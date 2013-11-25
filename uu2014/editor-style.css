@@ -1,0 +1,15 @@
+@import url( '//fonts.googleapis.com/css?family=Open+Sans' );
+@import url( 'style.css' );
+
+/* Add overwrites as needed so that the content of the editor field is attractive and not broken */
+body {
+	padding: 0;
+	margin: 0;
+	background-color: rgb(255, 255, 255); 
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	color: #000; }
+ 
+table td {
+	padding: 7px 10px;
+	border: 1px solid #cfcfcf; }
+ 

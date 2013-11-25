@@ -1,0 +1,1252 @@
+/*
+Theme Name: UU 2014
+Author: Dan Flippo
+Description: UU2014 is an merger and extension of the UU 2011 theme into the Underscores framework
+Version: 0.9
+Theme URI: http://www.faithandreason.dreamhosters.com/
+Author URI: http://www.faithandreason.dreamhosters.com/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, gray, green, white, light, two-columns, left-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, post-formats, rtl-language-support, translation-ready
+Text Domain: uu2014
+Domain Path: /languages/
+
+UU 2014 WordPress Theme, Copyright 2013 Dan Flippo, UU Church of Kent, Ohio
+UU 2014 is distributed under the terms of the GNU GPL
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+This theme draws from the following themes released under GNU General Public License:
+- UU 2011 http://www.faithandweb.com/faith2012/, (C) 2012 Anna Belle Leiserson
+- Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/*
+All initial styles are taken directly from _s and modified later to simplify 
+incorporating updates to the theme from _s
+*/
+/* ==========================================================================
+   1.0 Unmodified styles from _s
+   ========================================================================== */
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa #bbb;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Links */
+a {
+	color: royalblue;
+}
+a:visited {
+	color: purple;
+}
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	left: 0;
+	position: absolute;
+	top: 1.5em;
+	z-index: 99999;
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-navigation ul ul a {
+	width: 200px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+}
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.sticky {
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.byline,
+.updated {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-main .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-main .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-main .gallery dd {
+	margin: 0;
+}
+.site-main .gallery-columns-4 .gallery-item {
+}
+.site-main .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-main [class*="navigation"] {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+[class*="navigation"] .nav-previous {
+	float: left;
+	width: 50%;
+}
+[class*="navigation"] .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/* ==========================================================================
+   2.0 UU2014 Theme Specific
+   ========================================================================== */
+
+/* 2.1 UU2014 - Global
+   ========================================================================== */
+body,
+button,
+input,
+select,
+textarea {
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	color: #000; 
+	font-size: 15px;
+	font-size: 1.5rem; }
+
+body { background-color: rgb(106, 137, 153); }
+
+input[type="submit"] {
+	box-shadow: none;
+	text-shadow: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: none;
+  margin-bottom: 1.0em; }
+
+h1 {
+  font-size: 25px;
+  font-size: 2.5rem; }
+
+h2 {
+  font-size: 20px;
+  font-size: 2.0rem; }
+
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+h4 {
+  font-size: 17px;
+  font-size: 1.7rem; }
+
+h5 {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+img {
+	max-width: 100%;
+	height: auto; }
+
+div {
+  max-width: 100%; }
+  
+p,
+ul, ol ,
+li > ul,
+li > ol,
+dd,
+blockquote,
+address,
+pre,
+table { margin-bottom: 1.0em; }
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+.single .byline, .group-blog .byline { display: none; }
+
+.site { position: relative; }
+
+/* 2.2 UU2014 - Menu
+   ========================================================================== */
+.main-navigation {
+	float: right; 
+	font-size: 16px;
+	font-size: 1.6rem;
+	background: #000 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/bkgr-menu.png) repeat-x left top; 
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+		margin: 0;
+		padding: 0;
+    }
+
+	.main-navigation ul {
+    width: 100%;
+		list-style: none;
+		float: right; 
+    }
+
+	.main-navigation li {
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 11%;
+		float: left;
+		position: relative;}
+
+	.main-navigation a {
+    text-align: center;
+    width: inherit;
+		display: block;
+		padding: 0 .5em; 
+		border-left: 1px solid #444;
+		border-bottom: 1px solid #444;
+		color: #eee;
+		line-height: 40px;
+		text-decoration: none; }
+
+	.main-navigation ul ul {
+		display: none;
+		position: absolute;
+		top: 41px;
+		left: 0;
+		float: left;
+		width: 180px;
+		z-index: 999;
+		text-align: left; }
+
+		.main-navigation ul ul li { min-width: 170px; }
+
+		.main-navigation ul ul ul {
+			left: 100%;
+			top: 0; }
+
+		.main-navigation ul ul a {
+      text-align: left;
+			height: auto;
+			width: 160px;
+			padding: 10px 10px 10px 20px;
+			background: #333;
+			line-height: 1em; }
+
+	.main-navigation li:hover > a, .main-navigation ul ul :hover > a {
+		background: #333;
+		color: #fff; }
+
+	.main-navigation ul li:hover > ul { display: block; }
+
+	.main-navigation ul li.current_page_item > a,
+.main-navigation ul li.current-menu-ancestor > a,
+.main-navigation ul li.current-menu-item > a,
+.main-navigation ul li.current-menu-parent > a { color: #999; }
+
+* html .main-navigation ul li.current_page_item a,
+* html .main-navigation ul li.current-menu-ancestor a,
+* html .main-navigation ul li.current-menu-item a,
+* html .main-navigation ul li.current-menu-parent a,
+* html .main-navigation ul li a:hover { color: #999; }
+
+/* 2.3 UU2014 - Search Box
+   ========================================================================== */
+.search-box {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0px;
+	width: 250px;
+	margin: 0;
+	padding: 15px 0;
+	background: #333;
+	background: rgba(0, 0, 0, 0.4); /* fallback color */
+	text-align: center;
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-bottom-left-radius: 15px; }
+
+	.search-box .search-field {
+		width: 140px;
+		margin: 0 5px 0 0;
+		padding: 3px;
+		background: #333;
+		border: 1px solid #aaa;
+		color: #fff; }
+
+	.search-box .search-submit {
+		margin: 0;
+		padding: 2px 5px;
+		background: #333;
+		border: 1px solid #aaa;
+		color: #ccc; }
+
+/* 2.4 UU2014 - Header
+   ========================================================================== */
+.site .site-header {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1200px;
+	padding: 0;
+	position: relative;
+	text-align: left;
+	color: #fff; }
+
+#parentdiv:after { content: " "; display: block; clear: both;}
+
+	.site .site-header .mslide { width: 100%; }
+
+		.site .site-header .mslide  img { width: 100%; }
+
+	.site .site-header .site-branding { 
+		position: relative; }
+
+		.site .site-header .site-branding .site-title-description { 
+		position: absolute;
+		z-index: 99998;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		padding: 5px 15px 10px 15px;
+		border-top: 1px solid #555;
+		border-bottom: 1px solid #555; 
+		font-family: Georgia, "Times New Roman", Times, serif;
+		background: rgb(0, 0, 0); /* fallback color */
+		background: rgba(0, 0, 0, 0.5); }
+
+	.site .site-header .site-branding .site-title-description div:after { content: " "; display: block; clear: both;}
+
+		.site .site-header .site-branding .site-title {
+			margin: 0;
+			padding: 0;
+			font-size: 30px;
+			font-size: 3.0rem; }
+
+			.site .site-header .site-branding .site-title a {
+				color: white;
+				font-weight: normal;
+				text-decoration: none;
+				display: block;
+				padding: 0 0 0 85px;
+				}
+
+				.site .site-header .site-branding .site-title a:hover { background: #000; }
+
+		.site .site-header .site-branding .site-description {
+			color: white;
+			font-weight: normal;
+			text-decoration: none;
+			display: block;
+			padding: 0 0 0 85px;
+			margin: 0;
+			font-size: 15px;
+			font-size: 1.5rem; }
+			
+	.site .site-header .main-navigation { margin: 0; }
+
+/* 2.5 UU2014 - Content Area
+   ========================================================================== */
+.site .site-content {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1200px;
+	background: #fff url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/img-noise-500x500.png) repeat-y left top;
+	background-size: 25%; }
+
+	.site .site-content .content-area {
+		float: right;
+		margin: 0 0 0 -25%;
+		width: 100%; }
+
+		.site .site-content .content-area .site-main {
+			margin: 0 0 0 25%;
+			padding: 0 0 0 0;
+			background-color: rgb(255, 255, 255); }
+
+			.site .site-content .content-area .site-main table td {
+				padding: 7px 10px;
+				border: 1px solid #cfcfcf; }
+
+			.site .site-content .content-area .site-main a.post-edit-link {
+				display: block;
+				width: 120px;
+				margin: 0 20px 10px 0;
+				padding: 8px 10px;
+				background: #eebc6d;
+				border: 1px solid #999;
+				color: #000;
+				text-align: center;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-size: 12px;
+				font-size: 1.2rem; }
+
+/* Applies to single pages and posts */
+article {
+	padding: 20px 40px;
+	position: relative; }
+
+/* Applies to pages of posts */
+article.type-post {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	border: 1px solid #ccc;
+	margin: 15px 30px;
+	padding: 5px 10px;
+	position: relative; }
+
+.entry-title{
+  margin: 0; }
+
+.page-title {
+	margin: 15px 30px;
+	padding: 5px 10px;
+	background: #eee;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; }
+
+.site-main [class*="navigation"] {
+  padding: 0 40px;  }
+  
+/* 2.6 UU2014 - Sidebar Widgets
+   ========================================================================== */
+.widget { margin: 0; }
+
+.widget-area {
+	float: left;
+	overflow: hidden;
+	width: 25%;
+	text-align: left; }
+
+.widget-area h1,
+.widget-area h2,
+.widget-area h3,
+.widget-area h4,
+.widget-area h5,
+.widget-area h6,
+.widget-area p,
+.widget-area ul, 
+.widget-area ol,
+.widget-area li > ul,
+.widget-area li > ol,
+.widget-area dd,
+.widget-area blockquote,
+.widget-area address,
+.widget-area pre,
+.widget-area table { margin: 0; }
+
+	.widget-area ul {
+		list-style: none; }
+
+	.widget-area a {
+		background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
+		display: block;
+		padding: 10px 10px 10px 37px;
+		border-bottom: 1px solid #ccc;
+		color: #000;
+		text-decoration: none; }
+
+		.widget-area a:hover, .widget_nav_menu a:active {
+			background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 20px 15px;
+			color: #fff; }
+
+	.widget-area h1 {
+		background: #ccc;
+		background: rgba(0, 0, 0, 0.06); /* fallback color */
+		border-left: 1px solid #ccc;
+		font-weight: normal;
+		font-size: 18px;
+		font-size: 1.8rem;
+		padding: 14px 10px 8px 20px; }
+
+.widget_nav_menu .sub-menu { display: none; }
+
+.widget_nav_menu .current-menu-ancestor,
+        .widget_nav_menu .current-menu-item,
+        .widget_nav_menu .current-menu-ancestor .sub-menu,
+        .widget_nav_menu .current-menu-item .sub-menu { display: block; }
+
+.widget_nav_menu .current-menu-item a { font-weight: bold; }
+
+.widget_nav_menu .current-menu-item .sub-menu a { font-weight: normal; }
+
+.widget_nav_menu ul.sub-menu { border-top: none; }
+
+	.widget_nav_menu ul.sub-menu a, .widget_nav_menu ul.sub-menu a:link, .widget_nav_menu ul.sub-menu a:visited {
+		background: #ccc url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px;
+		background: rgba(0, 0, 0, 0.05) url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px; /* fallback */
+		padding: 7px 10px 7px 53px;
+		border-bottom: 1px solid #c0c0c0;
+		font-size: 14px;
+    font-size: 1.4rem; }
+
+	.widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active { background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 37px 11px; }
+
+	.widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
+
+		.widget_nav_menu ul.sub-menu ul.sub-menu a, .widget_nav_menu ul.sub-menu ul.sub-menu a:link, .widget_nav_menu ul.sub-menu ul.sub-menu a:visited {
+			background: #ccc url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px;
+			background: rgba(0, 0, 0, 0.05) url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px; /* fallback */
+			padding: 7px 10px 7px 69px;
+			border-bottom: 1px solid #c0c0c0;
+			font-size: 14px;
+      font-size: 1.4rem; }
+
+		.widget_nav_menu ul.sub-menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu ul.sub-menu a:active { background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 53px 11px; }
+
+/* 2.7 UU2014 - Footer
+   ========================================================================== */
+.site-footer {
+	clear: both;
+	width: 100%;
+	background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/chalice-watermark-dark.gif) no-repeat 40px -20px;
+	border-top: 4px solid #555;
+	color: #fff;
+	font-size: 12px;
+	font-size: 1.2rem;
+	padding: 30px 0 10px 0;
+	text-align: right; }
+
+	.site-footer p {
+		margin: 0 40px 20px 20px;
+		padding: 0;
+		line-height: 1.5;
+		text-align: right; }
+
+	.site-footer a {
+		color: #ccc;
+		text-decoration: none; }
+
+	.site-footer .footer-widget-container {
+		margin: 0px 40px 20px 40px;
+		text-align: right; }
+
+		.site-footer .footer-widget-container p { margin: 5px 0 10px 0; }
+
+/* 2.8 UU2014 - Plugin: Contact Form 7
+   ========================================================================== */
+span.wpcf7-checkbox span.wpcf7-list-item { display: block; }
+
+span.wpcf7-radio span.wpcf7-list-item { display: inline; }
+
+/* 2.9 UU2014 - Plugin: Featured Articles
+   ========================================================================== */
+.FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a { font-size: 75%; }
+
+/* 2.10 UU2014 - Specific #ID Styles
+   ========================================================================== */
+#page {
+	background: #333;
+	background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/bkgr-top.jpg) repeat-x left top; }
+
+#homepage-slider {
+	float: right;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
+	width: 100%; }
+
+#chalice {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 0 0 10px 10px;
+	z-index: 99999; }
+
+#main.no-sidebar { margin: 0; }
+
+.page-template-page-nosidebar-php .site .site-content {
+	background-size: 0%; }
+  
+#breadcrumbs {
+  margin: 0 20px;
+}
+
+.menu-sitemap { display: none; }
+
+/* ==========================================================================
+   3.0 UU2014 Theme Specific - Mobile Devices
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+
+/* 3.1 UU2014 - Mobile Devices - Global
+   ========================================================================== */
+body,
+button,
+input,
+select,
+textarea {
+	font-size: 12px;
+	font-size: 1.2rem; }
+
+p,
+ul, ol ,
+li > ul,
+li > ol,
+dd,
+blockquote,
+address,
+pre,
+table { margin-bottom: 0; }
+
+/* 3.2 UU2014 - Mobile Devices - Menu
+   ========================================================================== */
+.menu-toggle,
+	.main-navigation.toggled .nav-menu { display: none; }
+ 
+.main-navigation ul { display: block; }
+ 
+	.main-navigation ul li {
+    min-width: 85px;
+    vertical-align: middle;
+		 }
+
+    .main-navigation ul a {
+		height: auto;
+		font-size: 15px;
+		font-size: 1.5rem;
+		line-height: 2.0em;
+		padding: .2em; }
+ 
+	.main-navigation ul ul { top: 2.2em; }
+ 
+		.main-navigation ul ul ul li,
+    .main-navigation ul ul li { 
+    width: inherit; 
+    max-width: 85px; }
+
+		.main-navigation ul ul ul a,
+    .main-navigation ul ul a { 
+      padding: .2em; 
+      line-height: 2.0em; }
+ 
+		.main-navigation ul ul ul {
+			left: 100%;
+			top: 0; }
+
+/* 3.3 UU2014 - Mobile Devices - Search Box
+   ========================================================================== */
+.search-box { display: none; }
+
+/* 3.2 UU2014 - Mobile Devices - Header
+   ========================================================================== */
+
+.site .site-header .site-branding .site-title-description { 
+	padding: 5px 5px 5px 5px; }
+
+.site .site-header .site-branding .site-title a{
+	padding: 0 0 0 40px; }
+
+.site .site-header .site-branding .site-description {
+	padding: 0 0 0 40px; }
+
+/* 3.4 UU2014 - Mobile Devices - Content Area
+   ========================================================================== */
+.site .site-content { background-size: 100%; }
+ 
+	.site .site-content .content-area .site-main img {
+		height: auto;
+		max-width: 100px; }
+ 
+h1 {
+		font-size: 16px;
+		font-size: 1.6rem; }
+ 
+h2 {
+		font-size: 15px;
+		font-size: 1.5rem; }
+ 
+h3 {
+		font-size: 14px;
+		font-size: 1.4rem; }
+ 
+h4 {
+		font-size: 13px;
+		font-size: 1.3rem; }
+
+.widget-area h1 {
+		font-size: 15px;
+		font-size: 1.5rem; }
+
+.site .site-header .site-branding .site-title {
+	font-size: 20px;
+	font-size: 2.0rem;
+  margin: 0;}
+ 
+.site .site-content .content-area {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+/* Applies to single pages and posts */
+article { padding: 5px; }
+ 
+/* Applies to pages of posts */
+.archive article {
+	margin: 5px;
+	padding: 5px;
+	position: relative; }
+
+.page-title {
+	margin: 0 5px;
+	padding: 5px 10px; }
+  
+#main {
+	margin: 0;
+	padding: 0; }
+ 
+/* 3.5 UU2014 - Mobile Devices - Sidebar Widgets
+   ========================================================================== */
+.widget_nav_menu { display: none; }
+
+.site .site-content .widget-area {
+	clear: both;
+	width: 100%; }
+ 
+/* 3.6 UU2014 - Mobile Devices - Footer
+   ========================================================================== */
+
+/* 3.7 UU2014 - Mobile Devices - Specific #ID Styles
+   ========================================================================== */
+#chalice { max-width: 40px; padding: 5px 0; }
+
+}

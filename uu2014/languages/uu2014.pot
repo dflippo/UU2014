@@ -1,0 +1,584 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: UU2014\n"
+"POT-Creation-Date: 2013-10-09 17:44-0500\n"
+"PO-Revision-Date: 2013-10-09 17:44-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../twentythirteen/archive.php:29 ../twentytwelve/archive.php:29
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../twentythirteen/archive.php:31 ../twentytwelve/archive.php:31
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../twentythirteen/archive.php:33 ../twentytwelve/archive.php:33
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../twentythirteen/author-bio.php:16 ../twentytwelve/author.php:53
+#: ../twentytwelve/content.php:53
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../twentythirteen/author-bio.php:20 ../twentytwelve/content.php:57
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../twentythirteen/author.php:30
+#, php-format
+msgid "All posts by %s"
+msgstr ""
+
+#: ../twentythirteen/category.php:19 ../twentytwelve/category.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../twentythirteen/comments.php:46 ../twentytwelve/comments.php:43
+#: ../uu2014/comments.php:37 ../uu2014/comments.php:57
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../twentythirteen/comments.php:47 ../twentytwelve/comments.php:44
+#: ../uu2014/comments.php:38 ../uu2014/comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../twentythirteen/content-aside.php:13
+#: ../twentythirteen/content-audio.php:24
+#: ../twentythirteen/content-gallery.php:24
+#: ../twentythirteen/content-image.php:23
+#: ../twentythirteen/content-link.php:24
+#: ../twentythirteen/content-quote.php:13
+#: ../twentythirteen/content-status.php:13
+#: ../twentythirteen/content-video.php:23 ../twentythirteen/content.php:39
+#: ../twentytwelve/content-aside.php:15 ../twentytwelve/content-image.php:13
+#: ../twentytwelve/content-link.php:14 ../twentytwelve/content-quote.php:13
+#: ../twentytwelve/content-status.php:21 ../twentytwelve/content.php:39
+#: ../uu2014/content.php:24
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../twentythirteen/content-aside.php:14
+#: ../twentythirteen/content-audio.php:25
+#: ../twentythirteen/content-chat.php:24
+#: ../twentythirteen/content-gallery.php:25
+#: ../twentythirteen/content-image.php:24
+#: ../twentythirteen/content-link.php:25
+#: ../twentythirteen/content-quote.php:14
+#: ../twentythirteen/content-status.php:14
+#: ../twentythirteen/content-video.php:24 ../twentythirteen/content.php:40
+#: ../twentythirteen/image.php:70 ../twentythirteen/page.php:35
+#: ../twentytwelve/content-page.php:21 ../twentytwelve/content.php:40
+#: ../twentytwelve/image.php:92 ../uu2014/content-page.php:23
+#: ../uu2014/content-single.php:20 ../uu2014/content.php:27
+#: ../uu2014/image.php:60
+msgid "Pages:"
+msgstr ""
+
+#: ../twentythirteen/content-aside.php:20
+#: ../twentythirteen/content-aside.php:28
+#: ../twentythirteen/content-audio.php:31
+#: ../twentythirteen/content-chat.php:29
+#: ../twentythirteen/content-gallery.php:39
+#: ../twentythirteen/content-image.php:35
+#: ../twentythirteen/content-link.php:19
+#: ../twentythirteen/content-quote.php:25
+#: ../twentythirteen/content-status.php:19
+#: ../twentythirteen/content-video.php:35 ../twentythirteen/content.php:29
+#: ../twentythirteen/image.php:44 ../twentythirteen/page.php:39
+#: ../twentytwelve/content-aside.php:26 ../twentytwelve/content-image.php:26
+#: ../twentytwelve/content-link.php:24 ../twentytwelve/content-page.php:24
+#: ../twentytwelve/content-quote.php:23 ../twentytwelve/content-status.php:30
+#: ../twentytwelve/content.php:46 ../twentytwelve/functions.php:341
+#: ../twentytwelve/image.php:37 ../uu2014/content-page.php:28
+#: ../uu2014/content-single.php:61 ../uu2014/content.php:61
+#: ../uu2014/image.php:34 ../uu2014/image.php:78
+#: ../uu2014/inc/template-tags.php:71 ../uu2014/inc/template-tags.php:90
+msgid "Edit"
+msgstr ""
+
+#: ../twentythirteen/content-gallery.php:36
+#: ../twentythirteen/content-image.php:32
+#: ../twentythirteen/content-quote.php:22
+#: ../twentythirteen/content-video.php:32 ../twentythirteen/content.php:47
+#: ../uu2014/content.php:58
+msgid "Leave a comment"
+msgstr ""
+
+#: ../twentythirteen/content-gallery.php:36
+#: ../twentythirteen/content-image.php:32
+#: ../twentythirteen/content-quote.php:22
+#: ../twentythirteen/content-video.php:32 ../twentythirteen/content.php:47
+msgid "One comment so far"
+msgstr ""
+
+#: ../twentythirteen/content-gallery.php:36
+#: ../twentythirteen/content-image.php:32
+#: ../twentythirteen/content-quote.php:22
+#: ../twentythirteen/content-video.php:32 ../twentythirteen/content.php:47
+#, php-format
+msgid "View all % comments"
+msgstr ""
+
+#: ../twentythirteen/content-none.php:18 ../uu2014/no-results.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../twentythirteen/footer.php:20 ../twentytwelve/footer.php:17
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: ../twentythirteen/footer.php:20 ../twentytwelve/footer.php:17
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: ../twentythirteen/functions.php:93
+msgid "Navigation Menu"
+msgstr ""
+
+#: ../twentythirteen/functions.php:212 ../twentytwelve/functions.php:213
+#: ../uu2014/inc/extras.php:66
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../twentythirteen/functions.php:227
+msgid "Main Widget Area"
+msgstr ""
+
+#: ../twentythirteen/functions.php:229
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: ../twentythirteen/functions.php:237
+msgid "Secondary Widget Area"
+msgstr ""
+
+#: ../twentythirteen/functions.php:239
+msgid "Appears on posts and pages in the sidebar."
+msgstr ""
+
+#: ../twentythirteen/functions.php:268 ../twentytwelve/functions.php:283
+#: ../uu2014/inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../twentythirteen/functions.php:272 ../twentytwelve/functions.php:284
+#: ../uu2014/inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../twentythirteen/functions.php:324
+msgid "Sticky"
+msgstr ""
+
+#: ../twentythirteen/functions.php:330 ../twentythirteen/functions.php:336
+#: ../twentytwelve/functions.php:364 ../twentytwelve/functions.php:367
+#: ../uu2014/content-single.php:29 ../uu2014/content-single.php:32
+#: ../uu2014/content.php:38 ../uu2014/content.php:48
+msgid ", "
+msgstr ""
+
+#: ../twentythirteen/functions.php:345 ../twentytwelve/functions.php:378
+#: ../uu2014/inc/template-tags.php:191
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: ../twentythirteen/functions.php:371 ../twentytwelve/content-aside.php:20
+#: ../twentytwelve/content-link.php:18 ../twentytwelve/content-quote.php:17
+#: ../twentytwelve/content-status.php:15
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: ../twentythirteen/image.php:22
+#, php-format
+msgid ""
+"<span class=\"attachment-meta\">Published on <time class=\"entry-date\" "
+"datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Return to %4$s\" "
+"rel=\"gallery\">%5$s</a></span>"
+msgstr ""
+
+#: ../twentythirteen/image.php:39
+msgid "Full resolution"
+msgstr ""
+
+#: ../twentythirteen/image.php:51 ../uu2014/image.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: ../twentythirteen/image.php:52 ../uu2014/image.php:40
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../twentythirteen/search.php:18 ../twentytwelve/search.php:18
+#: ../uu2011/search.php:10 ../uu2011-kentuu/search.php:10
+#: ../uu2014/search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../twentythirteen/tag.php:21 ../twentytwelve/tag.php:21
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: ../twentythirteen/taxonomy-post_format.php:23
+#, php-format
+msgid "%s Archives"
+msgstr ""
+
+#: ../twentythirteen/inc/back-compat.php:38
+#: ../twentythirteen/inc/back-compat.php:50
+#: ../twentythirteen/inc/back-compat.php:65
+#, php-format
+msgid ""
+"Twenty Thirteen requires at least WordPress version 3.6. You are running "
+"version %s. Please upgrade and try again."
+msgstr ""
+
+#: ../twentytwelve/author.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../twentytwelve/content-aside.php:23 ../twentytwelve/content-image.php:23
+#: ../twentytwelve/content-link.php:21 ../twentytwelve/content-quote.php:20
+#: ../twentytwelve/content-status.php:27 ../twentytwelve/content.php:28
+msgid "Leave a reply"
+msgstr ""
+
+#: ../twentytwelve/content-aside.php:23 ../twentytwelve/content-image.php:23
+#: ../twentytwelve/content-link.php:21 ../twentytwelve/content-quote.php:20
+#: ../twentytwelve/content-status.php:27 ../twentytwelve/content.php:28
+msgid "1 Reply"
+msgstr ""
+
+#: ../twentytwelve/content-aside.php:23 ../twentytwelve/content-image.php:23
+#: ../twentytwelve/content-link.php:21 ../twentytwelve/content-quote.php:20
+#: ../twentytwelve/content-status.php:27 ../twentytwelve/content.php:28
+msgid "% Replies"
+msgstr ""
+
+#: ../twentytwelve/functions.php:64
+msgid "Primary Menu"
+msgstr ""
+
+#: ../twentytwelve/functions.php:238
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../twentytwelve/functions.php:240
+msgid ""
+"Appears on posts and pages except the optional Front Page template, which "
+"has its own widgets"
+msgstr ""
+
+#: ../twentytwelve/functions.php:248
+msgid "First Front Page Widget Area"
+msgstr ""
+
+#: ../twentytwelve/functions.php:250 ../twentytwelve/functions.php:260
+msgid ""
+"Appears when using the optional Front Page template with a page set as "
+"Static Front Page"
+msgstr ""
+
+#: ../twentytwelve/functions.php:258
+msgid "Second Front Page Widget Area"
+msgstr ""
+
+#: ../twentytwelve/functions.php:309
+msgid "(Edit)"
+msgstr ""
+
+#: ../twentytwelve/functions.php:324
+msgid "Post author"
+msgstr ""
+
+#: ../twentytwelve/functions.php:330
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../twentytwelve/functions.php:345
+msgid "Reply"
+msgstr ""
+
+#: ../twentytwelve/functions.php:384
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
+msgstr ""
+
+#: ../twentytwelve/functions.php:386
+#, php-format
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
+msgstr ""
+
+#: ../twentytwelve/functions.php:388
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: ../twentytwelve/image.php:26
+#, php-format
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></"
+"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
+"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
+"a>."
+msgstr ""
+
+#: ../twentytwelve/image.php:41
+msgid "&larr; Previous"
+msgstr ""
+
+#: ../twentytwelve/image.php:42
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../twentytwelve/index.php:42
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: ../uu2011/functions.php:12 ../uu2011-kentuu/functions.php:15
+msgid "Drag to update the sidebar for general pages"
+msgstr ""
+
+#: ../uu2011/functions.php:17 ../uu2011-kentuu/functions.php:20
+#: ../uu2014/functions.php:132
+msgid "Drag to create or update the sidebar for home page"
+msgstr ""
+
+#: ../uu2011/functions.php:22 ../uu2011-kentuu/functions.php:25
+msgid ""
+"Drag to create or update the sidebar for pages using the \"About Us Template"
+"\""
+msgstr ""
+
+#: ../uu2011/functions.php:27 ../uu2011-kentuu/functions.php:30
+msgid "Drag to create or update the sidebar for education pages"
+msgstr ""
+
+#: ../uu2011/functions.php:32 ../uu2011-kentuu/functions.php:50
+msgid "Drag to create or update the sidebar for ministry pages"
+msgstr ""
+
+#: ../uu2011/functions.php:37 ../uu2011-kentuu/functions.php:55
+msgid "Drag to update the sidebar for blog posts"
+msgstr ""
+
+#: ../uu2011/functions.php:42 ../uu2011-kentuu/functions.php:60
+#: ../uu2014/functions.php:141
+msgid "The footer widget area"
+msgstr ""
+
+#: ../uu2011/functions.php:61 ../uu2014/functions.php:49
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../uu2011/functions.php:69 ../uu2014/functions.php:74
+msgid "Golden Bridge"
+msgstr ""
+
+#: ../uu2011/functions.php:74 ../uu2014/functions.php:79
+msgid "Bible on a Pew"
+msgstr ""
+
+#: ../uu2011/functions.php:79 ../uu2014/functions.php:84
+msgid "Candles"
+msgstr ""
+
+#: ../uu2011/functions.php:84 ../uu2014/functions.php:89
+msgid "Stained Glass 2"
+msgstr ""
+
+#: ../uu2011/functions.php:89 ../uu2014/functions.php:69
+msgid "Bowling Green stained glass"
+msgstr ""
+
+#: ../uu2011/functions.php:94 ../uu2014/functions.php:94
+msgid "Stained Glass 1"
+msgstr ""
+
+#: ../uu2011/functions.php:100 ../uu2014/functions.php:99
+msgid "Sky"
+msgstr ""
+
+#: ../uu2011/functions.php:105 ../uu2014/functions.php:104
+msgid "Grunge"
+msgstr ""
+
+#: ../uu2011/functions.php:110 ../uu2014/functions.php:109
+msgid "Grunge 2"
+msgstr ""
+
+#: ../uu2011/functions.php:115 ../uu2014/functions.php:114
+msgid "Cherry Tree Path"
+msgstr ""
+
+#: ../uu2011/functions.php:120 ../uu2014/functions.php:119
+msgid "Lotus"
+msgstr ""
+
+#: ../uu2011-kentuu/display.php:68
+msgid "Previous post"
+msgstr ""
+
+#: ../uu2011-kentuu/display.php:69
+msgid "Next post"
+msgstr ""
+
+#: ../uu2011-kentuu/functions.php:35
+msgid "Drag to create or update the sidebar for exploration pages"
+msgstr ""
+
+#: ../uu2011-kentuu/functions.php:40
+msgid "Drag to create or update the sidebar for lifespan learning pages"
+msgstr ""
+
+#: ../uu2011-kentuu/functions.php:45
+msgid "Drag to create or update the sidebar for members pages"
+msgstr ""
+
+#: ../uu2014/404.php:45
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: ../uu2014/archive.php:31
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../uu2014/archive.php:39
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../uu2014/archive.php:42
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../uu2014/archive.php:45
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../uu2014/content-single.php:37
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: ../uu2014/content-single.php:39
+#, php-format
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: ../uu2014/content-single.php:45
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: ../uu2014/content-single.php:47
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: ../uu2014/content.php:42
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../uu2014/content.php:52
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../uu2014/content.php:58
+msgid "1 Comment"
+msgstr ""
+
+#: ../uu2014/content.php:58
+msgid "% Comments"
+msgstr ""
+
+#: ../uu2014/functions.php:130
+msgid "Home Sidebar"
+msgstr ""
+
+#: ../uu2014/functions.php:139
+msgid "Footer Widget"
+msgstr ""
+
+#: ../uu2014/image.php:23
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size "
+"image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: ../uu2014/image.php:69
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: ../uu2014/image.php:71
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+
+#: ../uu2014/inc/template-tags.php:81
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: ../uu2014/inc/template-tags.php:186
+#, php-format
+msgid ""
+"<span class=\"posted-on\" title=\"%1$s\">%2$s</span><span class=\"byline\"> "
+"by %3$s</span>"
+msgstr ""

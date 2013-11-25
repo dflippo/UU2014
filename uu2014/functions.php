@@ -1,0 +1,382 @@
+<?php
+
+/**
+ * UU2014 functions and definitions
+ *
+ * @package UU2014
+ */
+
+function setup_theme_admin_menus() {  
+    add_theme_page('UU2014 Theme Options', 'UU2014 Theme', 'edit_theme_options',   
+        'uu2014-options', 'uu2014_options');  
+}  
+
+// This tells WordPress to call the function named "setup_theme_admin_menus"  
+// when it's time to create the menu pages.  
+add_action("admin_menu", "setup_theme_admin_menus");  
+
+function uu2014_options() {  
+// Check that the user is allowed to update options  
+if (!current_user_can('edit_theme_options')) {  
+    wp_die('You do not have sufficient permissions to access this page.');  
+} 
+$twitter_username = get_option("twitter_username");
+$header_slideshow_name = get_option("header_slideshow_name");
+$featured_articles_id = get_option("featured_articles_id");
+	if (isset($_POST["update_settings"])) {  
+		$twitter_username = esc_attr($_POST["twitter_username"]);     
+		update_option("twitter_username", $twitter_username);  
+		$header_slideshow_name = esc_attr($_POST["header_slideshow_name"]);     
+		update_option("header_slideshow_name", $header_slideshow_name); 
+		$featured_articles_id = esc_attr($_POST["featured_articles_id"]);     
+		update_option("featured_articles_id", $featured_articles_id); 
+		?> <div id="message" class="updated">Settings saved</div>  
+	<?php } 
+
+?>
+    <div class="wrap">  
+        <?php screen_icon('themes'); ?> <h2>UU 2014 Custom Settings</h2>  
+  
+        <form method="POST" action="">  
+            <table class="form-table">  
+                <tr valign="top">  
+                    <th scope="row">  
+                        <label for="twitter_username">  
+                            Twitter Username:  
+                        </label>   
+                    </th>  
+                    <td>  
+                        <input type="text" name="twitter_username" value="<?php echo $twitter_username;?>" size="25" />  
+                    </td>  
+                </tr>  
+                <tr valign="top">  
+                    <th scope="row">  
+                        <label for="header_slideshow_name">  
+                            Meteor Slideshow Slug for Header:  
+                        </label>   
+                    </th>  
+                    <td>  
+                        <input type="text" name="header_slideshow_name" value="<?php echo $header_slideshow_name;?>" size="25" />  
+                    </td>  
+                </tr>  
+                <tr valign="top">  
+                    <th scope="row">  
+                        <label for="featured_articles_id">  
+                            Featured Articles Slider ID for Homepage:  
+                        </label>   
+                    </th>  
+                    <td>  
+                        <input type="text" name="featured_articles_id" value="<?php echo $featured_articles_id;?>" size="25" />  
+                    </td>  
+                </tr>  
+            </table>  
+			<p>  <input type="hidden" name="update_settings" value="Y" />
+				<input type="submit" value="Save settings" class="button-primary"/>  
+			</p>
+        </form>  
+    </div>
+<?php } 
+ 
+/**
+ * The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts
+ */
+if (!isset($content_width)) $content_width = 720; /* pixels */
+
+/**
+ * Set the name of the domain for translation
+ */
+if (!isset($theme_text_domain))
+    $theme_text_domain = 'uu2014';
+
+if (!function_exists('uu2014_setup')) :
+
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which runs
+     * before the init hook. The init hook is too late for some features, such as indicating
+     * support post thumbnails.
+     */
+    function uu2014_setup() {
+
+        /**
+         * Make theme available for translation
+         * Translations can be filed in the /languages/ directory
+         * If you're building a theme based on UU2014, use a find and replace
+         * to change 'uu2014' to the name of your theme in all the template files
+         */
+        load_theme_textdomain('uu2014', get_template_directory() . '/languages');
+
+        /**
+         * Add default posts and comments RSS feed links to head
+         */
+        add_theme_support('automatic-feed-links');
+
+        /**
+         * Enable support for Post Thumbnails on posts and pages
+         *
+         * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+         */
+        add_theme_support('post-thumbnails');
+
+        /**
+         * This theme uses wp_nav_menu() in one location.
+         */
+        register_nav_menus(array(
+            'primary' => __('Primary Menu', 'uu2014'),
+        ));
+
+        /**
+         * Enable support for Post Formats
+         */
+        add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
+
+        /**
+         * Setup the WordPress core custom background feature.
+         */
+        add_theme_support('custom-background', apply_filters('uu2014_custom_background_args', array(
+            'default-color' => '6a8999',
+            'default-image' => '',
+        )));
+        // Some custom headers packaged with the theme
+        register_default_headers(array(
+            'bowlinggreen' => array(
+                'url' => '%s/images/headers/uubgr.jpg',
+                'thumbnail_url' => '%s/images/headers/uubgr-thumbnail.jpg',
+                'description' => __('Bowling Green stained glass', 'uu2014')
+            ),
+            'goldenbridge' => array(
+                'url' => '%s/images/headers/header.jpg',
+                'thumbnail_url' => '%s/images/headers/header-thumbnail.jpg',
+                'description' => __('Golden Bridge', 'uu2014')
+            ),
+            'biblepew' => array(
+                'url' => '%s/images/headers/bible-pew.jpg',
+                'thumbnail_url' => '%s/images/headers/bible-pew-thumnail.jpg',
+                'description' => __('Bible on a Pew', 'uu2014')
+            ),
+            'candles' => array(
+                'url' => '%s/images/headers/candles.jpg',
+                'thumbnail_url' => '%s/images/headers/candles-thumbnail.jpg',
+                'description' => __('Candles', 'uu2014')
+            ),
+            'stainedglass2' => array(
+                'url' => '%s/images/headers/stained-glass2.jpg',
+                'thumbnail_url' => '%s/images/headers/stained-glass2-thumbnail.jpg',
+                'description' => __('Stained Glass 2', 'uu2014')
+            ),
+            'stainedglass' => array(
+                'url' => '%s/images/headers/stained-glass.jpg',
+                'thumbnail_url' => '%s/images/headers/stained-glass-thumbnail.jpg',
+                'description' => __('Stained Glass 1', 'uu2014')
+            ),
+            'sky' => array(
+                'url' => '%s/images/headers/sky.jpg',
+                'thumbnail_url' => '%s/images/headers/sky-thumbnail.jpg',
+                'description' => __('Sky', 'uu2014')
+            ),
+            'grunge' => array(
+                'url' => '%s/images/headers/grunge.jpg',
+                'thumbnail_url' => '%s/images/headers/grunge-thumbnail.jpg',
+                'description' => __('Grunge', 'uu2014')
+            ),
+            'grunge2' => array(
+                'url' => '%s/images/headers/grunge2.jpg',
+                'thumbnail_url' => '%s/images/headers/grunge2-thumbnail.jpg',
+                'description' => __('Grunge 2', 'uu2014')
+            ),
+            'cherrypath' => array(
+                'url' => '%s/images/headers/cherry-path.jpg',
+                'thumbnail_url' => '%s/images/headers/cherry-path-thumbnail.jpg',
+                'description' => __('Cherry Tree Path', 'uu2014')
+            ),
+            'lotus' => array(
+                'url' => '%s/images/headers/lotus.jpg',
+                'thumbnail_url' => '%s/images/headers/lotus-thumbnail.jpg',
+                'description' => __('Lotus', 'uu2014')
+            )
+        ));
+    }
+endif; // uu2014_setup
+add_action('after_setup_theme', 'uu2014_setup');
+
+        
+        // UU2014 automatically inserts the sharebar in the correct location
+        /*
+        update_option('sharebar_auto_posts', 0);
+        update_option('sharebar_auto_pages', 0);
+        update_option('sharebar_horizontal', 1);
+        update_option('sharebar_credit', 0);
+        update_option('sharebar_minwidth','1300');
+        update_option('sharebar_position','right');
+        update_option('sharebar_leftoffset','0');
+        update_option('sharebar_rightoffset','0');
+        update_option('sharebar_swidth','70');
+        update_option('sharebar_twitter_username',get_option("twitter_username"));
+        update_option('sharebar_bg','fff');
+        update_option('sharebar_border','ccc');
+        */  
+
+// Add dynamic sidebars to the widget areas
+function uu2014_widgets_init() {
+    register_sidebar(array(
+        'name' => _('Home Sidebar'),
+        'id' => 'home-widgets',
+        'description' => _('Drag to create or update the sidebar for home page'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ));
+    register_sidebar(array(
+        'name' => _('Footer Widget'),
+        'id' => 'footer-widget',
+        'description' => _('The footer widget area'),
+        'before_widget' => '<div class="footer-widget-container">',
+        'after_widget' => "</div>",
+        'before_title' => '<h3 class="footer-widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+
+add_action('widgets_init', 'uu2014_widgets_init');
+
+/**
+ * Enqueue scripts and styles
+ */
+function uu2014_scripts() {
+
+    $protocol = is_ssl() ? 'https' : 'http';
+    wp_enqueue_style('google-fonts-style', "$protocol://fonts.googleapis.com/css?family=Open+Sans");
+
+    wp_enqueue_style('uu2014-style', get_stylesheet_uri());
+
+    wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
+
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
+
+    if (is_singular() && wp_attachment_is_image()) {
+        wp_enqueue_script('uu2014-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), '20120202');
+    }
+}
+
+add_action('wp_enqueue_scripts', 'uu2014_scripts');
+
+function uu2014_add_editor_styles() {
+    add_editor_style('editor-style.css');
+}
+
+add_action('init', 'uu2014_add_editor_styles');
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load TGM_Plugin_Activation class.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register two plugins - one included with the TGMPA library
+ * and one from the .org repo.
+ *
+ * The variable passed to tgmpa_register_plugins() should be an array of plugin
+ * arrays.
+ *
+ * This function is hooked into tgmpa_init, which is fired within the
+ * TGM_Plugin_Activation class constructor.
+ */
+function my_theme_register_required_plugins() {
+
+	/**
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+
+        	// This is an example of how to include a plugin from the WordPress Plugin Repository
+		array(
+			'name' 		=> 'Meteor Slides',
+			'slug' 		=> 'meteor-slides',
+			'required' 	=> false,
+		),
+		array(
+			'name' 		=> 'Featured articles Lite',
+			'slug' 		=> 'featured-articles-lite',
+			'required' 	=> false,
+		),
+		array(
+			'name' 		=> 'Sharebar',
+			'slug' 		=> 'sharebar',
+			'required' 	=> false,
+		),
+
+	);
+
+	/**
+	 * Array of configuration settings. Amend each line as needed.
+	 * If you want the default strings to be available under your own theme domain,
+	 * leave the strings uncommented.
+	 * Some of the strings are added into a sprintf, so see the comments at the
+	 * end of each line for what each argument will be.
+	 */
+	$config = array(
+		'domain'       		=> 'uu2014',         	// Text domain - likely want to be the same as your theme.
+		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
+		'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
+		'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
+		'menu'         		=> 'install-required-plugins', 	// Menu slug
+		'has_notices'      	=> true,                       	// Show admin notices or not
+		'is_automatic'    	=> false,					   	// Automatically activate plugins after installation or not
+		'message' 			=> '',							// Message to output right before the plugins table
+		'strings'      		=> array(
+			'page_title'                       			=> __( 'Install Required Plugins', 'uu2014' ),
+			'menu_title'                       			=> __( 'Install Plugins', 'uu2014' ),
+			'installing'                       			=> __( 'Installing Plugin: %s', 'uu2014' ), // %1$s = plugin name
+			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'uu2014' ),
+			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
+			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
+			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
+			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
+			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
+			'notice_cannot_activate' 					=> _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
+			'notice_ask_to_update' 						=> _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
+			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
+			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
+			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
+			'return'                           			=> __( 'Return to Required Plugins Installer', 'uu2014' ),
+			'plugin_activated'                 			=> __( 'Plugin activated successfully.', 'uu2014' ),
+			'complete' 									=> __( 'All plugins installed and activated successfully. %s', 'uu2014' ), // %1$s = dashboard link
+			'nag_type'									=> 'updated' // Determines admin notice type - can only be 'updated' or 'error'
+		)
+	);
+
+	tgmpa( $plugins, $config );
+
+}
