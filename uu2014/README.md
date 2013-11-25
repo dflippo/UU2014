@@ -20,21 +20,21 @@ Here are some of the other more interesting things you'll find in this theme:
 Getting Started
 ---------------
 
-- Unzip the theme into your themes directory or download from WordPress.org
+* Unzip the theme into your themes directory or download from WordPress.org
 
-- Download and activate the plugins your are prompted to install from the top of all WordPress administration screens.
+* Download and activate the plugins your are prompted to install from the top of all WordPress administration screens.
 
-- Use the plugins to create a header slideshow, a featured articles slider, and a floating sharebar.
+* Use the plugins to create a header slideshow, a featured articles slider, and a floating sharebar.
 
-- For the Sharebar plugin, you will want to use the following settings to allow the theme to correctly display the bar at the correct location:
-    Automatically add Sharebar to posts: Off
-    Automatically add Sharebar to pages: Off
-    Display horizontal Sharebar if the page is resized to less than 1300px: Off
-    Sharebar Position: Right
-    Left Offset: 0
-    Right Offset: 0
-    Minimum width in pixels required to show vertical Sharebar to the left of post: 1300
-    Sharebar Width: 70
+* For the Sharebar plugin, you will want to use the following settings to allow the theme to correctly display the bar at the correct location:
+    - Automatically add Sharebar to posts: Off
+    - Automatically add Sharebar to pages: Off
+    - Display horizontal Sharebar if the page is resized to less than 1300px: Off
+    - Sharebar Position: Right
+    - Left Offset: 0
+    - Right Offset: 0
+    - Minimum width in pixels required to show vertical Sharebar to the left of post: 1300
+    - Sharebar Width: 70
 
-- Visit Appearance -> UU2014 Theme to tell the theme the name of your header slideshow and featured articles slider.
+* Visit Appearance -> UU2014 Theme to tell the theme the name of your header slideshow and featured articles slider.
 
