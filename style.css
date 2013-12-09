@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: UU2014 is an merger and extension of the UU 2011 theme into the Underscores framework
-Version: 1.0
+Version: 1.0.0
 Theme URI: http://www.faithandreason.dreamhosters.com/
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
@@ -975,18 +975,25 @@ article.type-post {
 .widget-area pre,
 .widget-area table { margin: 0; }
 
-	.widget-area ul {
-		list-style: none; }
+    .widget-area ul {
+		list-style: none; 
+    width: 100%;
+    }
 
-	.widget-area a {
+ 	.widget-area li {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    }
+
+    .widget-area ul a {
 		background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
-		display: block;
-		padding: 10px 10px 10px 37px;
-		border-bottom: 1px solid #ccc;
+		padding: 7px 5px 7px 37px;
+    display: inline-block;
 		color: #000;
 		text-decoration: none; }
 
-		.widget-area a:hover, .widget_nav_menu a:active {
+		.widget-area a:hover, 
+    .widget_nav_menu a:active {
 			background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 20px 15px;
 			color: #fff; }
 
@@ -1012,27 +1019,32 @@ article.type-post {
 
 .widget_nav_menu ul.sub-menu { border-top: none; }
 
-	.widget_nav_menu ul.sub-menu a, .widget_nav_menu ul.sub-menu a:link, .widget_nav_menu ul.sub-menu a:visited {
-		background: #ccc url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px;
-		background: rgba(0, 0, 0, 0.05) url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px; /* fallback */
-		padding: 7px 10px 7px 53px;
-		border-bottom: 1px solid #c0c0c0;
+	.widget_nav_menu ul.sub-menu a, 
+  .widget_nav_menu ul.sub-menu a:link, 
+  .widget_nav_menu ul.sub-menu a:visited,
+  .widget-area ul ul a  {
+		background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px;
+		padding: 7px 5px 7px 53px;
 		font-size: 14px;
     font-size: 1.4rem; }
 
-	.widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active { background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 37px 11px; }
+	.widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active { 
+    background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 37px 11px; }
 
 	.widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
 
-		.widget_nav_menu ul.sub-menu ul.sub-menu a, .widget_nav_menu ul.sub-menu ul.sub-menu a:link, .widget_nav_menu ul.sub-menu ul.sub-menu a:visited {
-			background: #ccc url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px;
-			background: rgba(0, 0, 0, 0.05) url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px; /* fallback */
-			padding: 7px 10px 7px 69px;
-			border-bottom: 1px solid #c0c0c0;
+		.widget_nav_menu ul.sub-menu ul.sub-menu a, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:link, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:visited ,
+    .widget-area ul ul ul a  {
+			background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px;
+			padding: 7px 5px 7px 69px;
 			font-size: 14px;
       font-size: 1.4rem; }
 
-		.widget_nav_menu ul.sub-menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu ul.sub-menu a:active { background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 53px 11px; }
+		.widget_nav_menu ul.sub-menu ul.sub-menu a:hover, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
+     background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 53px 11px; }
 
 /* 2.7 UU2014 - Footer
    ========================================================================== */
