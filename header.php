@@ -11,16 +11,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php 
-if (is_home() || is_front_page()) {
-	echo '<meta name="description" content="';
-	bloginfo('description');
-	echo '" />';
-} ?>
 <title>'<?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
-<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="<?php bloginfo( 'atom_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>

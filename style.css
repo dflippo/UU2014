@@ -1,8 +1,14 @@
 /*
 Theme Name: UU 2014
 Author: Dan Flippo
-Description: UU2014 is an merger and extension of the UU 2011 theme into the Underscores framework
-Version: 1.0.0
+Description: UU 2014 is a WordPress theme designed to meet the needs of Unitarian 
+Universalist Congregations and other UU organizations. Many congregations 
+currently use the UU 2011 WordPress theme. With permission of the original theme
+author, UU 2014 extends UU 2011 by making the theme fully responsive.  The theme 
+will automatically adjust to smaller screens such as mobile phones.  These theme 
+also migrates the look and feel into the Underscores framework to provide the 
+latest WordPress features and browser compatibility.
+Version: 1.0.1
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +25,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 This theme draws from the following themes released under GNU General Public License:
 - UU 2011 http://www.faithandweb.com/faith2012/, (C) 2012 Anna Belle Leiserson
 - Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/, 
+  (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
+  License (GPL), v3 and used with permission.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html

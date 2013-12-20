@@ -6,14 +6,14 @@
  * @package UU2014
  */
 
-function setup_theme_admin_menus() {  
+function uu2014_setup_admin_menus() {  
     add_theme_page('UU2014 Theme Options', 'UU2014 Theme', 'edit_theme_options',   
         'uu2014-options', 'uu2014_options');  
 }  
 
-// This tells WordPress to call the function named "setup_theme_admin_menus"  
+// This tells WordPress to call the function named "uu2014_setup_admin_menus"  
 // when it's time to create the menu pages.  
-add_action("admin_menu", "setup_theme_admin_menus");  
+add_action("admin_menu", "uu2014_setup_admin_menus");  
 
 function uu2014_options() {  
 // Check that the user is allowed to update options  
@@ -299,7 +299,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load TGM_Plugin_Activation class.
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+add_action( 'tgmpa_register', 'uu2014_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -312,15 +312,12 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function my_theme_register_required_plugins() {
-
+function uu2014_register_required_plugins() {
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
-        	// This is an example of how to include a plugin from the WordPress Plugin Repository
 		array(
 			'name' 		=> 'Meteor Slides',
 			'slug' 		=> 'meteor-slides',
@@ -336,7 +333,6 @@ function my_theme_register_required_plugins() {
 			'slug' 		=> 'sharebar',
 			'required' 	=> false,
 		),
-
 	);
 
 	/**
