@@ -6,8 +6,7 @@
  */
 get_header(); ?>
 <?php 
-global $uu2014;
-if ( function_exists( 'sharebar' ) && $uu2014['display_sharebar'] ) { sharebar(); } ?>
+if ( function_exists( 'sharebar' ) && get_theme_mod('display_sharebar', 1) ) { sharebar(); } ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

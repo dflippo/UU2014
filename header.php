@@ -24,8 +24,7 @@
   <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
 	<header id="masthead" class="site-header" role="banner">
 <?php
-    global $uu2014;
-    $slideshow = get_term_by( 'id', $uu2014['header_slideshow_id'], 'slideshow' );
+    $slideshow = get_term_by( 'id', get_theme_mod('header_slideshow_id', -1), 'slideshow' );
 		$header_image = get_header_image();
 		if ( function_exists( 'meteor_slideshow' ) && $slideshow ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

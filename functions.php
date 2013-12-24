@@ -220,7 +220,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load TGM_Plugin_Activation class.
  */
-require get_template_directory() . '/inc/TGM-Plugin-Activation/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'uu2014_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
