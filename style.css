@@ -9,7 +9,7 @@ author, UU 2014 extends UU 2011 by making the theme fully responsive.  The theme
 will automatically adjust to smaller screens such as mobile phones.  These theme 
 also migrates the look and feel into the Underscores framework to provide the 
 latest WordPress features and browser compatibility.
-Version: 1.0.2
+Version: 1.0.3
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,6 +31,10 @@ UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/,
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission.
 
+Theme Options capapabilities provided by the Redux Framework
+http://reduxframework.com/, GNU General Public License (GPL) v3 or later
+Contributors: nohalfpixels, ghost1227, dovyp
+  
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/

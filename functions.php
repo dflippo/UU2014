@@ -6,77 +6,15 @@
  * @package UU2014
  */
 
-function uu2014_setup_admin_menus() {  
-    add_theme_page('UU2014 Theme Options', 'UU2014 Theme', 'edit_theme_options',   
-        'uu2014-options', 'uu2014_options');  
-}  
+ // This theme uses the ReduxFramework for theme options
+ // See options-config.php for more information
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+}
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
+	require_once( dirname( __FILE__ ) . '/options-config.php' );
+}
 
-// This tells WordPress to call the function named "uu2014_setup_admin_menus"  
-// when it's time to create the menu pages.  
-add_action("admin_menu", "uu2014_setup_admin_menus");  
-
-function uu2014_options() {  
-// Check that the user is allowed to update options  
-if (!current_user_can('edit_theme_options')) {  
-    wp_die('You do not have sufficient permissions to access this page.');  
-} 
-$twitter_username = get_option("twitter_username");
-$header_slideshow_name = get_option("header_slideshow_name");
-$featured_articles_id = get_option("featured_articles_id");
-	if (isset($_POST["update_settings"])) {  
-		$twitter_username = esc_attr($_POST["twitter_username"]);     
-		update_option("twitter_username", $twitter_username);  
-		$header_slideshow_name = esc_attr($_POST["header_slideshow_name"]);     
-		update_option("header_slideshow_name", $header_slideshow_name); 
-		$featured_articles_id = esc_attr($_POST["featured_articles_id"]);     
-		update_option("featured_articles_id", $featured_articles_id); 
-		?> <div id="message" class="updated">Settings saved</div>  
-	<?php } 
-
-?>
-    <div class="wrap">  
-        <?php screen_icon('themes'); ?> <h2>UU 2014 Custom Settings</h2>  
-  
-        <form method="POST" action="">  
-            <table class="form-table">  
-                <tr valign="top">  
-                    <th scope="row">  
-                        <label for="twitter_username">  
-                            Twitter Username:  
-                        </label>   
-                    </th>  
-                    <td>  
-                        <input type="text" name="twitter_username" value="<?php echo $twitter_username;?>" size="25" />  
-                    </td>  
-                </tr>  
-                <tr valign="top">  
-                    <th scope="row">  
-                        <label for="header_slideshow_name">  
-                            Meteor Slideshow Slug for Header:  
-                        </label>   
-                    </th>  
-                    <td>  
-                        <input type="text" name="header_slideshow_name" value="<?php echo $header_slideshow_name;?>" size="25" />  
-                    </td>  
-                </tr>  
-                <tr valign="top">  
-                    <th scope="row">  
-                        <label for="featured_articles_id">  
-                            Featured Articles Slider ID for Homepage:  
-                        </label>   
-                    </th>  
-                    <td>  
-                        <input type="text" name="featured_articles_id" value="<?php echo $featured_articles_id;?>" size="25" />  
-                    </td>  
-                </tr>  
-            </table>  
-			<p>  <input type="hidden" name="update_settings" value="Y" />
-				<input type="submit" value="Save settings" class="button-primary"/>  
-			</p>
-        </form>  
-    </div>
-<?php } 
- 
 /**
  * The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts
  */
@@ -201,22 +139,6 @@ endif; // uu2014_setup
 add_action('after_setup_theme', 'uu2014_setup');
 
         
-        // UU2014 automatically inserts the sharebar in the correct location
-        /*
-        update_option('sharebar_auto_posts', 0);
-        update_option('sharebar_auto_pages', 0);
-        update_option('sharebar_horizontal', 1);
-        update_option('sharebar_credit', 0);
-        update_option('sharebar_minwidth','1300');
-        update_option('sharebar_position','right');
-        update_option('sharebar_leftoffset','0');
-        update_option('sharebar_rightoffset','0');
-        update_option('sharebar_swidth','70');
-        update_option('sharebar_twitter_username',get_option("twitter_username"));
-        update_option('sharebar_bg','fff');
-        update_option('sharebar_border','ccc');
-        */  
-
 // Add dynamic sidebars to the widget areas
 function uu2014_widgets_init() {
     register_sidebar(array(

@@ -23,27 +23,17 @@
 	<?php do_action( 'before' ); ?>
   <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
 	<header id="masthead" class="site-header" role="banner">
-<?php 
-		$header_image = get_header_image(); 
-		if ( function_exists( 'meteor_slideshow' ) ){
-			$slideshow_count = 0;
-			$header_slideshow_name = get_option( 'header_slideshow_name' );
-			$meteor_options        = get_option( 'meteorslides_options' );
-			$meteor_loop           = new WP_Query( array(
-				'post_type'      => 'slide',
-				'slideshow'      => $header_slideshow_name,
-				'posts_per_page' => $meteor_options['slideshow_quantity']
-			) ); 
-			$slideshow_count = $meteor_loop->post_count;
-			wp_reset_postdata();
-			if ( $slideshow_count > 0) { ?>
+<?php
+    global $uu2014;
+    $slideshow = get_term_by( 'id', $uu2014['header_slideshow_id'], 'slideshow' );
+		$header_image = get_header_image();
+		if ( function_exists( 'meteor_slideshow' ) && $slideshow ) { ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<div id="header-slideshow">
-				<?php meteor_slideshow($header_slideshow_name, "random: 1"); ?>
+				<?php meteor_slideshow($slideshow->name, "random: 1"); ?>
 				</div>
 				</a>
-			<?php } 
-		} // if ( function_exists( 'meteor_slideshow' ) )
+			<?php } // if ( function_exists( 'meteor_slideshow' ) )
 		elseif ( ! empty( $header_image ) ) { ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<img src="<?php header_image(); ?>" width="100%" alt="Header Image">
