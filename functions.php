@@ -8,7 +8,7 @@
 
  // This theme uses the ReduxFramework for theme options
  // See options-config.php for more information
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' ) ) {
 	require_once( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' );
 }
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
