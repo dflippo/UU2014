@@ -5,9 +5,9 @@
  * @package UU2014
  */
 ?>
-
-<?php if (is_home() || is_front_page()) {
-  global $uu2014;
+<?php 
+global $uu2014;
+if (is_home() || is_front_page()) {
   $featured_articles_id = $uu2014['featured_articles_id'];
   if( function_exists('FA_display_slider') && $featured_articles_id ){ ?>
     <div id="homepage-slider">

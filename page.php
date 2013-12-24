@@ -9,10 +9,10 @@
  *
  * @package UU2014
  */
-
 get_header(); ?>
-
-<?php if ( function_exists( 'sharebar' ) ) { sharebar(); } ?>
+<?php 
+global $uu2014;
+if ( function_exists( 'sharebar' ) && $uu2014['display_sharebar'] ) { sharebar(); } ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
