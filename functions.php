@@ -4,27 +4,13 @@
  * UU2014 functions and definitions
  *
  * @package UU2014
+ * This theme uses the WP Customizer, make sure to go into Appearance -> Customize
  */
-
- // This theme uses the ReduxFramework for theme options
- // See options-config.php for more information
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' ) ) {
-	require_once( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' );
-}
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
-	require_once( dirname( __FILE__ ) . '/options-config.php' );
-}
 
 /**
  * The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts
  */
 if (!isset($content_width)) $content_width = 720; /* pixels */
-
-/**
- * Set the name of the domain for translation
- */
-if (!isset($theme_text_domain))
-    $theme_text_domain = 'uu2014';
 
 if (!function_exists('uu2014_setup')) :
 
