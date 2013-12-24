@@ -1,19 +1,12 @@
 /*
 Theme Name: UU 2014
 Author: Dan Flippo
-Description: Responsive WordPress Theme for Unitarian Universalist Congregations
-UU 2014 is a WordPress theme designed to meet the needs of Unitarian 
-Universalist Congregations and other UU organizations. Many congregations 
-currently use the UU 2011 WordPress theme. With permission of the original theme
-author, UU 2014 extends UU 2011 by making the theme fully responsive.  The theme 
-will automatically adjust to smaller screens such as mobile phones.  These theme 
-also migrates the look and feel into the Underscores framework to provide the 
-latest WordPress features and browser compatibility.
+Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
 Version: 1.0.3
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, gray, green, white, light, two-columns, left-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, post-formats, rtl-language-support, translation-ready
+Tags: black, gray, green, white, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, post-formats, rtl-language-support, translation-ready
 Text Domain: uu2014
 Domain Path: /languages/
 
@@ -31,7 +24,7 @@ UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/,
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission.
 
-Theme Options capapabilities provided by the Redux Framework
+Theme options screens provided by the Redux Framework
 http://reduxframework.com/, GNU General Public License (GPL) v3 or later
 Contributors: nohalfpixels, ghost1227, dovyp
   

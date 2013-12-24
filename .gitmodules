@@ -1,3 +1,6 @@
-[submodule "ReduxFramework"]
-	path = ReduxFramework
+[submodule "inc/TGM-Plugin-Activation"]
+	path = inc/TGM-Plugin-Activation
+	url = https://github.com/thomasgriffin/TGM-Plugin-Activation.git
+[submodule "inc/ReduxFramework"]
+	path = inc/ReduxFramework
 	url = https://github.com/ReduxFramework/ReduxFramework.git

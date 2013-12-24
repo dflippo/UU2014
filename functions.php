@@ -9,7 +9,7 @@
  // This theme uses the ReduxFramework for theme options
  // See options-config.php for more information
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
-	require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+	require_once( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' );
 }
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/options-config.php' ) ) {
 	require_once( dirname( __FILE__ ) . '/options-config.php' );
@@ -220,7 +220,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load TGM_Plugin_Activation class.
  */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/TGM-Plugin-Activation/tgm-plugin-activation/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'uu2014_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
