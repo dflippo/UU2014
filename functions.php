@@ -9,8 +9,9 @@
 
 /**
  * The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts
+ * It is set to 720 pixels by default but you can change this in the customizer
  */
-if (!isset($content_width)) $content_width = 720; /* pixels */
+if (!isset($content_width)) $content_width = get_theme_mod('uu2014_content_width', 720); /* pixels */
 
 if (!function_exists('uu2014_setup')) :
 

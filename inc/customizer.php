@@ -15,6 +15,18 @@ function uu2014_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+  $wp_customize->add_section( 'uu2014_content_width_section' , array(
+    'title'      => __( 'Content Width', 'uu2014' ),
+    'priority'   => 35,
+    'description' => __('The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts', 'uu2014')
+  ) );
+  $wp_customize->add_setting( 'uu2014_content_width', array('default' => '720') );
+  $wp_customize->add_control( 'uu2014_content_width_textfield', array(
+      'label'    => __( 'Content Width', 'uu2014' ),
+      'section'  => 'uu2014_content_width_section',
+      'settings' => 'uu2014_content_width'
+    ) 
+  );
   $wp_customize->add_section( 'uu2014_plugin_integration' , array(
     'title'      => __( 'Plugin Integration', 'uu2014' ),
     'priority'   => 30,
@@ -23,18 +35,10 @@ function uu2014_customize_register( $wp_customize ) {
     <p class="description">You can choose a slideshow from the Featured Articles plugin to display on the front page of the of the website.</p>
     <p class="description">The theme can control the sidebar from the Sharebar plugin. Without this integration the plugin would not consistently display the bar at the correct horizontal and vertical location.', 'uu2014')
   ) );
-  $wp_customize->add_setting( 'header_slideshow_id', array(
-      'default'   => '-1'
-    ) 
-  );
-  $wp_customize->add_setting( 'featured_articles_id', array(
-      'default'   => '-1'
-    ) 
-  );
-  $wp_customize->add_setting( 'display_sharebar', array(
-      'default'   => '1'
-    ) 
-  );
+  $wp_customize->add_setting( 'header_slideshow_id', array('default' => '-1') );
+  $wp_customize->add_setting( 'featured_articles_id', array('default' => '-1') );
+  $wp_customize->add_setting( 'display_sharebar', array('default' => '1') );
+  //uu2014_content_width
   $options = array( '-1' => 'None' );
   $terms = get_terms('slideshow', '');
   foreach ( $terms as $term ) {
