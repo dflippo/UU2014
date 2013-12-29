@@ -11,9 +11,6 @@
  */
 get_header();
 ?>
-<?php if (function_exists('sharebar') && get_theme_mod('display_sharebar', 1)) {
-    sharebar();
-} ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 

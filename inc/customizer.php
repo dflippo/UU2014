@@ -75,23 +75,37 @@ function uu2014_customize_register($wp_customize) {
       'choices'  => $fa_slides_options,
       )
     );
-    /* Display Sharebar
+    /* Display Floating Widget Area
       ========================================================================== */
-    $wp_customize->add_section('display_sharebar_section', array(
-      'title'       => __('Display Sharebar', 'uu2014'),
+    $wp_customize->add_section('uu2014_display_floating_widgets_section', array(
+      'title'       => __('Floating Widget Area', 'uu2014'),
       'priority'    => 1004,
-      'description' => __('The theme can control the sidebar from the Sharebar plugin. Without this integration the plugin would not consistently display the bar at the correct horizontal and vertical location. This setting has no effect if the plugin is not activated.', 'uu2014')
+      'description' => __('The theme can display a floating widget area to the right of pages and individual posts. It will hide the widget area if the page is to narrow.', 'uu2014')
     ));
-    $wp_customize->add_setting('display_sharebar', array('default' => '1'));
-    $wp_customize->add_control('display_sharebar_dropdown', array(
-      'label'    => __('Display Sharebar', 'uu2014'),
-      'section'  => 'display_sharebar_section',
-      'settings' => 'display_sharebar',
+    $wp_customize->add_setting('uu2014_display_floating_widgets', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_floating_dropdown', array(
+      'label'    => __('Display floating sharing widgets?', 'uu2014'),
+      'section'  => 'uu2014_display_floating_widgets_section',
+      'settings' => 'uu2014_display_floating_widgets',
       'type'     => 'radio',
       'choices'  => array(
         '1' => 'Yes',
         '0' => 'No',
       ),
+      )
+    );
+    $wp_customize->add_setting('uu2014_floating_widgets_min_width', array('default' => '1300'));
+    $wp_customize->add_control('uu2014_floating_min_width_textfield', array(
+      'label'    => __('Minimum width in pixels required to show floating widget area?', 'uu2014'),
+      'section'  => 'uu2014_display_floating_widgets_section',
+      'settings' => 'uu2014_floating_widgets_min_width'
+      )
+    );
+    $wp_customize->add_setting('uu2014_floating_widgets_width', array('default' => '70'));
+    $wp_customize->add_control('uu2014_floating_widgets_width_textfield', array(
+      'label'    => __('Width in pixels for the floating widget area?', 'uu2014'),
+      'section'  => 'uu2014_display_floating_widgets_section',
+      'settings' => 'uu2014_floating_widgets_width'
       )
     );
     /* ========================================================================== */

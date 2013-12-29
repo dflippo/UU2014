@@ -11,7 +11,7 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>'<?php wp_title('|', true, 'right'); ?></title>
+        <title><?php wp_title('|', true, 'right'); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -60,3 +60,6 @@
             </header><!-- #masthead -->
 
             <div id="content" class="site-content">
+			<?php if ( get_theme_mod('uu2014_display_floating_widgets', 1) && ( is_single() || is_page() ) ) { ?>
+			<ul id="sharebar"><?php if(dynamic_sidebar('sharebar')){ 
+				?><script>jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal: false, swidth: <?php echo get_theme_mod('uu2014_floating_widgets_width', 70); ?>, minwidth: <?php echo get_theme_mod('uu2014_floating_widgets_min_width', 1300); ?>, position: 'right', leftOffset: 0, rightOffset: 0}); });</script><?php } ?></ul><?php }
