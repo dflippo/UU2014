@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
-Version: 1.0.3
+Version: 1.0.4
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,10 +24,10 @@ UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/,
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission.
 
-Theme options screens provided by the Redux Framework
-http://reduxframework.com/, GNU General Public License (GPL) v3 or later
-Contributors: nohalfpixels, ghost1227, dovyp
-  
+UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/, 
+  (C) 2010 Monjurul Dolon, http://mdolon.com/.
+  Released under the MIT, BSD, and GPL Licenses.
+
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -684,7 +684,7 @@ img {
 	max-width: 100%;
 	height: auto; }
 
-div {
+.site div {
   max-width: 100%; }
   
 p,
@@ -1269,3 +1269,89 @@ article { padding: 5px; }
 #chalice { max-width: 40px; padding: 5px 0; }
 
 }
+
+/* 3.8 UU2014 - Floating Widget CSS from Sharebar Plugin
+   ========================================================================== */
+body ul#sharebar {
+	display: none;
+	position: absolute;
+	width: 65px;
+	float: left;
+	background: #fff;
+	padding: 0;
+	text-align: center;
+	border: 1px solid #ccc;
+	list-style: none;
+	margin: 0;
+	z-index: 99; }
+ 
+	body ul#sharebar li {
+		display: block;
+		margin: 5px;
+		padding: 0;
+		overflow: hidden;
+		text-align: center; }
+ 
+body ul#sharebarx {
+	display: none;
+	list-style: none;
+	width: 100%;
+	float: left;
+	margin: 0 0 10px;
+	padding: 0; }
+ 
+	body ul#sharebarx a {
+		line-height: 14px;
+		text-decoration: none; }
+ 
+	body ul#sharebarx li {
+		float: left;
+		margin-right: 20px;
+		line-height: 18px; }
+ 
+		body ul#sharebarx li .st_email { margin: 0 15px !important; }
+ 
+.sharebar-button {
+	font-size: 11px;
+	font-family: Verdana, Arial;
+	padding: 2px 4px;
+	background: #f7f7f7;
+	color: #444;
+	border: 1px solid #ddd;
+	display: block;
+	margin: 0 0 5px; }
+ 
+	.sharebar-button:hover { border-color: #aaa; }
+ 
+.credit {
+	margin: 0;
+	padding: 0;
+	line-height: 9px; }
+ 
+	.credit a {
+		font-size: 8px;
+		color: #ccc;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: Verdana;
+		line-height: 9px; }
+ 
+.FBConnectButton_Small {
+	background-position: -5px -232px !important;
+	border-left: 1px solid #1A356E; }
+ 
+.FBConnectButton_Text {
+	margin-left: 12px !important ;
+	padding: 2px 5px 3px !important; }
+ 
+.stButton { margin: 0 0 6px !important; }
+ 
+	.stButton:last-child { margin: 0 !important; }
+ 
+	.stButton .stFb_vbubble { width: 53px !important; }
+ 
+	.stButton .stFb_text {
+		padding: 2px 5px 3px !important;
+		margin: 1px 1px 0 14px !important; }
+ 
+ 
