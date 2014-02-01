@@ -34,25 +34,28 @@ function uu2014_customize_register($wp_customize) {
     );
     /* Header Image Slideshow
       ========================================================================== */
-    $wp_customize->add_section('meter_slides_section', array(
-      'title'       => __('Header Image Slideshow', 'uu2014'),
-      'priority'    => 1002,
-      'description' => __('You can choose a slideshow from the Meteor Slides plugin to display at the top of every page instead of a static header image. This setting has no effect if the plugin is not activated.', 'uu2014')
-    ));
-    $wp_customize->add_setting('header_slideshow_id', array('default' => '-1'));
-    $meter_slides_options                                     = array('-1' => 'None');
-    $terms                                                    = get_terms('slideshow', '');
-    foreach ($terms as $term) {
-        $meter_slides_options[$term->term_id] = $term->name;
-    }
-    $wp_customize->add_control('meter_slides_dropdown', array(
-      'label'    => __('Header Image Slideshow', 'uu2014'),
-      'section'  => 'meter_slides_section',
-      'settings' => 'header_slideshow_id',
-      'type'     => 'select',
-      'choices'  => $meter_slides_options,
-      )
-    );
+    $terms = get_terms('slideshow', '');
+	if (! is_wp_error($terms) ){
+		$wp_customize->add_section('meter_slides_section', array(
+		  'title'       => __('Header Image Slideshow', 'uu2014'),
+		  'priority'    => 1002,
+		  'description' => __('You can choose a slideshow from the Meteor Slides plugin to display at the top of every page instead of a static header image. This setting has no effect if the plugin is not activated.', 'uu2014')
+		));
+		$wp_customize->add_setting('header_slideshow_id', array('default' => '-1'));
+		$meter_slides_options = array('-1' => 'None');
+		echo $return->get_error_message();
+		foreach ($terms as $term) {
+			$meter_slides_options[$term->term_id] = $term->name;
+		}
+		$wp_customize->add_control('meter_slides_dropdown', array(
+		  'label'    => __('Header Image Slideshow', 'uu2014'),
+		  'section'  => 'meter_slides_section',
+		  'settings' => 'header_slideshow_id',
+		  'type'     => 'select',
+		  'choices'  => $meter_slides_options,
+		  )
+		);
+	}
     /* Front Page News Slideshow
       ========================================================================== */
     $wp_customize->add_section('fa_slides_section', array(
