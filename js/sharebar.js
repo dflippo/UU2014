@@ -15,11 +15,7 @@ jQuery.fn.sharebar = function(options) {
 	var start = sharebar_init();
 
 	function sharebar_init(){
-		jQuery(sharebar).css('width',o.swidth+'px');
-		if (o.position == 'left') jQuery(sharebar).css('marginLeft',(0-o.swidth-o.leftOffset));
-		else {
-			jQuery(sharebar).css('marginLeft',(parent+o.rightOffset));
-		}
+		jQuery(sharebar).css('marginLeft',(parent+o.rightOffset));
 		if(w < o.minwidth && o.horizontal) jQuery(sharebarx).slideDown();
 		else jQuery(sharebar).fadeIn();
 		jQuery.event.add(window, "scroll", sharebar_scroll);

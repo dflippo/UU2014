@@ -1275,7 +1275,7 @@ article { padding: 5px; }
 body ul#sharebar {
 	display: none;
 	position: absolute;
-	width: 65px;
+        width: auto;
 	float: left;
 	background: #fff;
 	padding: 0;

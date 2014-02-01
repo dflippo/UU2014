@@ -62,4 +62,4 @@
             <div id="content" class="site-content">
 			<?php if ( get_theme_mod('uu2014_display_floating_widgets', 1) && ( is_single() || is_page() ) ) { ?>
 			<ul id="sharebar"><?php if(dynamic_sidebar('sharebar')){ 
-				?><script>jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal: false, swidth: <?php echo get_theme_mod('uu2014_floating_widgets_width', 70); ?>, minwidth: <?php echo get_theme_mod('uu2014_floating_widgets_min_width', 1300); ?>, position: 'right', leftOffset: 0, rightOffset: 0}); });</script><?php } ?></ul><?php }
+				?><script>jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal: false, swidth: 70, minwidth: <?php echo get_theme_mod('uu2014_floating_widgets_min_width', 1300); ?>, position: 'right', leftOffset: 0, rightOffset: 0}); });</script><?php } ?></ul><?php }
