@@ -1116,7 +1116,7 @@ article.type-post {
     margin: 0px 40px 20px auto;
     padding-left: 40px;
 
-    max-width: 900px;
+    max-width: 1200px;
     text-align: left; }
 
     .footer-widget-area h1,
@@ -1178,7 +1178,7 @@ article.type-post {
       padding: 0 5px 0 37px; }
 
     .footer-widget-area .textwidget {
-      padding: 0 5px 0 5px; }
+      text-align: right; }
 
     .footer-widget-area #calendar_wrap {
       margin: 0 5px 0 5px;
