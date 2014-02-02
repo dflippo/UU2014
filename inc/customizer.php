@@ -103,6 +103,68 @@ function uu2014_customize_register($wp_customize) {
         'settings' => 'uu2014_floating_widgets_min_width'
             )
     );
+    /* Display Comments
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_display_comments_section', array(
+        'title' => __('Comments', 'uu2014'),
+        'priority' => 1005,
+        'description' => __('The theme can globally hide all visual traces of comments.  WordPress normally allows comments to be disabled per page/post.  If you disable comments here the "Comments are disabled" messages will not be displayed.', 'uu2014')
+    ));
+    $wp_customize->add_setting('uu2014_display_comments_pages', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_comments_pages_dropdown', array(
+        'label' => __('Display comments on pages?', 'uu2014'),
+        'section' => 'uu2014_display_comments_section',
+        'settings' => 'uu2014_display_comments_pages',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_comments_posts', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_comments_posts_dropdown', array(
+        'label' => __('Display comments on posts?', 'uu2014'),
+        'section' => 'uu2014_display_comments_section',
+        'settings' => 'uu2014_display_comments_posts',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_comments_images', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_comments_images_dropdown', array(
+        'label' => __('Display comments on image pages?', 'uu2014'),
+        'section' => 'uu2014_display_comments_section',
+        'settings' => 'uu2014_display_comments_images',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+            )
+    );
+    /* Display By-Lines
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_display_bylines_section', array(
+        'title' => __('By-Lines', 'uu2014'),
+        'priority' => 1005,
+        'description' => __('You can choose whether to display a byline for the author of each post.', 'uu2014')
+    ));
+    $wp_customize->add_setting('uu2014_display_bylines', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_bylines_dropdown', array(
+        'label' => __('Display bylines on posts?', 'uu2014'),
+        'section' => 'uu2014_display_bylines_section',
+        'settings' => 'uu2014_display_bylines',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+            )
+    );
     /* ========================================================================== */
 }
 

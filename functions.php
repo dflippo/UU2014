@@ -142,8 +142,8 @@ function uu2014_widgets_init() {
       'name'          => __('Footer Widget', 'uu2014'),
       'id'            => 'footer-widget',
       'description'   => __('The footer widget area', 'uu2014'),
-      'before_widget' => '<div class="footer-widget-container">',
-      'after_widget'  => '</div>',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
       'before_title'  => '<h3 class="footer-widget-title">',
       'after_title'   => '</h3>',
     ));
@@ -187,6 +187,16 @@ function uu2014_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'uu2014_scripts');
+
+/** 
+ * The Recent Comments widget in core adds CSS with !important that interferes 
+ * with the theme so we are going to remove those styles 
+ */
+function uu2014_remove_recent_comments_style() {
+	global $wp_widget_factory;
+	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+}
+add_action( 'widgets_init', 'uu2014_remove_recent_comments_style' );
 
 function uu2014_add_editor_styles() {
     add_editor_style('editor-style.css');
