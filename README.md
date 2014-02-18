@@ -11,7 +11,7 @@ Here are some of the other more interesting things you'll find in this theme:
 * The theme will intelligently prompt you to install several plugins that add functionality to the theme.  You can skip their installation but the theme will automatically use:
     - Meteor Slides: This plugin allows you to create slides and slideshows.  The UU2014 settings page allows you to set a slideshow as a rotating header throughout the site.
     - Featured Articles Lite: This plugin allows you to create a very nice new post slider on your homepage.  This is especially nice if you use a page as your homepage.  You set the ID# of your home page slider in the UU2014 settings page.
-* The 'style.css' file is organized so that you can see which styles came from _s and which have been updated by UU2014.  If you wish to further tweak the styles, we recommend leaving both the _s and UU2014 styles in place and adding your own overrides at the bottom of the file.  Please provide feedback to the authors if you have improvements that could benefit other congregations using the theme. 
+* The 'style.css' file is organized so that you can see which styles came from _s and which have been updated by UU2014. * Please provide feedback to the authors if you have improvements that could benefit other congregations using the theme. 
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
 Getting Started
