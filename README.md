@@ -21,12 +21,20 @@ Getting Started
 You can download the theme from the WordPress.org theme repository directly in your copy of WordPress or you can also download the very latest versions from the GitHub repository:
 
 1. Download the latest UU2014 release from https://github.com/dflippo/UU2014/releases (choose the “zip” option)
-2. Go to the Themes -> Add New Theme screen and click the Upload tab
+2. Go to the `Themes -> Add New Them`e screen and click the `Upload` tab
 3. Upload the zipped archive directly
-4. Go to the Themes screen click Activate
+4. Go to the `Themes` screen click `Activate`
 5. Optionally download and activate the plugins your are prompted to install from the top of all WordPress administration screens
 6. You can use the plugins to create a header image slideshow and a featured articles slider on your front page
-7. Visit Appearance -> Customize to tell the theme the name of your header slideshow and featured articles slider.  There are a number of other theme-specific additions to the customizer.
+7. Visit `Appearance -> Customize` to tell the theme the name of your header slideshow and featured articles slider.  There are a number of other theme-specific additions to the customizer.
+8. Alternatively, visit `Appearance -> Header` to change the header image or set the theme to randomly choose which image to display.
+
+Adding Your Own Header Images
+-----------------------------
+
+While the UU2014 theme comes with a set of default images, you can add your own images by going to `Appearance -> Header`.  The suggested width is 940 pixels and suggested height is 198 pixels. During the upload process you will have the option to crop the image.  The theme _will_ work with larger images if you wish.
+
+If you upload multiple images you will then see a choice for "Random" which will cause the theme to randomly display one of your images when a page is viewed (including when a page is refreshed).
 
 Getting Updates
 ---------------
@@ -34,10 +42,11 @@ Getting Updates
 This theme supports updates from WordPress.org but as of version 1.0.6 it also supports more frequent updates from GitHub. To enable the updates from GitHub, you need to add the “GitHub Updater” plugin to WordPress. This plugin is not available on the WordPress.org plugin directory and you need to download the latest version from GitHub:
 
 1. Download the latest GitHub Updater release from https://github.com/afragen/github-updater/releases (choose the “zip” option)
-2. Go to the Plugins -> Add New Plugin screen and click the Upload tab
+2. Go to the `Plugins -> Add New Plugin` screen and click the `Upload` tab
 3. Upload the zipped archive directly
-4. Go to the Plugins screen and click Activate
+4. Go to the `Plugins` screen and click `Activate`
 
+You will now receive update notifications when future versions of the UU2014 theme are released.
 
 Notes for Congregations Migrating from the UU2011 Theme
 -------------------------------------------------------
