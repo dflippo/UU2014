@@ -168,7 +168,7 @@ function uu2014_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-fonts-style', "$protocol://fonts.googleapis.com/css?family=Open+Sans");
 
-    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20131229');
+    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140301');
 
     wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115');
 

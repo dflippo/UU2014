@@ -165,6 +165,40 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
+    /* UU Image Selection
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_choose_images_section', array(
+        'title' => __('UU Images', 'uu2014'),
+        'priority' => 1006,
+        'description' => __('You can choose what style of UU image to display in the theme.', 'uu2014')
+    ));
+    $wp_customize->add_setting('uu2014_title_image', array('default' => 'chalice.png'));
+    $wp_customize->add_control('uu2014_title_image_dropdown', array(
+        'label' => __('Which image should be displayed near the title?', 'uu2014'),
+        'section' => 'uu2014_choose_images_section',
+        'settings' => 'uu2014_title_image',
+        'type' => 'select',
+        'choices' => array(
+            'chalice.png' => 'Silver Chalice',
+            'Symbol_Metal_77_110.png' => 'Silver UUA Symbol',
+			'Symbol_Metal_77_71.png' => 'Smaller Silver UUA Symbol',
+            'Symbol_Gradient_77_110.png' => 'Red UUA Symbol',
+			'Symbol_Gradient_77_71.png' => 'Smaller Red UUA Symbol',
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_footer_image', array('default' => 'chalice-watermark-dark.gif'));
+    $wp_customize->add_control('uu2014_footer_image_dropdown', array(
+        'label' => __('Which image should be displayed in the footer?', 'uu2014'),
+        'section' => 'uu2014_choose_images_section',
+        'settings' => 'uu2014_footer_image',
+        'type' => 'select',
+        'choices' => array(
+            'chalice-watermark-dark.gif' => 'Dark Chalice',
+            'UUA_Symbol_dark_148_200.png' => 'Dark UUA Symbol',
+        ),
+            )
+    );
     /* ========================================================================== */
 }
 

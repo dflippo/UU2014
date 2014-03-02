@@ -46,7 +46,7 @@
                 <?php } // elseif ( ! empty( $header_image ) )   ?>
                 <div class="site-branding">
                     <div class="site-title-description">
-                        <img id="chalice" alt="Flaming Chalice" src="<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/chalice.png'); ?>" />
+                        <img id="chalice" alt="Flaming Chalice" src="<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png') ); ?>" />
                         <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" style="color:<?php get_header_textcolor() ?>;" rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php if (get_bloginfo('description')) { ?>
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>

@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
-Version: 1.0.7
+Version: 1.0.8
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,13 +21,16 @@ This theme draws from the following themes released under GNU General Public Lic
 - UU 2011 http://www.faithandweb.com/faith2012/, (C) 2012 Anna Belle Leiserson
 - Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
-UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/, 
+UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/ 
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission.
 
-UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/, 
-  (C) 2010 Monjurul Dolon, http://mdolon.com/.
+UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/
+  (C) 2010 Monjurul Dolon, http://mdolon.com/
   Released under the MIT, BSD, and GPL Licenses.
+
+UU 2014 Uses Images from the UUA, http://www.uua.org/communications/art/uuachalice/index.shtml
+  (C) 2014 Unitarian Universalist Association. Images used with permission.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -1102,6 +1105,7 @@ article.type-post {
   clear: both;
   width: 100%;
   background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/chalice-watermark-dark.gif) no-repeat 40px -20px;
+  background-size:auto 100%;
   border-top: 4px solid #555;
   color: #fff;
   font-size: 12px;
