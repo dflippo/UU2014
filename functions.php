@@ -263,11 +263,13 @@ function uu2014_register_required_plugins() {
         'slug'     => 'featured-articles-lite',
         'required' => false,
       ),
-    /*  array(
-        'name'     => 'Sharebar',
-        'slug'     => 'sharebar',
-        'required' => false,
-      ),*/
+      array(
+        'name'     => 'GitHub Updater',
+        'slug'     => 'github-updater',
+        'required' => true,
+        'source' => 'https://github.com/afragen/github-updater/archive/master.zip',
+        'external_url' => 'https://github.com/afragen/github-updater/blob/master/README.md',
+      ),
     );
 
     /**
