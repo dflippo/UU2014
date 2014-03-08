@@ -3,22 +3,19 @@ UU2014
 
 UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations have used the UU2011 WordPress theme. With permission of the UU2011 theme author, UU2014 extends UU2011 by making the theme fully responsive to smaller screens such as mobile phones. The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
 
-To see the theme in action with live content, visit some of the UU websites who have adopted the theme:
-* [Unitarian Universalist Church of Kent, Ohio](http://www.kentuu.org/)
-* [Unitarian Universalist Fellowship of Santa Cruz County](http://uufscc.org/wordpress/)
-* [Unitarian Universalist Church of Washington County](http://uuccwc.org/)
-* [CERGing Forward - The CERG Regional Blog](http://www.cerguua.org/cergingforward/)
-* [Better Together - By the Staff of the Ohio-Meadville and St. Lawrence Districts](http://ohiomeadville.org/bettertogether/)
+####To see the theme in action with live content, visit some of the UU websites who have adopted the theme:
+* [Unitarian Universalist Church of Kent, Ohio](http://www.kentuu.org)
+* [Unitarian Universalist Fellowship of Santa Cruz County](http://uufscc.org/wordpress)
+* [Unitarian Universalist Church of Washington County](http://uuccwc.org)
+* [CERGing Forward - The CERG Regional Blog](http://www.cerguua.org/cergingforward)
+* [Better Together - By the Staff of the Ohio-Meadville and St. Lawrence Districts](http://ohiomeadville.org/bettertogether)
 
-The latest releases are always available at: https://github.com/dflippo/UU2014/releases
-
-You can view the source code or contribute to the project at: https://github.com/dflippo/UU2014
-
-If you have any questions, comments, suggestions, or issues please create an issue on GitHub where the author or another user of the theme can help you: https://github.com/dflippo/UU2014/issues
-
-You can learn more about the theme including setup and configuration on it's website: http://www.faithandreason.dreamhosters.com/
-
-Here are some of the other more interesting things you'll find in this theme:
+####The latest releases are always available at https://github.com/dflippo/UU2014/releases.
+####You can view the source code or contribute to the project at https://github.com/dflippo/UU2014.
+####If you have any questions, comments, suggestions, or issues please [create an issue on GitHub](https://github.com/dflippo/UU2014/issues) where the author or another user of the theme can help you.
+####You can learn more about the theme including setup and configuration on it's website, http://www.faithandreason.dreamhosters.com
+####Here are some of the more interesting things you'll find in this theme:
+* You can choose between traditional UU Chalice symbols and the new UUA logo for your header and footer.  This and many other custom theme settings are available in the `Appearance -> Customize` menu of WordPress.
 * The theme will intelligently prompt you to install several plugins that add functionality to the theme.  You can skip their installation but the theme will automatically use:
     - GitHub Updater: This plugin will notify you when new releases of UU2014 have been released on GitHub.  Like other themes and plugins, you will be able to update the theme in `Dashboard -> Updates`
     - Meteor Slides: This plugin allows you to create slides and slideshows.  The UU2014 settings page allows you to set a slideshow as a rotating header throughout the site.
@@ -31,7 +28,7 @@ Here are some of the other more interesting things you'll find in this theme:
 Getting Started
 ---------------
 
-You can download the theme from the WordPress.org theme repository directly in your copy of WordPress or you can also download the very latest versions from the GitHub repository:
+You can download the latest release from the GitHub repository:
 
 1. Download the latest UU2014 release from https://github.com/dflippo/UU2014/releases (choose the “zip” option)
 2. Go to the `Themes -> Add New Theme` screen and click the `Upload` tab
