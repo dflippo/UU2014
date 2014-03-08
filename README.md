@@ -7,6 +7,8 @@ UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian U
 * [Unitarian Universalist Church of Kent, Ohio](http://www.kentuu.org)
 * [Unitarian Universalist Fellowship of Santa Cruz County](http://uufscc.org/wordpress)
 * [Unitarian Universalist Church of Washington County](http://uuccwc.org)
+* [Florence Unitarian Universalist Fellowship](http://www.florenceuuf.org)
+* [Thermal Belt Unitarian Universalist Fellowship](http://www.tbuuf.org)
 * [CERGing Forward - The CERG Regional Blog](http://www.cerguua.org/cergingforward)
 * [Better Together - By the Staff of the Ohio-Meadville and St. Lawrence Districts](http://ohiomeadville.org/bettertogether)
 
