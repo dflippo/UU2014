@@ -64,6 +64,14 @@ if (!function_exists('uu2014_setup')) :
           'default-color' => '6a8999',
           'default-image' => '',
         )));
+
+    // Enable support for HTML5 markup.
+    add_theme_support( 'html5', array(
+      'comment-list',
+      'search-form',
+      'comment-form',
+      'gallery',
+    ) );
         // Some custom headers packaged with the theme
         register_default_headers(array(
           'bowlinggreen'  => array(
@@ -168,7 +176,7 @@ function uu2014_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-fonts-style', "$protocol://fonts.googleapis.com/css?family=Open+Sans");
 
-    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140301');
+    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140330');
 
     wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115');
 
@@ -193,8 +201,8 @@ add_action('wp_enqueue_scripts', 'uu2014_scripts');
  * with the theme so we are going to remove those styles 
  */
 function uu2014_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+  global $wp_widget_factory;
+  remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
 add_action( 'widgets_init', 'uu2014_remove_recent_comments_style' );
 

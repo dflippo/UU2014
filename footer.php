@@ -10,7 +10,7 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer" role="contentinfo" style="background: #111 url(<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif') ); ?>) no-repeat 40px 0; background-size:auto 100%;">
+<footer id="colophon" class="site-footer" role="contentinfo">
   <div id="footer-widget-area" class="footer-widget-area" role="complementary">    <?php
     if (!dynamic_sidebar('footer-widget')) :
       echo '<p>&nbsp;</p>';

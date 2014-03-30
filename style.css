@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
-Version: 1.1.0
+Version: 1.1.1
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,7 +20,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 This theme draws from the following themes released under GNU General Public License:
 - UU 2011 http://www.faithandweb.com/faith2012/, (C) 2012 Anna Belle Leiserson
-- Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+- Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/ 
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
@@ -45,9 +45,31 @@ incorporating updates to the theme from _s
 /* ==========================================================================
    1.0 Unmodified styles from _s
    ========================================================================== */
-/* =Reset
--------------------------------------------------------------- */
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Typography
+3.0 - Elements
+4.0 - Forms
+5.0 - Navigation
+  5.1 - Links
+  5.2 - Menus
+6.0 - Accessibility
+7.0 - Alignments
+8.0 - Clearings
+9.0 - Widgets
+10.0 - Content
+  10.1 - Posts and pages
+  10.2 - Asides
+  10.3 - Comments
+11.0 - Infinite scroll
+12.0 - Media
+--------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -68,9 +90,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 html {
   font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-  overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+  overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
   -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+*,
+*:before,
+*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+  -webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+  -moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+  box-sizing:         border-box;
 }
 body {
   background: #fff;
@@ -109,17 +138,16 @@ a:focus {
   outline: thin dotted;
 }
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+a:active {
   outline: 0;
 }
 a img {
   border: 0;
 }
 
-
-/* =Global
------------------------------------------------ */
-
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
 body,
 button,
 input,
@@ -131,41 +159,11 @@ textarea {
   font-size: 1.6rem;
   line-height: 1.5;
 }
-
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
-}
-
-/* Text elements */
 p {
   margin-bottom: 1.5em;
-}
-ul, ol {
-  margin: 0 0 1.5em 3em;
-}
-ul {
-  list-style: disc;
-}
-ol {
-  list-style: decimal;
-}
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin: 0 1.5em 1.5em;
 }
 b, strong {
   font-weight: bold;
@@ -221,6 +219,40 @@ small {
 big {
   font-size: 125%;
 }
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 1.5em 1.5em;
+}
+img {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
 figure {
   margin: 0;
 }
@@ -231,10 +263,10 @@ table {
 th {
   font-weight: bold;
 }
-img {
-  height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
-}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
 button,
 input,
 select,
@@ -242,14 +274,10 @@ textarea {
   font-size: 100%; /* Corrects font size not being inherited in all browsers */
   margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
   vertical-align: baseline; /* Improves appearance and consistency in all browsers */
-  *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle; /* Improves appearance and consistency in IE6/IE7 */
 }
 button,
-input {
-  line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-}
-button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid #ccc;
@@ -267,18 +295,18 @@ input[type="submit"] {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 button:hover,
-html input[type="button"]:hover,
+input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
   border-color: #ccc #bbb #aaa #bbb;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 button:focus,
-html input[type="button"]:focus,
+input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 button:active,
-html input[type="button"]:active,
+input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   border-color: #aaa #bbb #bbb #bbb;
@@ -286,7 +314,6 @@ input[type="submit"]:active {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
   padding: 0; /* Addresses excess padding in IE8/9 */
 }
 input[type="search"] {
@@ -335,7 +362,12 @@ textarea {
   width: 98%;
 }
 
-/* Links */
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
 a {
   color: royalblue;
 }
@@ -348,80 +380,9 @@ a:active {
   color: midnightblue;
 }
 
-/* Alignment */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Text meant only for screen readers */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000; /* Above WP toolbar */
-}
-
-/* Clearing */
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: '';
-  display: table;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
-}
-
-
-/* =Menu
------------------------------------------------ */
-
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
 .main-navigation {
   clear: both;
   display: block;
@@ -468,16 +429,14 @@ a:active {
 .main-navigation ul li:hover > ul {
   display: block;
 }
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a {
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
 }
-
 /* Small menu */
 .menu-toggle {
   cursor: pointer;
   display: none;
 }
-
 @media screen and (max-width: 600px) {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
@@ -488,11 +447,126 @@ a:active {
     display: none;
   }
 }
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
 
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
 
-/* =Content
------------------------------------------------ */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar */
+}
 
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: '';
+  display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
 .sticky {
 }
 .hentry {
@@ -516,19 +590,39 @@ a:active {
   margin: 0 0 1.5em;
 }
 
-
-/* =Asides
------------------------------------------------ */
-
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none;
 }
 
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word;
+}
+.bypostauthor {
+}
 
-/* =Media
------------------------------------------------ */
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
 
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -563,14 +657,14 @@ a:active {
   height: auto;
   max-width: 90%;
 }
-.site-main .gallery dd {
+.site-main .gallery dd,
+.site-main .gallery figcaption {
   margin: 0;
 }
 .site-main .gallery-columns-4 .gallery-item {
 }
 .site-main .gallery-columns-4 .gallery-item img {
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
@@ -578,66 +672,6 @@ object {
   max-width: 100%;
 }
 
-
-/* =Navigation
------------------------------------------------ */
-
-.site-main [class*="navigation"] {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-[class*="navigation"] .nav-previous {
-  float: left;
-  width: 50%;
-}
-[class*="navigation"] .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-
-
-/* =Comments
------------------------------------------------ */
-
-.comment-content a {
-  word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-
-/* =Widgets
------------------------------------------------ */
-
-.widget {
-  margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets */
-.widget select {
-  max-width: 100%;
-}
-
-/* Search widget */
-.widget_search .search-submit {
-  display: none;
-}
-
-
-/* =Infinite Scroll
------------------------------------------------ */
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-  display: block;
-}
 
 /* ==========================================================================
    2.0 UU2014 Theme Specific
@@ -651,7 +685,7 @@ input,
 select,
 textarea {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  color: #000; 
+  color: #000;
   font-size: 15px;
   font-size: 1.5rem; }
 
@@ -691,7 +725,7 @@ img {
 
 .site div {
   max-width: 100%; }
-  
+
 p,
 ul, ol ,
 li > ul,
@@ -702,70 +736,82 @@ address,
 pre,
 table { margin-bottom: 1.0em; }
 
-.size-auto, 
+.size-auto,
 .size-full,
 .size-large,
 .size-medium,
 .size-thumbnail {
     max-width: 100%;
-    height: auto;
-}
+    height: auto; }
+
 .byline {
-  display: inline;
-}
-/*.single .byline, .group-blog .byline { display: inline; }*/
+  display: inline; }
 
 .site { position: relative; }
 
 /* 2.2 UU2014 - Menu
    ========================================================================== */
-.main-navigation {
-  float: right; 
+.main-navigation  {
+  position: relative;
+  margin: 0;  
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 42px;
+  width: 100%;
+  max-width: 1200px;
+  float: none;
+  clear: none;
   font-size: 16px;
   font-size: 1.6rem;
-  background: #000 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/bkgr-menu.png) repeat-x left top; 
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    margin: 0;
-    padding: 0;
+  border-top: 1px solid #555;
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+  background: #000 url(images/bkgr-menu.png) repeat-x left top;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(255,255,255,.25), rgba(0,0,0,0)); /*Standard*/
+}
+
+  .main-navigation  div {
+    min-width: 75%;
+    float:right; 
     }
 
   .main-navigation ul {
-    width: 100%;
+    display: block;
+    height: auto;
+    line-height: 40px;
     list-style: none;
-    float: right; 
+    width: 100%; 
+    float: left;
     }
 
   .main-navigation li {
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 11%;
-    float: left;
-    position: relative;}
+    min-width: 120px;
+    position: relative;
+    vertical-align: middle; 
+    border-left: 1px solid #444;
+    border-bottom: 1px solid #444;}
 
   .main-navigation a {
     text-align: center;
     width: inherit;
     display: block;
-    padding: 0 .5em; 
-    border-left: 1px solid #444;
-    border-bottom: 1px solid #444;
+    padding: 0 .5em;
     color: #eee;
-    line-height: 40px;
     text-decoration: none; }
 
   .main-navigation ul ul {
+  box-shadow: none;
     display: none;
     position: absolute;
     top: 41px;
     left: 0;
     float: left;
-    width: 180px;
     z-index: 999;
     text-align: left; }
-
-    .main-navigation ul ul li { min-width: 170px; }
 
     .main-navigation ul ul ul {
       left: 100%;
@@ -774,7 +820,7 @@ table { margin-bottom: 1.0em; }
     .main-navigation ul ul a {
       text-align: left;
       height: auto;
-      width: 160px;
+      width: 180px;
       padding: 10px 10px 10px 20px;
       background: #333;
       line-height: 1em; }
@@ -833,25 +879,44 @@ table { margin-bottom: 1.0em; }
 /* 2.4 UU2014 - Header
    ========================================================================== */
 .site .site-header {
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
-  max-width: 1200px;
   padding: 0;
   position: relative;
   text-align: left;
-  color: #fff; }
+  background: #333;
+  background: url(images/bkgr-top.jpg) repeat-x left top;
+  line-height: 0;
+  color: #fff;
+  /* gradient 65% transparent to black */
+  background: -webkit-linear-gradient(top,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,1)); /*Standard*/
+  }
 
 #parentdiv:after { content: " "; display: block; clear: both;}
 
-  .site .site-header .mslide { width: 100%; }
+  .site .site-header .mslide { 
+    width: 100%; 
+    height: auto; }
 
-    .site .site-header .mslide  img { width: 100%; }
+    .site .site-header .mslide  img { 
+      width: 100%; 
+      height: auto; }
 
-  .site .site-header .site-branding { 
+  .site .site-header .site-branding {
+    margin: 0;  
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding: 0;
     position: relative; }
 
-    .site .site-header .site-branding .site-title-description { 
+    .site .site-header .site-branding img {
+      margin: 0;
+      padding: 0; }
+
+    .site .site-header .site-branding .site-title-description {
     position: absolute;
     z-index: 99998;
     bottom: 0;
@@ -859,40 +924,40 @@ table { margin-bottom: 1.0em; }
     margin: 0;
     padding: 5px 15px 10px 15px;
     border-top: 1px solid #555;
-    border-bottom: 1px solid #555; 
     font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.5; 
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.5); }
 
-  .site .site-header .site-branding .site-title-description div:after { content: " "; display: block; clear: both;}
+    .site .site-header .site-branding .site-title-description img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 0 10px 10px;
+      z-index: 99999; }
+
+    .site .site-header .site-branding .site-title-description  h1:hover,
+    .site .site-header .site-branding .site-title-description  h2:hover {
+      background: #000; }
+
+    .site .site-header .site-branding .site-title-description div:after { content: " "; display: block; clear: both;}
 
     .site .site-header .site-branding .site-title {
+      display: block;
       margin: 0;
-      padding: 0;
+      padding: 0 0 0 85px; 
       font-size: 30px;
       font-size: 3.0rem; }
 
-      .site .site-header .site-branding .site-title a {
-        color: white;
-        font-weight: normal;
-        text-decoration: none;
-        display: block;
-        padding: 0 0 0 85px;
-        }
-
-        .site .site-header .site-branding .site-title a:hover { background: #000; }
-
     .site .site-header .site-branding .site-description {
-      color: white;
-      font-weight: normal;
-      text-decoration: none;
       display: block;
-      padding: 0 0 0 85px;
       margin: 0;
-      font-size: 15px;
-      font-size: 1.5rem; }
-      
-  .site .site-header .main-navigation { margin: 0; }
+      padding: 0 0 0 85px;
+      font-size: 16px;
+      font-size: 1.6rem; }
 
   /* Text meant only for screen readers */
     .screen-reader-text {
@@ -907,7 +972,8 @@ table { margin-bottom: 1.0em; }
   margin-right: auto;
   width: 100%;
   max-width: 1200px;
-  background: #fff url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/img-noise-500x500.png) repeat-y left top;
+  background: #fff url(images/img-noise-500x500.png) repeat-y left top;
+  background-color: rgba(255, 255, 255, .9); /* 10% transparent */
   background-size: 25%; }
 
   .site .site-content .content-area {
@@ -916,20 +982,22 @@ table { margin-bottom: 1.0em; }
     width: 100%; }
 
     .site .site-content .content-area .site-main {
-      margin: 0 0 0 25%;
-      padding: 0 0 0 0;
-      background-color: rgb(255, 255, 255); }
-
+  margin: 0 0 0 25%;
+    padding: 0 0 0 0;
+  background-color: rgb(255, 255, 255); /* fallback color */
+  background-color: rgba(255, 255, 255, 0); /* 100% transparent */
+  }
       .site .site-content .content-area .site-main table td {
         padding: 7px 10px;
         border: 1px solid #cfcfcf; }
 
       .site .site-content .content-area .site-main a.post-edit-link {
         display: block;
-        width: 120px;
-        margin: 0 20px 10px 0;
-        padding: 8px 10px;
-        background: #eebc6d;
+        width: 50px;
+        margin: 5px;
+        padding: 5px;
+        background: #eebc6d; /* fallback color */
+    background: rgba(238, 188, 109, 0.25); /* 75% transparent */
         border: 1px solid #999;
         color: #000;
         text-align: center;
@@ -947,7 +1015,7 @@ article {
 article.type-post {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border-radius: 5px; 
+  border-radius: 5px;
   border: 1px solid #ccc;
   margin: 15px 30px;
   padding: 5px 10px;
@@ -967,7 +1035,7 @@ article.type-post {
 
 .site-main [class*="navigation"] {
   padding: 0 40px;  }
-  
+
 /* 2.6 UU2014 - Sidebar Widgets
    ========================================================================== */
 .widget { margin: 0; }
@@ -985,7 +1053,7 @@ article.type-post {
 .widget-area h5,
 .widget-area h6,
 .widget-area p,
-.widget-area ul, 
+.widget-area ul,
 .widget-area ol,
 .widget-area li > ul,
 .widget-area li > ol,
@@ -996,7 +1064,7 @@ article.type-post {
 .widget-area table { margin: 0; }
 
     .widget-area ul {
-    list-style: none; 
+    list-style: none;
     width: 100%;
     }
 
@@ -1006,25 +1074,25 @@ article.type-post {
     }
 
     .widget-area ul a {
-    background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
+    background: url(images/tri-red.gif) no-repeat 20px 15px;
     padding: 7px 5px 7px 37px;
     display: inline-block;
     color: #000;
     text-decoration: none; }
 
-    .widget-area a:hover, 
+    .widget-area a:hover,
     .widget_nav_menu a:active {
-      background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 20px 15px;
+      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
       color: #fff; }
 
     .widget-area li.recentcomments {
       width: 85%;
-      background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
+      background: url(images/tri-red.gif) no-repeat 20px 15px;
       padding: 7px 5px 7px 37px; }
 
     .widget-area li.recentcomments a {
     background-image: none;
-    display: inline; 
+    display: inline;
     padding: 0; }
 
     .widget-area li.recentcomments a:hover {
@@ -1073,40 +1141,41 @@ article.type-post {
 
 .widget_nav_menu ul.sub-menu { border-top: none; }
 
-  .widget_nav_menu ul.sub-menu a, 
-  .widget_nav_menu ul.sub-menu a:link, 
+  .widget_nav_menu ul.sub-menu a,
+  .widget_nav_menu ul.sub-menu a:link,
   .widget_nav_menu ul.sub-menu a:visited,
   .widget-area ul ul a  {
-    background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px;
+    background: url(images/tri-red.gif) no-repeat 37px 11px;
     padding: 7px 5px 7px 53px;
     font-size: 14px;
     font-size: 1.4rem; }
 
-  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active { 
-    background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 37px 11px; }
+  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active {
+    background: #111 url(images/tri-white.gif) no-repeat 37px 11px; }
 
   .widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a, 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:link, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a,
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:link,
     .widget_nav_menu ul.sub-menu ul.sub-menu a:visited ,
     .widget-area ul ul ul a  {
-      background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px;
+      background: url(images/tri-red.gif) no-repeat 53px 11px;
       padding: 7px 5px 7px 69px;
       font-size: 14px;
       font-size: 1.4rem; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover,
     .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
-     background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 53px 11px; }
+     background: #111 url(images/tri-white.gif) no-repeat 53px 11px; }
 
 /* 2.7 UU2014 - Footer
    ========================================================================== */
 .site-footer {
   clear: both;
   width: 100%;
-  background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/chalice-watermark-dark.gif) no-repeat 40px -20px;
+  background: #111 url(images/chalice-watermark-dark.gif) no-repeat 40px 0;
   background-size:auto 100%;
+  background-color: rgba(0,0,0,.90);
   border-top: 4px solid #555;
   color: #fff;
   font-size: 12px;
@@ -1138,7 +1207,7 @@ article.type-post {
     .footer-widget-area h5,
     .footer-widget-area h6,
     .footer-widget-area p,
-    .footer-widget-area ul, 
+    .footer-widget-area ul,
     .footer-widget-area ol,
     .footer-widget-area li > ul,
     .footer-widget-area li > ol,
@@ -1149,7 +1218,7 @@ article.type-post {
     .footer-widget-area table { margin: 0; }
 
     .footer-widget-area ul {
-    list-style: none; 
+    list-style: none;
     width: 100%;
     }
 
@@ -1159,25 +1228,25 @@ article.type-post {
     }
 
     .footer-widget-area ul a {
-    background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
+    background: url(images/tri-red.gif) no-repeat 20px 15px;
     padding: 7px 5px 7px 37px;
     display: inline-block;
     /*color: #000;*/
     text-decoration: none; }
 
-    .footer-widget-area a:hover, 
+    .footer-widget-area a:hover,
     .widget_nav_menu a:active {
-      background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 20px 15px;
+      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
       /*color: #fff;*/ }
 
     .footer-widget-area li.recentcomments {
       width: 85%;
-      background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 20px 15px;
+      background: url(images/tri-red.gif) no-repeat 20px 15px;
       padding: 7px 5px 7px 37px; }
 
     .footer-widget-area li.recentcomments a {
     background-image: none;
-    display: inline; 
+    display: inline;
     padding: 0; }
 
     .footer-widget-area li.recentcomments a:hover {
@@ -1217,32 +1286,32 @@ article.type-post {
 
 .widget_nav_menu ul.sub-menu { border-top: none; }
 
-  .widget_nav_menu ul.sub-menu a, 
-  .widget_nav_menu ul.sub-menu a:link, 
+  .widget_nav_menu ul.sub-menu a,
+  .widget_nav_menu ul.sub-menu a:link,
   .widget_nav_menu ul.sub-menu a:visited,
   .footer-widget-area ul ul a  {
-    background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 37px 11px;
+    background: url(images/tri-red.gif) no-repeat 37px 11px;
     padding: 7px 5px 7px 53px;
     font-size: 14px;
     font-size: 1.4rem; }
 
-  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active { 
-    background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 37px 11px; }
+  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active {
+    background: #111 url(images/tri-white.gif) no-repeat 37px 11px; }
 
   .widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a, 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:link, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a,
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:link,
     .widget_nav_menu ul.sub-menu ul.sub-menu a:visited ,
     .footer-widget-area ul ul ul a  {
-      background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-red.gif) no-repeat 53px 11px;
+      background: url(images/tri-red.gif) no-repeat 53px 11px;
       padding: 7px 5px 7px 69px;
       font-size: 14px;
       font-size: 1.4rem; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover, 
+    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover,
     .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
-     background: #111 url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/tri-white.gif) no-repeat 53px 11px; }
+     background: #111 url(images/tri-white.gif) no-repeat 53px 11px; }
 
 /* 2.8 UU2014 - Plugin: Contact Form 7
    ========================================================================== */
@@ -1254,35 +1323,43 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
    ========================================================================== */
 .FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a { font-size: 75%; }
 
+.site .FA_overall_container_classic.light{
+  background: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==);
+}
+
+.site .FA_overall_container_classic.light ul.FA_navigation,
+.site .FA_overall_container_classic.light .FA_featured_articles .FA_article .image_container,
+.site .FA_overall_container_classic.light .FA_featured_articles .FA_article h2 {
+  background: none; }
+
 /* 2.10 UU2014 - Specific #ID Styles
    ========================================================================== */
-#page {
-  background: #333;
-  background: url(http://i1.wp.com/www.kentuu.org/wordpress/wp-content/themes/uu2014/images/bkgr-top.jpg) repeat-x left top; }
-
 #homepage-slider {
   float: right;
   margin: 0 0 20px 0;
   padding: 0 0 0 0;
   width: 100%; }
 
-#chalice {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0 0 10px 10px;
-  z-index: 99999; }
-
 #main.no-sidebar { margin: 0; }
 
 .page-template-page-nosidebar-php .site .site-content {
   background-size: 0%; }
-  
+
 #breadcrumbs {
   margin: 0 20px;
-}
+}.menu-sitemap { display: none; }
 
-.menu-sitemap { display: none; }
+/* 2.11 UU2014 - Comments
+   ========================================================================== */
+.comments-area  {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0 30px 15px 30px;
+  padding: 5px 10px;
+  position: relative; }
 
 /* ==========================================================================
    3.0 UU2014 Theme Specific - Mobile Devices
@@ -1313,33 +1390,27 @@ table { margin-bottom: 0; }
    ========================================================================== */
 .menu-toggle,
   .main-navigation.toggled .nav-menu { display: none; }
- 
-.main-navigation ul { display: block; }
- 
-  .main-navigation ul li {
-    min-width: 85px;
-    vertical-align: middle;
-     }
+
+  .main-navigation ul li { min-width: 85px; }
 
     .main-navigation ul a {
-    height: auto;
     font-size: 15px;
     font-size: 1.5rem;
     line-height: 2.0em;
     padding: .2em; }
- 
+
   .main-navigation ul ul { top: 2.2em; }
- 
+
     .main-navigation ul ul ul li,
-    .main-navigation ul ul li { 
-    width: inherit; 
+    .main-navigation ul ul li {
+    width: inherit;
     max-width: 85px; }
 
     .main-navigation ul ul ul a,
-    .main-navigation ul ul a { 
-      padding: .2em; 
+    .main-navigation ul ul a {
+      padding: .2em;
       line-height: 2.0em; }
- 
+
     .main-navigation ul ul ul {
       left: 100%;
       top: 0; }
@@ -1351,7 +1422,7 @@ table { margin-bottom: 0; }
 /* 3.2 UU2014 - Mobile Devices - Header
    ========================================================================== */
 
-.site .site-header .site-branding .site-title-description { 
+.site .site-header .site-branding .site-title-description {
   padding: 5px 5px 5px 5px; }
 
 .site .site-header .site-branding .site-title a{
@@ -1363,23 +1434,23 @@ table { margin-bottom: 0; }
 /* 3.4 UU2014 - Mobile Devices - Content Area
    ========================================================================== */
 .site .site-content { background-size: 100%; }
- 
+
   .site .site-content .content-area .site-main img {
     height: auto;
     max-width: 100px; }
- 
+
 h1 {
     font-size: 16px;
     font-size: 1.6rem; }
- 
+
 h2 {
     font-size: 15px;
     font-size: 1.5rem; }
- 
+
 h3 {
     font-size: 14px;
     font-size: 1.4rem; }
- 
+
 h4 {
     font-size: 13px;
     font-size: 1.3rem; }
@@ -1392,15 +1463,15 @@ h4 {
   font-size: 20px;
   font-size: 2.0rem;
   margin: 0;}
- 
+
 .site .site-content .content-area {
   float: none;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
+  
 /* Applies to single pages and posts */
 article { padding: 5px; }
- 
+
 /* Applies to pages of posts */
 .archive article {
   margin: 5px;
@@ -1410,11 +1481,11 @@ article { padding: 5px; }
 .page-title {
   margin: 0 5px;
   padding: 5px 10px; }
-  
+
 #main {
   margin: 0;
   padding: 0; }
- 
+
 /* 3.5 UU2014 - Mobile Devices - Sidebar Widgets
    ========================================================================== */
 .widget_nav_menu { display: none; }
@@ -1422,7 +1493,7 @@ article { padding: 5px; }
 .site .site-content .widget-area {
   clear: both;
   width: 100%; }
- 
+
 /* 3.6 UU2014 - Mobile Devices - Footer
    ========================================================================== */
 
@@ -1446,14 +1517,14 @@ body ul#sharebar {
   list-style: none;
   margin: 0;
   z-index: 99; }
- 
+
   body ul#sharebar li {
     display: block;
     margin: 5px;
     padding: 0;
     overflow: hidden;
     text-align: center; }
- 
+
 body ul#sharebarx {
   display: none;
   list-style: none;
@@ -1461,18 +1532,18 @@ body ul#sharebarx {
   float: left;
   margin: 0 0 10px;
   padding: 0; }
- 
+
   body ul#sharebarx a {
     line-height: 14px;
     text-decoration: none; }
- 
+
   body ul#sharebarx li {
     float: left;
     margin-right: 20px;
     line-height: 18px; }
- 
+
     body ul#sharebarx li .st_email { margin: 0 15px !important; }
- 
+
 .sharebar-button {
   font-size: 11px;
   font-family: Verdana, Arial;
@@ -1482,14 +1553,14 @@ body ul#sharebarx {
   border: 1px solid #ddd;
   display: block;
   margin: 0 0 5px; }
- 
+
   .sharebar-button:hover { border-color: #aaa; }
- 
+
 .credit {
   margin: 0;
   padding: 0;
   line-height: 9px; }
- 
+
   .credit a {
     font-size: 8px;
     color: #ccc;
@@ -1497,23 +1568,22 @@ body ul#sharebarx {
     text-decoration: none;
     font-family: Verdana;
     line-height: 9px; }
- 
+
 .FBConnectButton_Small {
   background-position: -5px -232px !important;
   border-left: 1px solid #1A356E; }
- 
+
 .FBConnectButton_Text {
   margin-left: 12px !important ;
   padding: 2px 5px 3px !important; }
- 
+
 .stButton { margin: 0 0 6px !important; }
- 
+
   .stButton:last-child { margin: 0 !important; }
- 
+
   .stButton .stFb_vbubble { width: 53px !important; }
- 
+
   .stButton .stFb_text {
     padding: 2px 5px 3px !important;
     margin: 1px 1px 0 14px !important; }
- 
- 
+

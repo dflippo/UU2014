@@ -181,9 +181,9 @@ function uu2014_customize_register($wp_customize) {
         'choices' => array(
             'chalice.png' => 'Silver Chalice',
             'Symbol_Metal_77_110.png' => 'Silver UUA Symbol',
-			'Symbol_Metal_77_71.png' => 'Smaller Silver UUA Symbol',
+      'Symbol_Metal_77_71.png' => 'Smaller Silver UUA Symbol',
             'Symbol_Gradient_77_110.png' => 'Red UUA Symbol',
-			'Symbol_Gradient_77_71.png' => 'Smaller Red UUA Symbol',
+      'Symbol_Gradient_77_71.png' => 'Smaller Red UUA Symbol',
         ),
             )
     );
@@ -199,10 +199,33 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
+    $wp_customize->add_setting('uu2014_favicon', array('default' => false));
+    $wp_customize->add_control('uu2014_favicon_dropdown', array(
+        'label' => __('Which image should be used for the website icon? (favicon)', 'uu2014'),
+        'section' => 'uu2014_choose_images_section',
+        'settings' => 'uu2014_favicon',
+        'type' => 'select',
+        'choices' => array(
+            false => 'Use the default image at /favicon.ico',
+            'favicon.ico' => 'New Red UUA Symbol',
+            'chalice-favicon.ico' => 'Previous Chalice UUA Symbol',
+        ),
+            )
+    );
     /* ========================================================================== */
 }
 
 add_action('customize_register', 'uu2014_customize_register');
+
+//We have a small amount of dynamic CSS that is output in the header
+function uu2014_customize_css()
+{ ?>
+<style type="text/css" id="uu2014_customize_css">
+.site .site-content { background-image: url(<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/img-noise-500x500.png'); ?>); }
+.site .site-footer { background-image: url(<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif') ); ?>); }
+</style>
+<?php }
+add_action( 'wp_head', 'uu2014_customize_css');
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
