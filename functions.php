@@ -138,18 +138,27 @@ add_action('after_setup_theme', 'uu2014_setup');
 // Add dynamic sidebars to the widget areas
 function uu2014_widgets_init() {
     register_sidebar(array(
-      'name'          => __('Home Sidebar', 'uu2014'),
+      'name'          => __('Primary Sidebar', 'uu2014'),
       'id'            => 'home-widgets',
-      'description'   => __('Drag to create or update the sidebar for home page', 'uu2014'),
+      'description'   => __('This widget area will appear as a sidebar on the left of every page.', 'uu2014'),
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget'  => '</aside>',
       'before_title'  => '<h1 class="widget-title">',
       'after_title'   => '</h1>',
     ));
     register_sidebar(array(
-      'name'          => __('Footer Widget', 'uu2014'),
+      'name'          => __('Header Widget Area', 'uu2014'),
+      'id'            => 'header-widget',
+      'description'   => __('The theme can display a header widget area instead of the standard WordPress header image functionality.  The theme will still use the WordPress header image if no widgets are added.  You can use this area to easily add a slideshow widget as your header.', 'uu2014'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h1 class="header-widget-title">',
+      'after_title'   => '</h1>',
+    ));
+    register_sidebar(array(
+      'name'          => __('Footer Widget Area', 'uu2014'),
       'id'            => 'footer-widget',
-      'description'   => __('The footer widget area', 'uu2014'),
+      'description'   => __('The theme can display a footer widget area at the bottom of the page.  The area will only appear if you add a widget.  You can use this area to easily add custom text and links to the footer.', 'uu2014'),
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget'  => '</aside>',
       'before_title'  => '<h3 class="footer-widget-title">',
@@ -158,7 +167,7 @@ function uu2014_widgets_init() {
     register_sidebar(array(
       'name'          => __('Floating Widget Area', 'uu2014'),
       'id'            => 'sharebar',
-      'description'   => __('A floating widget area that appears to the right of pages and individual posts. Display is controlled in the WP theme customizer.', 'uu2014'),
+      'description'   => __('The theme can display a floating widget area to the right of pages and individual posts.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to your pages.', 'uu2014'),
       'before_widget' => '<li id="%1$s" class="widget %2$s">',
       'after_widget'  => '</li>',
       'before_title'  => '<h3 class="floating-widget-title">',
@@ -176,7 +185,7 @@ function uu2014_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-fonts-style', "$protocol://fonts.googleapis.com/css?family=Open+Sans");
 
-    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140330');
+    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140406');
 
     wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115');
 
@@ -245,15 +254,6 @@ add_action('tgmpa_register', 'uu2014_register_required_plugins');
 
 /**
  * Register the required plugins for this theme.
- *
- * In this example, we register two plugins - one included with the TGMPA library
- * and one from the .org repo.
- *
- * The variable passed to tgmpa_register_plugins() should be an array of plugin
- * arrays.
- *
- * This function is hooked into tgmpa_init, which is fired within the
- * TGM_Plugin_Activation class constructor.
  */
 function uu2014_register_required_plugins() {
     /**
@@ -261,11 +261,6 @@ function uu2014_register_required_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array(
-      array(
-        'name'     => 'Meteor Slides',
-        'slug'     => 'meteor-slides',
-        'required' => false,
-      ),
       array(
         'name'     => 'Featured articles Lite',
         'slug'     => 'featured-articles-lite',
@@ -279,44 +274,35 @@ function uu2014_register_required_plugins() {
         'external_url' => 'https://github.com/afragen/github-updater/blob/master/README.md',
       ),
     );
-
-    /**
-     * Array of configuration settings. Amend each line as needed.
-     * If you want the default strings to be available under your own theme domain,
-     * leave the strings uncommented.
-     * Some of the strings are added into a sprintf, so see the comments at the
-     * end of each line for what each argument will be.
-     */
     $config = array(
-      'domain'           => 'uu2014', // Text domain - likely want to be the same as your theme.
-      'default_path'     => '', // Default absolute path to pre-packaged plugins
-      'parent_menu_slug' => 'themes.php', // Default parent menu slug
-      'parent_url_slug'  => 'themes.php', // Default parent URL slug
-      'menu'             => 'install-required-plugins', // Menu slug
-      'has_notices'      => true, // Show admin notices or not
-      'is_automatic'     => false, // Automatically activate plugins after installation or not
-      'message'          => '', // Message to output right before the plugins table
-      'strings'          => array(
-        'page_title'                      => __('Install Required Plugins', 'uu2014'),
-        'menu_title'                      => __('Install Plugins', 'uu2014'),
-        'installing'                      => __('Installing Plugin: %s', 'uu2014'), // %1$s = plugin name
-        'oops'                            => __('Something went wrong with the plugin API.', 'uu2014'),
-        'notice_can_install_required'     => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.'), // %1$s = plugin name(s)
-        'notice_can_install_recommended'  => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.'), // %1$s = plugin name(s)
-        'notice_cannot_install'           => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.'), // %1$s = plugin name(s)
-        'notice_can_activate_required'    => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.'), // %1$s = plugin name(s)
-        'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.'), // %1$s = plugin name(s)
-        'notice_cannot_activate'          => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.'), // %1$s = plugin name(s)
-        'notice_ask_to_update'            => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.'), // %1$s = plugin name(s)
-        'notice_cannot_update'            => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.'), // %1$s = plugin name(s)
-        'install_link'                    => _n_noop('Begin installing plugin', 'Begin installing plugins'),
-        'activate_link'                   => _n_noop('Activate installed plugin', 'Activate installed plugins'),
-        'return'                          => __('Return to Required Plugins Installer', 'uu2014'),
-        'plugin_activated'                => __('Plugin activated successfully.', 'uu2014'),
-        'complete'                        => __('All plugins installed and activated successfully. %s', 'uu2014'), // %1$s = dashboard link
-        'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated' or 'error'
-      )
+        'id'           => 'uu2014-tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                             // Default absolute path to pre-packaged plugins.
+        'menu'         => 'uu2014-tgmpa-install-plugins', // Menu slug.
+        'has_notices'  => true,                           // Show admin notices or not.
+        'dismissable'  => true,                           // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                             // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                          // Automatically activate plugins after installation or not.
+        'message'      => '',                             // Message to output right before the plugins table.
+        'strings'      => array(
+            'page_title'                      => __( 'Install Required Plugins', 'uu2014' ),
+            'menu_title'                      => __( 'Install Plugins', 'uu2014' ),
+            'installing'                      => __( 'Installing Plugin: %s', 'uu2014' ), // %s = plugin name.
+            'oops'                            => __( 'Something went wrong with the plugin API.', 'uu2014' ),
+            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'uu2014' ), // %1$s = plugin name(s).
+            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'uu2014' ), // %1$s = plugin name(s).
+            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'uu2014' ),
+            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'uu2014' ),
+            'return'                          => __( 'Return to Required Plugins Installer', 'uu2014' ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', 'uu2014' ),
+            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'uu2014' ), // %s = dashboard link.
+            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+        )
     );
-
     tgmpa($plugins, $config);
 }

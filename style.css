@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
-Version: 1.1.1
+Version: 1.1.2
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -846,7 +846,7 @@ table { margin-bottom: 1.0em; }
    ========================================================================== */
 .search-box {
   position: absolute;
-  z-index: 2;
+  z-index: 9999;
   top: 0;
   right: 0px;
   width: 250px;
@@ -1313,6 +1313,106 @@ article.type-post {
     .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
      background: #111 url(images/tri-white.gif) no-repeat 53px 11px; }
 
+/* 2.7.1 UU2014 - Header Widget Area
+   ========================================================================== */
+
+  div.header-widget-area {
+    margin: 0;
+    padding: 0;
+	border: 0;
+    max-width: 1200px;
+    text-align: left;
+    line-height: 15px;	}
+
+.header-widget-area .header-widget-title {
+    color: white;	}
+
+    .header-widget-area h1,
+    .header-widget-area h2,
+    .header-widget-area h3,
+    .header-widget-area h4,
+    .header-widget-area h5,
+    .header-widget-area h6,
+    .header-widget-area p,
+    .header-widget-area ul,
+    .header-widget-area ol,
+    .header-widget-area li > ul,
+    .header-widget-area li > ol,
+    .header-widget-area dd,
+    .header-widget-area blockquote,
+    .header-widget-area address,
+    .header-widget-area pre,
+    .header-widget-area table { margin: 0; }
+
+    .header-widget-area ul {
+    list-style: none;
+    width: 100%;
+    }
+
+   .header-widget-area li {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    }
+
+    .header-widget-area ul a {
+    background: url(images/tri-red.gif) no-repeat 20px 15px;
+    padding: 7px 5px 7px 37px;
+    display: inline-block;
+    color: white;
+    text-decoration: none; }
+
+    .header-widget-area a:hover {
+      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
+      color: white; }
+
+    .header-widget-area a:visited {
+      color: white; }
+
+    .header-widget-area li.recentcomments {
+      width: 85%;
+      background: url(images/tri-red.gif) no-repeat 20px 15px;
+      padding: 7px 5px 7px 37px; }
+
+    .header-widget-area li.recentcomments a {
+    background-image: none;
+    display: inline;
+    padding: 0; }
+
+    .header-widget-area li.recentcomments a:hover {
+      background-image: none;
+      display: inline;
+      padding: 0; }
+
+    .header-widget-area .rssSummary,
+    .header-widget-area .rss-date{
+      padding: 0 5px 0 37px; }
+
+    .header-widget-area .textwidget {
+      text-align: right; }
+
+    .header-widget-area #calendar_wrap {
+      margin: 0 5px 0 5px;
+      padding: 0 5px 0 5px;
+      border: solid white thin; }
+
+    .header-widget-area h1 {
+    font-weight: normal;
+    font-size: 18px;
+    font-size: 1.8rem;
+    padding: 14px 10px 8px 20px; }
+
+  .header-widget-area ul ul a  {
+    background: url(images/tri-red.gif) no-repeat 37px 11px;
+    padding: 7px 5px 7px 53px;
+    font-size: 14px;
+    font-size: 1.4rem; }
+
+    .header-widget-area ul ul ul a  {
+      background: url(images/tri-red.gif) no-repeat 53px 11px;
+      padding: 7px 5px 7px 69px;
+      font-size: 14px;
+      font-size: 1.4rem; }
+
 /* 2.8 UU2014 - Plugin: Contact Form 7
    ========================================================================== */
 span.wpcf7-checkbox span.wpcf7-list-item { display: block; }
@@ -1335,12 +1435,6 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
 /* 2.10 UU2014 - Specific #ID Styles
    ========================================================================== */
-#homepage-slider {
-  float: right;
-  margin: 0 0 20px 0;
-  padding: 0 0 0 0;
-  width: 100%; }
-
 #main.no-sidebar { margin: 0; }
 
 .page-template-page-nosidebar-php .site .site-content {

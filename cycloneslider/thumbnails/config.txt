@@ -1,0 +1,5 @@
+; Slide Types Supported
+slide_type[] = "image"
+slide_type[] = "youtube"
+slide_type[] = "vimeo"
+slide_type[] = "custom"

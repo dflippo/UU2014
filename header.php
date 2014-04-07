@@ -30,21 +30,14 @@
             <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
             <header id="masthead" class="site-header" role="banner">
                 <div class="site-branding">
-                <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-                <?php
-                $slideshow    = get_term_by('id', get_theme_mod('header_slideshow_id', -1), 'slideshow');
-                $header_image = get_header_image();
-                if (function_exists('meteor_slideshow') && $slideshow) {
-                    ?>
-                        <div id="header-slideshow">
-                            <?php meteor_slideshow($slideshow->name, "random: 1"); ?>
-                        </div>
-                    <?php
-                } // if ( function_exists( 'meteor_slideshow' ) )
-                elseif (!empty($header_image)) {
-                    ?>
-                        <img src="<?php header_image(); ?>" width="100%" alt="Header Image">
-                <?php } // elseif ( ! empty( $header_image ) )   ?>
+					<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+					<div id="header-widget-area" class="header-widget-area">
+					<?php $header_image = get_header_image();
+					if (!get_theme_mod('uu2014_display_header_widgets', 1) || !dynamic_sidebar('header-widget')) {
+						if (!empty($header_image)) { ?>
+							<img src="<?php header_image(); ?>" width="100%" alt="Header Image">
+					<?php } } ?>
+					</div>
                     <div class="site-title-description" style="color:<?php get_header_textcolor() ?>;">
                         <img id="chalice" alt="Flaming Chalice" src="<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png') ); ?>">
                         <h1 class="site-title"><?php bloginfo('name'); ?></h1>

@@ -34,27 +34,23 @@ function uu2014_customize_register($wp_customize) {
     );
     /* Header Image Slideshow
       ========================================================================== */
-    $terms = get_terms('slideshow', '');
-    if (!is_wp_error($terms)) {
-        $wp_customize->add_section('meter_slides_section', array(
-            'title' => __('Header Image Slideshow', 'uu2014'),
-            'priority' => 1002,
-            'description' => __('You can choose a slideshow from the Meteor Slides plugin to display at the top of every page instead of a static header image. This setting has no effect if the plugin is not activated.', 'uu2014')
-        ));
-        $wp_customize->add_setting('header_slideshow_id', array('default' => '-1'));
-        $meter_slides_options = array('-1' => 'None');
-        foreach ($terms as $term) {
-            $meter_slides_options[$term->term_id] = $term->name;
-        }
-        $wp_customize->add_control('meter_slides_dropdown', array(
-            'label' => __('Header Image Slideshow', 'uu2014'),
-            'section' => 'meter_slides_section',
-            'settings' => 'header_slideshow_id',
-            'type' => 'select',
-            'choices' => $meter_slides_options,
-                )
-        );
-    }
+    $wp_customize->add_section('uu2014_display_header_widgets_section', array(
+        'title' => __('Header Widget Area', 'uu2014'),
+        'priority' => 1002,
+        'description' => __('The theme can display a header widget area instead of the standard WordPress header image functionality.  The theme will still use the WordPress header image if no widgets are added.', 'uu2014')
+    ));
+    $wp_customize->add_setting('uu2014_display_header_widgets', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_header_dropdown', array(
+        'label' => __('Display header widget area?', 'uu2014'),
+        'section' => 'uu2014_display_header_widgets_section',
+        'settings' => 'uu2014_display_header_widgets',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+            )
+    );
     /* Front Page News Slideshow
       ========================================================================== */
     $wp_customize->add_section('fa_slides_section', array(
