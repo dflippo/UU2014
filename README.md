@@ -56,6 +56,10 @@ This theme supports updates from WordPress.org but we recommend users update the
 Changelog
 ---------
 
+### v1.2.0
+* One of the most significant cosmetic changes since release
+    - In response to a request I received, I've updated the theme to be a bit cleaner and less "rectangular".  Essentially, the background of the primary sidebar now is the same color as the main content dashboard.  They background to the left and right of the header has also been converted into a semi-transparent gradient and the edge of the main content now appears to float above the page background.
+
 ### v1.1.0
 * Making GitHub Updater Required
     - It has been over 4 months since I released a version of UU2014 to WordPress.org and the theme still isn't visible in the directory. I will continue to deal with that process but I am now making GitHub Updater a "required" plugin for the theme. If you don't have it, the theme will help you download and activate it. You can still choose to not install the plugin but that will now require more effort.

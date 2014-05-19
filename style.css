@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Author: Dan Flippo
 Description: Responsive WordPress Theme for Unitarian Universalist Congregations - UU 2014 is designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. Many congregations currently use the UU 2011 WordPress theme. With permission of the original theme author, UU 2014 extends UU 2011 by making the theme fully responsive to smaller screens such as mobile phones.  The theme also migrates the look and feel into the Underscores framework to provide the latest WordPress features and browser compatibility.
-Version: 1.1.2
+Version: 1.2.0
 Author URI: http://www.faithandreason.dreamhosters.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -747,7 +747,9 @@ table { margin-bottom: 1.0em; }
 .byline {
   display: inline; }
 
-.site { position: relative; }
+.site { 
+  position: relative;
+  }
 
 /* 2.2 UU2014 - Menu
    ========================================================================== */
@@ -757,9 +759,9 @@ table { margin-bottom: 1.0em; }
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  min-height: 42px;
   width: 100%;
   max-width: 1200px;
+  min-height: 42px;
   float: none;
   clear: none;
   font-size: 16px;
@@ -767,17 +769,22 @@ table { margin-bottom: 1.0em; }
   border-top: 1px solid #555;
   border-left: 1px solid #555;
   border-right: 1px solid #555;
-  background: #000 url(images/bkgr-menu.png) repeat-x left top;
-  background: -webkit-linear-gradient(top,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(bottom,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(bottom,rgba(255,255,255,.25),rgba(0,0,0,0)); /*Fx 3.6-15*/
-  background: linear-gradient(to bottom, rgba(255,255,255,.25), rgba(0,0,0,0)); /*Standard*/
+  box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
 }
 
-  .main-navigation  div {
+  .main-nav-menu {
+  width: 100%;
+  min-height: 42px;
+  display: inline-block;
+  background: #000 url(images/bkgr-menu.png) repeat-x left top;
+  background: -webkit-linear-gradient(top,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Standard*/
+  }
+  .main-nav-menu  div {
     min-width: 75%;
-    float:right; 
-    }
+    float:right; }
 
   .main-navigation ul {
     display: block;
@@ -804,7 +811,6 @@ table { margin-bottom: 1.0em; }
     text-decoration: none; }
 
   .main-navigation ul ul {
-  box-shadow: none;
     display: none;
     position: absolute;
     top: 41px;
@@ -880,7 +886,6 @@ table { margin-bottom: 1.0em; }
    ========================================================================== */
 .site .site-header {
   width: 100%;
-  padding: 0;
   position: relative;
   text-align: left;
   background: #333;
@@ -888,10 +893,10 @@ table { margin-bottom: 1.0em; }
   line-height: 0;
   color: #fff;
   /* gradient 65% transparent to black */
-  background: -webkit-linear-gradient(top,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(bottom,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(bottom,rgba(0,0,0,.45),rgba(0,0,0,1)); /*Fx 3.6-15*/
-  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,1)); /*Standard*/
+  background: -webkit-linear-gradient(top,rgba(0,0,0,.8),rgba(0,0,0,0)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(bottom,rgba(0,0,0,.8),rgba(0,0,0,0)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(bottom,rgba(0,0,0,.8),rgba(0,0,0,0)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,0)); /*Standard*/
   }
 
 #parentdiv:after { content: " "; display: block; clear: both;}
@@ -910,7 +915,9 @@ table { margin-bottom: 1.0em; }
     margin-right: auto;
     max-width: 1200px;
     padding: 0;
-    position: relative; }
+    position: relative; 
+    box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
+}
 
     .site .site-header .site-branding img {
       margin: 0;
@@ -930,7 +937,10 @@ table { margin-bottom: 1.0em; }
     text-decoration: none;
     line-height: 1.5; 
     background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.5); }
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    border-top-right-radius: 15px; }
 
     .site .site-header .site-branding .site-title-description img {
       position: absolute;
@@ -974,7 +984,8 @@ table { margin-bottom: 1.0em; }
   max-width: 1200px;
   background: #fff url(images/img-noise-500x500.png) repeat-y left top;
   background-color: rgba(255, 255, 255, .9); /* 10% transparent */
-  background-size: 25%; }
+  background-size: 25%; 
+  box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8); }
 
   .site .site-content .content-area {
     float: right;
@@ -1043,8 +1054,7 @@ article.type-post {
 .widget-area {
   float: left;
   overflow: hidden;
-  width: 25%;
-  text-align: left; }
+  width: 25%; }
 
 .widget-area h1,
 .widget-area h2,
@@ -1070,7 +1080,7 @@ article.type-post {
 
    .widget-area li {
     width: 100%;
-    border-top: 1px solid #ccc;
+    border-top: 1px dashed #ccc;
     }
 
     .widget-area ul a {
@@ -1126,7 +1136,15 @@ article.type-post {
     font-weight: normal;
     font-size: 18px;
     font-size: 1.8rem;
-    padding: 14px 10px 8px 20px; }
+    padding: 14px 10px 8px 20px; 
+	border-top: 1px dashed #ccc;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-bottom-right-radius: 5px; }
+
 
 .widget_nav_menu .sub-menu { display: none; }
 
@@ -1426,7 +1444,11 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 .site .FA_overall_container_classic.light{
   background: none;
   background-image: url(data:image/png;base64,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);
-}
+  margin-left: 5px;
+  -webkit-border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  border-bottom-left-radius: 15px; }
+
 
 .site .FA_overall_container_classic.light ul.FA_navigation,
 .site .FA_overall_container_classic.light .FA_featured_articles .FA_article .image_container,
@@ -1442,7 +1464,9 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
 #breadcrumbs {
   margin: 0 20px;
-}.menu-sitemap { display: none; }
+}
+
+.menu-sitemap { display: none; }
 
 /* 2.11 UU2014 - Comments
    ========================================================================== */
@@ -1610,7 +1634,8 @@ body ul#sharebar {
   border: 1px solid #ccc;
   list-style: none;
   margin: 0;
-  z-index: 99; }
+  z-index: 99; 
+  box-shadow: 7px 2px 7px 3px rgba(0, 0, 0, 0.8); }
 
   body ul#sharebar li {
     display: block;
