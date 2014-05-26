@@ -39,7 +39,7 @@
 					<?php } } ?>
 					</div>
                     <div class="site-title-description" style="color:<?php get_header_textcolor() ?>;">
-                        <img id="chalice" alt="Flaming Chalice" src="<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png') ); ?>">
+                        <img id="chalice" alt="Flaming Chalice" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png'); ?>">
                         <h1 class="site-title"><?php bloginfo('name'); ?></h1>
                         <?php if (get_bloginfo('description')) { ?>
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>

@@ -264,9 +264,9 @@ div.header-widget-area { max-width: <?php echo get_theme_mod('uu2014_header_widt
   line-height: 0;
   color: #fff;
   }
-.site .site-content { background-image: url(<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/img-noise-500x500.png'); ?>); }
+.site .site-content { background-image: url(<?php echo get_template_directory_uri() . '/images/img-noise-500x500.png'; ?>); }
 .site .site-content { background: rgb(255, 255, 255); background-color: rgba(255, 255, 255, .9); ?>); }
-.site .site-footer { background-image: url(<?php echo apply_filters('jetpack_photon_url', get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif') ); ?>); }
+.site .site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
 <?php 
 if (!get_theme_mod('uu2014_display_sidebar_widgets', 1)) : ?>
 .site .site-content .content-area .site-main { margin: 0; }
