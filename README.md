@@ -18,10 +18,7 @@ UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian U
 ####You can learn more about the theme including setup and configuration on it's website, http://www.faithandreason.dreamhosters.com
 ####Here are some of the more interesting things you'll find in this theme:
 * You can choose between traditional UU Chalice symbols and the new UUA logo for your header and footer.  This and many other custom theme settings are available in the `Appearance -> Customize` menu of WordPress.
-* The theme will intelligently prompt you to install several plugins that add functionality to the theme.  You can skip their installation but the theme will automatically use:
-    - GitHub Updater: This plugin will notify you when new releases of UU2014 have been released on GitHub.  Like other themes and plugins, you will be able to update the theme in `Dashboard -> Updates`
-    - Meteor Slides: This plugin allows you to create slides and slideshows.  The UU2014 settings page allows you to set a slideshow as a rotating header throughout the site.
-    - Featured Articles Lite: This plugin allows you to create a very nice new post slider on your homepage.  This is especially nice if you use a page as your homepage.  You set the ID# of your home page slider in the UU2014 settings page.
+* The theme will intelligently prompt you to install the Featured Articles Lite plugin that adds functionality to the theme.  You can skip the installation but the theme will automatically use this plugin to create a very nice new post slider on your homepage.  This is especially nice if you use a page as your homepage.
 * Floating Widget Area: The theme can display a floating widget area to the right of pages and individual posts.  It will hide the widget area if the page is to narrow.
 * The 'style.css' file is organized so that you can see which styles came from _s and which have been updated by UU2014.
 * Please provide feedback to the authors if you have improvements that could benefit other congregations using the theme. 
@@ -30,16 +27,15 @@ UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian U
 Getting Started
 ---------------
 
-You can download the latest release from the GitHub repository:
+You can download the latest release directly from WordPress:
 
-1. Download the latest UU2014 release from https://github.com/dflippo/UU2014/releases (choose the “zip” option)
-2. Go to the `Themes -> Add New Theme` screen and click the `Upload` tab
-3. Upload the zipped archive directly
-4. Go to the `Themes` screen click `Activate`
-5. Optionally download and activate the plugins your are prompted to install from the top of all WordPress administration screens
-6. You can use the plugins to create a header image slideshow and a featured articles slider on your front page
-7. Visit `Appearance -> Customize` to tell the theme the name of your header slideshow and featured articles slider.  There are a number of other theme-specific additions to the customizer.
-8. Alternatively, visit `Appearance -> Header` to change the header image or set the theme to randomly choose which image to display.
+1. Go to the `Themes -> Add New Theme` screen and search for `UU 2014`
+2. Click on the `Install` button
+3. Click on the `Activate` link
+4. Optionally download and activate the plugin your are prompted to install from the top of all WordPress administration screens
+5. You can use the plugin to create a featured articles slider on your front page
+6. Visit `Appearance -> Customize` to customize a number of theme-specific additions to the customizer.
+7. Alternatively, visit `Appearance -> Header` to change the header image or set the theme to randomly choose which image to display.
 
 Adding Your Own Header Images
 -----------------------------
@@ -51,12 +47,33 @@ If you upload multiple images you will then see a choice for "Random" which will
 Getting Updates
 ---------------
 
-This theme supports updates from WordPress.org but we recommend users update the theme directly from GitHub. When you activate the theme, it will prompt you to install the “GitHub Updater” plugin. Please follow the instructions to download and activate the plugin so that you will receive update notifications when future versions of the UU2014 theme are released.
+This theme supports updates from WordPress.org. If you are not seeing updates and installed the theme manually (not within WordPress), the easiest fix is to delete the theme and add it again from within Wordpress.
 
 Changelog
 ---------
 
-### v1.2.0
+### [v1.2.5](http://wordpress.org/themes/download/uu-2014.1.2.5.zip)
+* UU2014 WordPress.org Release 1.2.5
+    - Updated the customizer to allow users to disable the UU symbols in the title and footer
+    - Synchronized the latest changes to _s with the theme to gain minor HTML5 support improvements
+
+### [v1.2.4](http://wordpress.org/themes/download/uu-2014.1.2.4.zip)
+* UU2014 WordPress.org Release 1.2.4
+    - The Photon Filters allowed the theme to use the WordPress Photon service to host images. However, it apparently doesn't work correctly if JetPack is installed but Photon is not activated.
+
+### v1.2.3
+* GitHub Release 1.2.3
+    - This version reverts the GitHub URI because the change broke updating from older GitHub releases.
+
+### [v1.2.2](http://wordpress.org/themes/download/uu-2014.1.2.2.zip)
+* UU2014 WordPress.org Release 1.2.2
+    - WordPress.org deployed this version promptly but made me take out the lines that required the GitHub Updater. I wasn't too surprised with this requirement. The theme does still support GitHub Updater but you are not prompted to install it now if you don't already have it. I have also switched the GitHub name from UU2014 to UU-2014 because WP.org has been putting a dash for the folder name in their own zip files. I believe this difference causes some unexpected behavior when updating using both WP.org and Github.
+
+### [v1.2.1](http://wordpress.org/themes/download/uu-2014.1.2.1.zip)
+* UU2014 Public Release 1.2.1
+  - Updated screenshot, optimized images and packaged for WordPress.org
+
+### [v1.2.0](http://wordpress.org/themes/download/uu-2014.1.2.0.zip)
 * One of the most significant cosmetic changes since release
     - In response to a request I received, I've updated the theme to be a bit cleaner and less "rectangular".  Essentially, the background of the primary sidebar now is the same color as the main content dashboard.  They background to the left and right of the header has also been converted into a semi-transparent gradient and the edge of the main content now appears to float above the page background.
 
@@ -98,7 +115,7 @@ Changelog
 	6. Upload the zipped archive directly
 	7. Go to the `Themes` screen click `Activate`
 
-### v1.0.5
+### [v1.0.5] (http://wordpress.org/themes/download/uu-2014.1.0.5.zip)
 * Based on feedback from elseloop at WordPress.org, the following issues were reported and resolved:
 	- Error when Meteor Slides is not installed
 	- Posts with no title have no link to the single view from the index list
@@ -111,7 +128,7 @@ Changelog
 	- The customizer has a new section to allow you to choose whether to display comments for posts, pages, and image pages.  The default is yes for all three but I recommend disabling comments for all three for most congregation websites.
 	- The customizer has a new section to allow you to choose whether to display a byline for the author of each post.  In the past the bylines were not displayed.  The default is now to display the byline.
 
-### v1.0.4
+### [v1.0.4] (http://wordpress.org/themes/download/uu-2014.1.0.4.zip)
 * Replaced integration with the Sharebar plugin with embedded us of the CSS and JS from the plugin. 
 	- The plugin was generating WP errors due to poor PHP but there weren't any issues with the CSS or JS. 
 	- Instead of the plugin screens, we now have a new floating widget area and you can put whatever widgets you want in there. 
@@ -126,13 +143,13 @@ Changelog
 ### v1.0.2
 * Updated footer to include a small bit of text to track theme usage
 
-### v1.0.1
+### [v1.0.1] (http://wordpress.org/themes/download/uu-2014.1.0.1.zip)
 * Removed <meta name="description" from header.php
 * Removed hard coded RSS link in header.php.
 * Renamed all functions in functions.php to be prefixed with uu2013 including the setup_theme_admin_menus() function.
 * Added license and copyright text for images used in the theme.
 
-### v1.0.0
+### [v1.0.0] (http://wordpress.org/themes/download/uu-2014.1.0.0.zip)
 * Initial Release of UU2014 for public use
 
 Notes for Congregations Migrating from the UU2011 Theme

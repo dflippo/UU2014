@@ -13,21 +13,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function uu2014_customize_register($wp_customize) {
-	/**
-	 * Adds textarea support to the theme customizer
-	 */
-	class UU2014_Textarea_Control extends WP_Customize_Control {
-		public $type = 'uu2014_textarea';
-	 
-		public function render_content() {
-			?>
-				<label>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-				</label>
-			<?php
-		}
-	}
+
     /* Add postMessage support for site title and description for the Theme Customizer.
       ========================================================================== */
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
@@ -36,7 +22,7 @@ function uu2014_customize_register($wp_customize) {
     /* Widths
       ========================================================================== */
     $wp_customize->add_section('uu2014_width_section', array(
-        'title' => __('Widths', 'uu2014'),
+        'title' => __('UU 2014 - Widths', 'uu2014'),
         'priority' => 10010,
         'description' => __('You can customize the maximum widths for different sections of the theme below', 'uu2014')
     ));
@@ -82,128 +68,150 @@ function uu2014_customize_register($wp_customize) {
         'settings' => 'uu2014_content_width'
             )
     );
-    /* Display Widget Areas
+    /* UU 2014 - Display And Hide Features
       ========================================================================== */
-    $wp_customize->add_section('uu2014_display_widgets_section', array(
-        'title' => __('Display Widget Areas', 'uu2014'),
+    $wp_customize->add_section('uu2014_display_features_section', array(
+        'title' => __('UU 2014 - Display And Hide Features', 'uu2014'),
         'priority' => 10020,
-        'description' => __('This theme has four widget areas that you can choose to disable', 'uu2014')
+        'description' => __('This theme has a number of features that you can choose to display or hide', 'uu2014')
     ));
+    $wp_customize->add_setting('uu2014_display_title_image', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_title_image_dropdown', array(
+        'label' => __('Display an image near the title?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_title_image',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_footer_image', array('default' => '1'));
+    $wp_customize->add_control('uu2014_display_footer_image_dropdown', array(
+        'label' => __('Display an image in the footer?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_footer_image',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_favicon_image', array('default' => '0'));
+    $wp_customize->add_control('uu2014_display_favicon_image_dropdown', array(
+        'label' => __('Display theme image for the website icon(favicon)?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_favicon_image',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
     $wp_customize->add_setting('uu2014_display_sidebar_widgets', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_sidebar_dropdown', array(
         'label' => __('Display primary sidebar widget area?', 'uu2014'),
-        'section' => 'uu2014_display_widgets_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_sidebar_widgets',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
     $wp_customize->add_setting('uu2014_display_header_widgets', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_header_dropdown', array(
         'label' => __('Display header widget area?', 'uu2014'),
-        'section' => 'uu2014_display_widgets_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_header_widgets',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
     $wp_customize->add_setting('uu2014_display_footer_widgets', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_footer_dropdown', array(
         'label' => __('Display footer widget area?', 'uu2014'),
-        'section' => 'uu2014_display_widgets_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_footer_widgets',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
     $wp_customize->add_setting('uu2014_display_floating_widgets', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_floating_dropdown', array(
         'label' => __('Display floating widget area?', 'uu2014'),
-        'section' => 'uu2014_display_widgets_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_floating_widgets',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
-    /* Display Comments
-      ========================================================================== */
-    $wp_customize->add_section('uu2014_display_comments_section', array(
-        'title' => __('Comments', 'uu2014'),
-        'priority' => 10050,
-        'description' => __('The theme can globally hide all visual traces of comments.  WordPress normally allows comments to be disabled per page/post.  If you disable comments here the "Comments are disabled" messages will not be displayed.', 'uu2014')
-    ));
     $wp_customize->add_setting('uu2014_display_comments_pages', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_comments_pages_dropdown', array(
         'label' => __('Display comments on pages?', 'uu2014'),
-        'section' => 'uu2014_display_comments_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_comments_pages',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
     $wp_customize->add_setting('uu2014_display_comments_posts', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_comments_posts_dropdown', array(
         'label' => __('Display comments on posts?', 'uu2014'),
-        'section' => 'uu2014_display_comments_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_comments_posts',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
     $wp_customize->add_setting('uu2014_display_comments_images', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_comments_images_dropdown', array(
         'label' => __('Display comments on image pages?', 'uu2014'),
-        'section' => 'uu2014_display_comments_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_comments_images',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
-    /* Display By-Lines
-      ========================================================================== */
-    $wp_customize->add_section('uu2014_display_bylines_section', array(
-        'title' => __('By-Lines', 'uu2014'),
-        'priority' => 10060,
-        'description' => __('You can choose whether to display a byline for the author of each post.', 'uu2014')
-    ));
     $wp_customize->add_setting('uu2014_display_bylines', array('default' => '1'));
     $wp_customize->add_control('uu2014_display_bylines_dropdown', array(
         'label' => __('Display bylines on posts?', 'uu2014'),
-        'section' => 'uu2014_display_bylines_section',
+        'section' => 'uu2014_display_features_section',
         'settings' => 'uu2014_display_bylines',
         'type' => 'radio',
         'choices' => array(
-            '1' => 'Yes',
-            '0' => 'No',
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
         ),
             )
     );
-    /* UU Image Selection
+    /* UU 2014 - Image Selection
       ========================================================================== */
     $wp_customize->add_section('uu2014_choose_images_section', array(
-        'title' => __('UU Images', 'uu2014'),
-        'priority' => 100070,
+        'title' => __('UU 2014 - Image Selection', 'uu2014'),
+        'priority' => 100030,
         'description' => __('You can choose what style of UU image to display in the theme.', 'uu2014')
     ));
     $wp_customize->add_setting('uu2014_title_image', array('default' => 'chalice.png'));
@@ -214,10 +222,10 @@ function uu2014_customize_register($wp_customize) {
         'type' => 'select',
         'choices' => array(
             'chalice.png' => 'Silver Chalice',
-            'Symbol_Metal_77_110.png' => 'Silver UUA Symbol',
-      'Symbol_Metal_77_71.png' => 'Smaller Silver UUA Symbol',
-            'Symbol_Gradient_77_110.png' => 'Red UUA Symbol',
-      'Symbol_Gradient_77_71.png' => 'Smaller Red UUA Symbol',
+            'Symbol_Metal_77_110.png' => __('Silver UUA Symbol', 'uu2014'),
+            'Symbol_Metal_77_71.png' => __('Smaller Silver UUA Symbol', 'uu2014'),
+            'Symbol_Gradient_77_110.png' => __('Red UUA Symbol', 'uu2014'),
+            'Symbol_Gradient_77_71.png' => __('Smaller Red UUA Symbol', 'uu2014'),
         ),
             )
     );
@@ -228,21 +236,20 @@ function uu2014_customize_register($wp_customize) {
         'settings' => 'uu2014_footer_image',
         'type' => 'select',
         'choices' => array(
-            'chalice-watermark-dark.gif' => 'Dark Chalice',
-            'UUA_Symbol_dark_148_200.png' => 'Dark UUA Symbol',
+            'chalice-watermark-dark.gif' => __('Dark Chalice', 'uu2014'),
+            'UUA_Symbol_dark_148_200.png' => __('Dark UUA Symbol', 'uu2014'),
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_favicon', array('default' => false));
+    $wp_customize->add_setting('uu2014_favicon', array('default' => 'favicon.ico'));
     $wp_customize->add_control('uu2014_favicon_dropdown', array(
-        'label' => __('Which image should be used for the website icon? (favicon)', 'uu2014'),
+        'label' => __('Which image should be used for the website icon(favicon)?', 'uu2014'),
         'section' => 'uu2014_choose_images_section',
         'settings' => 'uu2014_favicon',
         'type' => 'select',
         'choices' => array(
-            false => 'Use the default image at /favicon.ico',
-            'favicon.ico' => 'New Red UUA Symbol',
-            'chalice-favicon.ico' => 'Previous Chalice UUA Symbol',
+            'favicon.ico' => __('New Red UUA Symbol', 'uu2014'),
+            'chalice-favicon.ico' => __('Previous Chalice UUA Symbol', 'uu2014'),
         ),
             )
     );
@@ -266,12 +273,20 @@ div.header-widget-area { max-width: <?php echo get_theme_mod('uu2014_header_widt
   }
 .site .site-content { background-image: url(<?php echo get_template_directory_uri() . '/images/img-noise-500x500.png'; ?>); }
 .site .site-content { background: rgb(255, 255, 255); background-color: rgba(255, 255, 255, .9); ?>); }
-.site .site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
-<?php 
-if (!get_theme_mod('uu2014_display_sidebar_widgets', 1)) : ?>
-.site .site-content .content-area .site-main { margin: 0; }
-.site .site-content { background-size: 0%; }
-#secondary { display: none; }
+<?php if (!get_theme_mod('uu2014_display_title_image', 1)) : ?>
+    #chalice { display: none; }
+    .site .site-header .site-branding .site-title { padding: 0; }
+    .site .site-header .site-branding .site-description { padding: 0; }
+<?php endif; ?>
+<?php if (get_theme_mod('uu2014_display_footer_image', 1)) : ?>
+    .site .site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
+<?php else : ?>
+    .site .site-footer { background-image: none; }
+<?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_sidebar_widgets', 1)) : ?>
+    .site .site-content .content-area .site-main { margin: 0; }
+    .site .site-content { background-size: 0%; }
+    #secondary { display: none; }
 <?php endif; ?>
 </style>
 <?php }

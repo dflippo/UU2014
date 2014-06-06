@@ -4,34 +4,31 @@
  *
  * @package UU2014
  */
-get_header();
-?>
-<div id="primary" class="content-area">
-  <main id="main" class="site-main" role="main">
 
-    <?php while (have_posts()) : the_post(); ?>
+get_header(); ?>
 
-      <?php get_template_part('content', 'single'); ?>
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-      <?php uu2014_content_nav('nav-below'); ?>
+        <?php while (have_posts()) : the_post(); ?>
 
-      <?php
-      // If the theme is set to display comments
-      if (get_theme_mod('uu2014_display_comments_posts', 1)) {
-        // If comments are open or we have at least one comment, load up the comment template
-        if (comments_open() || '0' != get_comments_number()) {
-          comments_template();
-        } else {
-          ?>
-          <h2 class="comments-title">Comments are disabled</h2>
-        <?php }
-      }
-      ?>
+            <?php get_template_part('content', 'single'); ?>
 
-<?php endwhile; // end of the loop.     ?>
+            <?php uu2014_post_nav(); ?>
 
-  </main><!-- #main -->
-</div><!-- #primary -->
+            <?php
+            // If the theme is set to display comments
+            if (get_theme_mod('uu2014_display_comments_posts', 1)) {
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || '0' != get_comments_number() ) {
+                    comments_template();
+                }
+            } ?>
+
+        <?php endwhile; // end of the loop. ?>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php

@@ -29,8 +29,8 @@ function uu2014_custom_header_setup() {
     add_theme_support('custom-header', apply_filters('uu2014_custom_header_args', array(
       'default-image'          => get_template_directory_uri() . '/images/headers/uubgr.jpg',
       'random-default'         => false,
-      'width'                  => 940,
-      'height'                 => 198,
+      'width'                  => 1200,
+      'height'                 => 200,
       'flex-height'            => true,
       'flex-width'             => true,
       'default-text-color'     => 'fff',
@@ -56,8 +56,9 @@ if (!function_exists('uu2014_header_style')) :
 
         // If no custom options for text are set, let's bail
         // get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-        if (HEADER_TEXTCOLOR == $header_text_color)
+        if (HEADER_TEXTCOLOR == $header_text_color) {
             return;
+        }
 
         // If we get this far, we have custom styles. Let's do this.
         ?>

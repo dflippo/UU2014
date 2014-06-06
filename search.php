@@ -23,11 +23,11 @@ get_header();
 
             <?php endwhile; ?>
 
-            <?php uu2014_content_nav('nav-below'); ?>
+            <?php uu2014_paging_nav(); ?>
 
         <?php else : ?>
 
-            <?php get_template_part('no-results', 'search'); ?>
+            <?php get_template_part('content', 'none'); ?>
 
         <?php endif; ?>
 

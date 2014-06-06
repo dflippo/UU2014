@@ -16,6 +16,7 @@ if (!isset($content_width)) {
 
 if (!function_exists('uu2014_setup')) :
 
+
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -52,26 +53,28 @@ if (!function_exists('uu2014_setup')) :
           'primary' => __('Primary Menu', 'uu2014'),
         ));
 
-        /**
-         * Enable support for Post Formats
-         */
-        add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+	) );
 
-        /**
-         * Setup the WordPress core custom background feature.
-         */
+	/*
+	 * Enable support for Post Formats.
+	 * See http://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link'
+	) );
+
+        // Setup the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('uu2014_custom_background_args', array(
           'default-color' => '6a8999',
           'default-image' => '',
         )));
 
-    // Enable support for HTML5 markup.
-    add_theme_support( 'html5', array(
-      'comment-list',
-      'search-form',
-      'comment-form',
-      'gallery',
-    ) );
         // Some custom headers packaged with the theme
         register_default_headers(array(
           'bowlinggreen'  => array(
@@ -185,9 +188,9 @@ function uu2014_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-fonts-style', "$protocol://fonts.googleapis.com/css?family=Open+Sans");
 
-    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140520');
+    wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140605');
 
-    wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115');
+    wp_enqueue_script('uu2014-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

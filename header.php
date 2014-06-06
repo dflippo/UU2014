@@ -12,8 +12,9 @@
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php wp_title('|', true, 'right'); ?></title>
-<?php $uu2014_favicon = get_theme_mod('uu2014_favicon', false);
-      if($uu2014_favicon) {
+<?php $uu2014_display_favicon_image = get_theme_mod('uu2014_display_favicon_image', false);
+      $uu2014_favicon = get_theme_mod('uu2014_favicon', false);
+      if($uu2014_display_favicon_image && $uu2014_favicon) {
         echo '<link rel="shortcut icon" href="' . get_template_directory_uri() . '/images/' . $uu2014_favicon . '">';
       } ?>
         <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -26,6 +27,7 @@
 
     <body <?php body_class(); ?>>
         <div id="page" class="hfeed site">
+            <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'uu2014' ); ?></a>
             <?php do_action('before'); ?>
             <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
             <header id="masthead" class="site-header" role="banner">
@@ -49,8 +51,7 @@
                 </div>
 
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <h1 class="menu-toggle"><?php _e('Menu', 'uu2014'); ?></h1>
-                    <div class="skip-link"><a class="screen-reader-text" href="#content"><?php _e('Skip to content', 'uu2014'); ?></a></div>
+                    <button class="menu-toggle"><?php _e('Menu', 'uu2014'); ?></button>
                     <div class="main-nav-menu"><?php wp_nav_menu(array('theme_location' => 'primary')); ?></div>
                 </nav><!-- #site-navigation -->
             </header><!-- #masthead -->
