@@ -2,12 +2,12 @@
 Theme Name: UU 2014
 Theme URI: http://www.faithandreason.dreamhosters.com
 Author: Dan Flippo
-Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress features and browser compatibility. The theme is easy to customize with support for widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
-Version: 1.2.5
+Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. The theme Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
+Version: 1.2.7
 Author URI: https://github.com/dflippo
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, left-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
+Tags: accessibility-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
 Text Domain: uu2014
 Domain Path: /languages/
 GitHub Theme URI: https://github.com/dflippo/UU2014
@@ -20,8 +20,9 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 This theme draws from the following themes released under GNU General Public License:
-- UU 2011 http://www.faithandweb.com/faith2012/, (C) 2012 Anna Belle Leiserson
-- Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+- UU 2011 http://www.faithandweb.com/faith2012/ (C)2012 Anna Belle Leiserson
+- Underscores http://underscores.me/ (C)2012-2014 Automattic, Inc.
+- Twenty Fourteen http://wordpress.org/themes/twentyfourteen (C)2014 the WordPress team
 
 UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/ 
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
@@ -33,6 +34,10 @@ UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/
 
 UU 2014 Uses Images from the UUA, http://www.uua.org/communications/art/uuachalice/index.shtml
   (C) 2014 Unitarian Universalist Association. Images used with permission.
+
+UU 2014 Uses JS from HTML5 Shiv, https://code.google.com/p/html5shiv/
+  (C) 2014 @afarkas @jdalton @jon_neal @rem
+  Released under the MIT and GPL Version 2 Licenses.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -702,10 +707,10 @@ object {
 
 
 /* ==========================================================================
-   2.0 UU2014 Theme Specific
+   20.0 UU2014 Theme Specific
    ========================================================================== */
 
-/* 2.1 UU2014 - Global
+/* 20.1 UU2014 - Global
    ========================================================================== */
 body,
 button,
@@ -779,104 +784,129 @@ table { margin-bottom: 1.0em; }
   position: relative;
   }
 
-/* 2.2 UU2014 - Menu
+/* 20.2 UU2014 - Menu
    ========================================================================== */
-.main-navigation  {
-  position: relative;
-  margin: 0;  
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 42px;
-  float: none;
-  clear: none;
-  font-size: 16px;
-  font-size: 1.6rem;
-  border-top: 1px solid #555;
-  border-left: 1px solid #555;
-  border-right: 1px solid #555;
-  box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
+div.main-nav-menu  {
+    position: relative;
+    margin: 0;  
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 42px;
+    float: none;
+    clear: none;
+    font-size: 16px;
+    font-size: 1.6rem;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
 }
 
-  .main-nav-menu {
-  width: 100%;
-  min-height: 42px;
-  display: inline-block;
-  background: #000 url(images/bkgr-menu.png) repeat-x left top;
-  background: -webkit-linear-gradient(top,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Fx 3.6-15*/
-  background: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(0,0,0,.7), rgba(0,0,0,1)); /*Standard*/
-  }
-  .main-nav-menu  div {
-    min-width: 75%;
-    float:right; }
+.main-navigation {
+    min-height: 42px;
+    display: inline-block;
+    background: #000 url(images/bkgr-menu.png) repeat-x left top;
+    background: -webkit-linear-gradient(top,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Standard*/
+}
 
-  .main-navigation ul {
+.main-navigation .nav-menu {
     display: block;
-    height: auto;
-    line-height: 40px;
-    list-style: none;
-    width: 100%; 
-    float: left;
-    }
+}
 
-  .main-navigation li {
+.main-navigation ul {
+    line-height: 40px;
+    min-width: 75%;
+    float:right; 
+}
+
+.main-navigation li {
     min-width: 120px;
-    position: relative;
     vertical-align: middle; 
     border-left: 1px solid #444;
-    border-bottom: 1px solid #444;}
+    border-bottom: 1px solid #444;
+}
 
-  .main-navigation a {
+.main-navigation a {
     text-align: center;
-    width: inherit;
-    display: block;
     padding: 0 .5em;
-    color: #eee;
-    text-decoration: none; }
+    color: #fff; 
+}
 
-  .main-navigation ul ul {
-    display: none;
-    position: absolute;
+.main-navigation ul ul {
     top: 41px;
-    left: 0;
-    float: left;
-    z-index: 999;
-    text-align: left; }
+    text-align: left; 
+}
 
-    .main-navigation ul ul ul {
-      left: 100%;
-      top: 0; }
-
-    .main-navigation ul ul a {
-      text-align: left;
-      height: auto;
-      width: 180px;
-      padding: 10px 10px 10px 20px;
-      background: #333;
-      line-height: 1em; }
-
-  .main-navigation li:hover > a, .main-navigation ul ul :hover > a {
+.main-navigation ul ul a {
+    text-align: left;
+    width: 180px;
+    padding: 10px 10px 10px 20px;
     background: #333;
-    color: #fff; }
+    line-height: 1em; 
+}
 
-  .main-navigation ul li:hover > ul { display: block; }
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+    background: #333;
+}
 
-  .main-navigation ul li.current_page_item > a,
+.main-navigation ul ul:hover > a,
+.main-navigation ul ul.focus > a {
+    background: #333;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+    left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+    left: 100%;
+}
+
+.main-navigation ul li.current_page_item > a,
 .main-navigation ul li.current-menu-ancestor > a,
 .main-navigation ul li.current-menu-item > a,
-.main-navigation ul li.current-menu-parent > a { color: #999; }
+.main-navigation ul li.current-menu-parent > a{ 
+    color: cyan;
+}
 
-* html .main-navigation ul li.current_page_item a,
-* html .main-navigation ul li.current-menu-ancestor a,
-* html .main-navigation ul li.current-menu-item a,
-* html .main-navigation ul li.current-menu-parent a,
-* html .main-navigation ul li a:hover { color: #999; }
+.site-navigation ul li > a:focus,
+.site-navigation ul li > a:hover { 
+    text-decoration: underline; 
+}
 
-/* 2.3 UU2014 - Search Box
+.secondary-navigation ul li.current_page_item > a,
+.secondary-navigation ul li.current-menu-item > a{ 
+    color: darkblue;
+}
+
+.secondary-navigation ul li.current_page_item > a:focus,
+.secondary-navigation ul li.current-menu-item > a:focus,
+.secondary-navigation ul li.current_page_item > a:hover,
+.secondary-navigation ul li.current-menu-item > a:hover { 
+    color: cyan; 
+}
+
+.secondary-navigation .sub-menu { 
+    display: none; 
+}
+
+.secondary-navigation.current-menu-ancestor,
+.secondary-navigation .current-menu-item,
+.secondary-navigation .current-menu-ancestor .sub-menu,
+.secondary-navigation .current-menu-item .sub-menu { 
+    display: inline-block; 
+}
+
+/* 20.3 UU2014 - Search Box
    ========================================================================== */
 .search-box {
   position: absolute;
@@ -910,7 +940,7 @@ table { margin-bottom: 1.0em; }
     border: 1px solid #aaa;
     color: #ccc; }
 
-/* 2.4 UU2014 - Header
+/* 20.4 UU2014 - Header
    ========================================================================== */
 .site .site-header {
   width: 100%;
@@ -925,6 +955,13 @@ table { margin-bottom: 1.0em; }
   background: -o-linear-gradient(bottom,rgba(0,0,0,.8),rgba(0,0,0,0)); /*Opera 11.1-12*/
   background: -moz-linear-gradient(bottom,rgba(0,0,0,.8),rgba(0,0,0,0)); /*Fx 3.6-15*/
   background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,0)); /*Standard*/
+  }
+
+.site .site-header .site-branding .site-title-description a{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
   }
 
 #parentdiv:after { content: " "; display: block; clear: both;}
@@ -977,8 +1014,10 @@ table { margin-bottom: 1.0em; }
       padding: 0 0 10px 10px;
       z-index: 99999; }
 
-    .site .site-header .site-branding .site-title-description  h1:hover,
-    .site .site-header .site-branding .site-title-description  h2:hover {
+    .site .site-header .site-branding .site-title-description  h1 a:focus,
+    .site .site-header .site-branding .site-title-description  h1 a:hover,
+    .site .site-header .site-branding .site-title-description  h2 a:focus,
+    .site .site-header .site-branding .site-title-description  h2 a:hover {
       background: #000; }
 
     .site .site-header .site-branding .site-title-description div:after { content: " "; display: block; clear: both;}
@@ -1003,7 +1042,7 @@ table { margin-bottom: 1.0em; }
       clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
       clip: rect(1px, 1px, 1px, 1px); }
 
-/* 2.5 UU2014 - Content Area
+/* 20.5 UU2014 - Content Area
    ========================================================================== */
 .site .site-content {
   margin-left: auto;
@@ -1075,14 +1114,15 @@ article.type-post {
 .site-main [class*="navigation"] {
   padding: 0 40px;  }
 
-/* 2.6 UU2014 - Sidebar Widgets
+/* 20.6 UU2014 - Sidebar Widgets
    ========================================================================== */
 .widget { margin: 0; }
 
 .widget-area {
   float: left;
   overflow: hidden;
-  width: 25%; }
+  width: 25%; 
+ }
 
 .widget-area h1,
 .widget-area h2,
@@ -1113,26 +1153,27 @@ article.type-post {
 
     .widget-area ul a {
     background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 7px 5px 7px 37px;
+    padding: 5px 5px 5px 37px;
     display: inline-block;
     color: #000;
     text-decoration: none; }
 
-    .widget-area a:hover,
-    .widget_nav_menu a:active {
-      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
+    .widget-area ul a:focus,
+    .widget-area ul a:hover {
+      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
       color: #fff; }
 
     .widget-area li.recentcomments {
       width: 85%;
       background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 7px 5px 7px 37px; }
+      padding: 5px 5px 5px 37px; }
 
     .widget-area li.recentcomments a {
     background-image: none;
     display: inline;
     padding: 0; }
 
+    .widget-area li.recentcomments a:focus,
     .widget-area li.recentcomments a:hover {
       background-image: none;
       display: inline;
@@ -1173,48 +1214,39 @@ article.type-post {
 	-moz-border-radius-bottomright: 5px;
 	border-bottom-right-radius: 5px; }
 
-
-.widget_nav_menu .sub-menu { display: none; }
-
-.widget_nav_menu .current-menu-ancestor,
-        .widget_nav_menu .current-menu-item,
-        .widget_nav_menu .current-menu-ancestor .sub-menu,
-        .widget_nav_menu .current-menu-item .sub-menu { display: block; }
-
 .widget_nav_menu .current-menu-item a { font-weight: bold; }
 
 .widget_nav_menu .current-menu-item .sub-menu a { font-weight: normal; }
 
-.widget_nav_menu ul.sub-menu { border-top: none; }
+.widget-area ul ul { border-top: none; }
 
-  .widget_nav_menu ul.sub-menu a,
-  .widget_nav_menu ul.sub-menu a:link,
-  .widget_nav_menu ul.sub-menu a:visited,
-  .widget-area ul ul a  {
+  .widget-area ul ul a,
+  .widget-area ul ul a:link,
+  .widget-area ul ul a:visited  {
     background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 7px 5px 7px 53px;
+    padding: 5px 5px 5px 53px;
     font-size: 14px;
     font-size: 1.4rem; }
 
-  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active {
-    background: #111 url(images/tri-white.gif) no-repeat 37px 11px; }
+  .widget-area ul ul a:focus, 
+  .widget-area ul ul a:hover {
+    background: #333 url(images/tri-white.gif) no-repeat 37px 11px; }
 
-  .widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
+  .widget-area ul ul ul { border-top: none; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:link,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:visited ,
-    .widget-area ul ul ul a  {
+    .widget-area ul ul ul a,
+    .widget-area ul ul ul a:link,
+    .widget-area ul ul ul a:visited  {
       background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 7px 5px 7px 69px;
+      padding: 5px 5px 5px 69px;
       font-size: 14px;
       font-size: 1.4rem; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
-     background: #111 url(images/tri-white.gif) no-repeat 53px 11px; }
+    .widget-area ul ul ul a:focus,
+    .widget-area ul ul ul a:hover {
+     background: #333 url(images/tri-white.gif) no-repeat 53px 11px; }
 
-/* 2.7 UU2014 - Footer
+/* 20.7 UU2014 - Footer
    ========================================================================== */
 .site-footer {
   clear: both;
@@ -1275,27 +1307,28 @@ article.type-post {
 
     .footer-widget-area ul a {
     background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 7px 5px 7px 37px;
+    padding: 5px 5px 5px 37px;
     display: inline-block;
     /*color: #000;*/
     text-decoration: none; }
 
-    .footer-widget-area a:hover,
-    .widget_nav_menu a:active {
-      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
+	.footer-widget-area ul a:focus,
+    .footer-widget-area ul a:hover {
+      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
       /*color: #fff;*/ }
 
     .footer-widget-area li.recentcomments {
       width: 85%;
       background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 7px 5px 7px 37px; }
+      padding: 5px 5px 5px 37px; }
 
     .footer-widget-area li.recentcomments a {
     background-image: none;
     display: inline;
     padding: 0; }
 
-    .footer-widget-area li.recentcomments a:hover {
+	.footer-widget-area li.recentcomments a:focus,
+	.footer-widget-area li.recentcomments a:hover {
       background-image: none;
       display: inline;
       padding: 0; }
@@ -1319,47 +1352,33 @@ article.type-post {
     font-size: 1.8rem;
     padding: 14px 10px 8px 20px; }
 
-.widget_nav_menu .sub-menu { display: none; }
-
-.widget_nav_menu .current-menu-ancestor,
-        .widget_nav_menu .current-menu-item,
-        .widget_nav_menu .current-menu-ancestor .sub-menu,
-        .widget_nav_menu .current-menu-item .sub-menu { display: block; }
-
-.widget_nav_menu .current-menu-item a { font-weight: bold; }
-
-.widget_nav_menu .current-menu-item .sub-menu a { font-weight: normal; }
-
-.widget_nav_menu ul.sub-menu { border-top: none; }
-
-  .widget_nav_menu ul.sub-menu a,
-  .widget_nav_menu ul.sub-menu a:link,
-  .widget_nav_menu ul.sub-menu a:visited,
-  .footer-widget-area ul ul a  {
+  .footer-widget-area ul ul a,
+  .footer-widget-area ul ul a:link,
+  .footer-widget-area ul ul a:visited {
     background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 7px 5px 7px 53px;
+    padding: 5px 5px 5px 53px;
     font-size: 14px;
     font-size: 1.4rem; }
 
-  .widget_nav_menu ul.sub-menu a:hover, .widget_nav_menu ul.sub-menu a:active {
-    background: #111 url(images/tri-white.gif) no-repeat 37px 11px; }
+  .footer-widget-area ul ul a:focus, 
+  .footer-widget-area ul ul a:hover {
+    background: #333 url(images/tri-white.gif) no-repeat 37px 11px; }
 
-  .widget_nav_menu ul.sub-menu ul.sub-menu { border-top: none; }
+  .footer-widget-area ul ul ul { border-top: none; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:link,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:visited ,
-    .footer-widget-area ul ul ul a  {
+    .footer-widget-area ul ul ul a,
+    .footer-widget-area ul ul ul a:link,
+    .footer-widget-area ul ul ul a:visited  {
       background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 7px 5px 7px 69px;
+      padding: 5px 5px 5px 69px;
       font-size: 14px;
       font-size: 1.4rem; }
 
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:hover,
-    .widget_nav_menu ul.sub-menu ul.sub-menu a:active {
-     background: #111 url(images/tri-white.gif) no-repeat 53px 11px; }
+    .footer-widget-area ul ul ul a:focus,
+    .footer-widget-area ul ul ul a:hover {
+     background: #333 url(images/tri-white.gif) no-repeat 53px 11px; }
 
-/* 2.7.1 UU2014 - Header Widget Area
+/* 20.7.1 UU2014 - Header Widget Area
    ========================================================================== */
 
   div.header-widget-area {
@@ -1402,13 +1421,14 @@ article.type-post {
 
     .header-widget-area ul a {
     background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 7px 5px 7px 37px;
+    padding: 5px 5px 5px 37px;
     display: inline-block;
     color: white;
     text-decoration: none; }
 
-    .header-widget-area a:hover {
-      background: #111 url(images/tri-white.gif) no-repeat 20px 15px;
+    .header-widget-area ul a:focus, 
+	.header-widget-area ul a:hover {
+      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
       color: white; }
 
     .header-widget-area a:visited {
@@ -1417,14 +1437,16 @@ article.type-post {
     .header-widget-area li.recentcomments {
       width: 85%;
       background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 7px 5px 7px 37px; }
+      padding: 5px 5px 5px 37px; }
 
     .header-widget-area li.recentcomments a {
     background-image: none;
     display: inline;
     padding: 0; }
 
-    .header-widget-area li.recentcomments a:hover {
+    .header-widget-area li.recentcomments a:active,
+	.header-widget-area li.recentcomments a:focus,
+	.header-widget-area li.recentcomments a:hover {
       background-image: none;
       display: inline;
       padding: 0; }
@@ -1449,23 +1471,23 @@ article.type-post {
 
   .header-widget-area ul ul a  {
     background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 7px 5px 7px 53px;
+    padding: 5px 5px 5px 53px;
     font-size: 14px;
     font-size: 1.4rem; }
 
     .header-widget-area ul ul ul a  {
       background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 7px 5px 7px 69px;
+      padding: 5px 5px 5px 69px;
       font-size: 14px;
       font-size: 1.4rem; }
 
-/* 2.8 UU2014 - Plugin: Contact Form 7
+/* 20.8 UU2014 - Plugin: Contact Form 7
    ========================================================================== */
 span.wpcf7-checkbox span.wpcf7-list-item { display: block; }
 
 span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
-/* 2.9 UU2014 - Plugin: Featured Articles
+/* 20.9 UU2014 - Plugin: Featured Articles
    ========================================================================== */
 .FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a { font-size: 75%; }
 
@@ -1483,7 +1505,7 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 .site .FA_overall_container_classic.light .FA_featured_articles .FA_article h2 {
   background: none; }
 
-/* 2.10 UU2014 - Specific #ID Styles
+/* 20.10 UU2014 - Specific #ID Styles
    ========================================================================== */
 #main.no-sidebar { margin: 0; }
 
@@ -1496,7 +1518,7 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
 .menu-sitemap { display: none; }
 
-/* 2.11 UU2014 - Comments
+/* 20.11 UU2014 - Comments
    ========================================================================== */
 .comments-area  {
   -moz-border-radius: 5px;
@@ -1569,7 +1591,7 @@ table { margin-bottom: 0; }
    ========================================================================== */
 
 .site .site-header .site-branding .site-title-description {
-  padding: 5px 5px 5px 5px; }
+  padding: 5px; }
 
 .site .site-header .site-branding .site-title a{
   padding: 0 0 0 40px; }
@@ -1701,7 +1723,9 @@ body ul#sharebarx {
   display: block;
   margin: 0 0 5px; }
 
-  .sharebar-button:hover { border-color: #aaa; }
+.sharebar-button:active,
+.sharebar-button:focus,
+.sharebar-button:hover { border-color: #aaa; }
 
 .credit {
   margin: 0;

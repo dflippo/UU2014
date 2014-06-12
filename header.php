@@ -19,20 +19,18 @@
       } ?>
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        <?php wp_head(); ?>
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <!--[if lt IE 9]>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
         <![endif]-->
+        <?php wp_head(); ?>
     </head>
 
     <body <?php body_class(); ?>>
         <div id="page" class="hfeed site">
             <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'uu2014' ); ?></a>
-            <?php do_action('before'); ?>
-            <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
+
             <header id="masthead" class="site-header" role="banner">
                 <div class="site-branding">
-					<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
 					<div id="header-widget-area" class="header-widget-area">
 					<?php $header_image = get_header_image();
 					if (!get_theme_mod('uu2014_display_header_widgets', 1) || !dynamic_sidebar('header-widget')) {
@@ -40,22 +38,22 @@
 							<img src="<?php header_image(); ?>" width="100%" alt="Header Image">
 					<?php } } ?>
 					</div>
-                    <div class="site-title-description" style="color:<?php get_header_textcolor() ?>;">
+                    <div class="site-title-description">
                         <img id="chalice" alt="Flaming Chalice" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png'); ?>">
-                        <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home" style="color:<?php get_header_textcolor() ?>;"><?php bloginfo('name'); ?></a></h1>
                         <?php if (get_bloginfo('description')) { ?>
-                            <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+                            <h2 class="site-description" style="color:<?php get_header_textcolor() ?>;"><?php bloginfo('description'); ?></h2>
                         <?php } // if (get_bloginfo('description'))   ?>
                     </div>
-                </a>
                 </div>
-
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <button class="menu-toggle"><?php _e('Menu', 'uu2014'); ?></button>
-                    <div class="main-nav-menu"><?php wp_nav_menu(array('theme_location' => 'primary')); ?></div>
-                </nav><!-- #site-navigation -->
+                <div class="main-nav-menu">
+                    <nav id="site-navigation" class="navigation site-navigation main-navigation" role="navigation">
+                        <button class="menu-toggle"><?php _e('Menu', 'uu2014'); ?></button>
+                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu')); ?>
+                    </nav><!-- #site-navigation -->
+                </div>
             </header><!-- #masthead -->
-
+            <div id="search-box" class="search-box"><?php echo get_search_form(); ?></div>
             <div id="content" class="site-content">
 			<?php if ( get_theme_mod('uu2014_display_floating_widgets', 1) && ( is_single() || is_page() ) ) { ?>
 			<ul id="sharebar"><?php if(dynamic_sidebar('sharebar')){ 
