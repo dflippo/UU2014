@@ -21,11 +21,13 @@
     </div><!-- .entry-summary -->
     <?php else : ?>
     <div class="entry-content">
-        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'uu2014' ) ); ?>
+		<?php the_content( sprintf( __( 'Finish Reading: <em>%s</em>', 'uu2014' ), get_the_title() ) ); ?>
         <?php
             wp_link_pages( array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'uu2014' ),
+                'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'uu2014' ) . '</span>',
                 'after'  => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
             ) );
         ?>
     </div><!-- .entry-content -->
@@ -58,6 +60,6 @@
         <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'uu2014' ), __( '1 Comment', 'uu2014' ), __( '% Comments', 'uu2014' ) ); ?></span>
         <?php endif; ?>
 
-        <?php edit_post_link( __( 'Edit', 'uu2014' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( sprintf( __( 'Edit: <em>%s</em>', 'uu2014' ), get_the_title() ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

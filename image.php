@@ -22,7 +22,7 @@ get_header();
             printf(__('Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'uu2014'), esc_attr(get_the_date('c')), esc_html(get_the_date()), esc_url(wp_get_attachment_url()), $metadata['width'], $metadata['height'], esc_url(get_permalink($post->post_parent)), esc_attr(strip_tags(get_the_title($post->post_parent))), get_the_title($post->post_parent)
             );
 
-            edit_post_link(__('Edit', 'uu2014'), '<span class="edit-link">', '</span>');
+            edit_post_link( sprintf( __( 'Edit: <em>%s</em>', 'uu2014' ), get_the_title() ), '<span class="edit-link">', '</span>' );
             ?>
           </div><!-- .entry-meta -->
 
@@ -66,7 +66,7 @@ get_header();
             _e('Both comments and trackbacks are currently closed.', 'uu2014');
           endif;
 
-          edit_post_link(__('Edit', 'uu2014'), ' <span class="edit-link">', '</span>');
+          edit_post_link( sprintf( __( 'Edit: <em>%s</em>', 'uu2014' ), get_the_title() ), '<span class="edit-link">', '</span>' );
           ?>
         </footer><!-- .entry-meta -->
       </article><!-- #post-## -->

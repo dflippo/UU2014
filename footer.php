@@ -11,11 +11,10 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-  <div id="footer-widget-area" class="footer-widget-area" role="complementary">    <?php
-    if (!dynamic_sidebar('footer-widget')) :
-      echo '<p>&nbsp;</p>';
-    endif;
-    ?></div>
+  <div id="footer-widget-area" class="footer-widget-area">
+  <?php if (!dynamic_sidebar('footer-widget')) :
+			echo '<p>&nbsp;</p>';
+		endif; ?></div>
   <div class="site-info">
     <?php do_action('uu2014_credits'); ?>
     <p>Copyright &copy; <?php echo date("Y"); ?> : 

@@ -35,8 +35,19 @@ jQuery.fn.sharebar = function(options) {
 	function sharebar_scroll() {
 		var p = jQuery(window).scrollTop();
 		var w = jQuery(window).width();
-		jQuery(sharebar).css('position',((p+10)>start) ? 'fixed' : 'absolute');
-		jQuery(sharebar).css('top',((p+10)>start) ? '10px' : '');
+		jQuery(sharebar).css('position',((p+20)>start) ? 'fixed' : 'absolute');
+		jQuery(sharebar).css('top',((p+20)>start) ? '20px' : '');
 	}
 
 };
+// UU2014 specific call to invoke the method for floating widget areas
+jQuery(document).ready(function ($) {
+    $('.sharebar').sharebar({
+        horizontal: false,
+        swidth: 70,
+        minwidth: uu2014_floating_widgets.min_width,
+        position: 'right',
+        leftOffset: 0,
+        rightOffset: 0
+    });
+});

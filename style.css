@@ -2,8 +2,8 @@
 Theme Name: UU 2014
 Theme URI: http://www.faithandreason.dreamhosters.com
 Author: Dan Flippo
-Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. The theme Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
-Version: 1.2.7
+Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
+Version: 1.3.0
 Author URI: https://github.com/dflippo
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -784,6 +784,13 @@ table { margin-bottom: 1.0em; }
   position: relative;
   }
 
+a:hover, a:focus, a:active {
+	color: #fff;
+	background: #333;
+	text-decoration: underline;
+	outline: thin dotted;
+}
+
 /* 20.2 UU2014 - Menu
    ========================================================================== */
 div.main-nav-menu  {
@@ -919,8 +926,8 @@ div.main-nav-menu  {
   background: #333;
   background: rgba(0, 0, 0, 0.4); /* fallback color */
   text-align: center;
-  border-left: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   -webkit-border-bottom-left-radius: 15px;
   -moz-border-radius-bottomleft: 15px;
   border-bottom-left-radius: 15px; }
@@ -930,15 +937,31 @@ div.main-nav-menu  {
     margin: 0 5px 0 0;
     padding: 3px;
     background: #333;
-    border: 1px solid #aaa;
+    border: 1px solid #fff;
     color: #fff; }
+
+.search-box ::-webkit-input-placeholder, /* For WebKit browsers */
+.search-box :-moz-placeholder, /* For Mozilla Firefox 4 to 18 */
+.search-box ::-moz-placeholder, /* For Mozilla Firefox 19+ */
+.search-box :-ms-input-placeholder { /* For Internet Explorer 10+ */
+    color:    #fff;
+}
 
   .search-box .search-submit {
     margin: 0;
     padding: 2px 5px;
     background: #333;
-    border: 1px solid #aaa;
-    color: #ccc; }
+    border: 1px solid #fff;
+    color: #fff; }
+
+.search-box .search-field:hover,
+.search-box .search-field:focus,
+.search-box .search-field:active,
+.search-box .search-submit:hover,
+.search-box .search-submit:focus,
+.search-box .search-submit:active {
+    background: #fff;
+    color: #000; }
 
 /* 20.4 UU2014 - Header
    ========================================================================== */
@@ -1069,20 +1092,26 @@ div.main-nav-menu  {
         padding: 7px 10px;
         border: 1px solid #cfcfcf; }
 
-      .site .site-content .content-area .site-main a.post-edit-link {
-        display: block;
-        width: 50px;
-        margin: 5px;
-        padding: 5px;
-        background: #eebc6d; /* fallback color */
-    background: rgba(238, 188, 109, 0.25); /* 75% transparent */
-        border: 1px solid #999;
-        color: #000;
-        text-align: center;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-size: 12px;
-        font-size: 1.2rem; }
+.more-link {
+	width: 100%;
+	display: block;
+}
+
+.edit-link {
+	width: 100%;
+	display: block;
+	margin: 5px;
+	padding: 5px;
+}
+
+.post-edit-link {
+	padding: 5px;
+	background: #eebc6d; /* fallback color */
+	background: rgba(238, 188, 109, 0.25); /* 75% transparent */
+	border: 1px solid #999;
+	color: #000;
+	text-decoration: none; 
+}
 
 /* Applies to single pages and posts */
 article {

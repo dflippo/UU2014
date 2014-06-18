@@ -57,6 +57,6 @@
             );
         ?>
 
-        <?php edit_post_link( __( 'Edit', 'uu2014' ), '<span class="edit-link">', '</span>' ); ?>
+        <?php edit_post_link( sprintf( __( 'Edit: <em>%s</em>', 'uu2014' ), get_the_title() ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
