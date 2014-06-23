@@ -3,7 +3,7 @@ Theme Name: UU 2014
 Theme URI: http://www.faithandreason.dreamhosters.com
 Author: Dan Flippo
 Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
-Version: 1.3.0
+Version: 1.3.1
 Author URI: https://github.com/dflippo
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -801,7 +801,6 @@ div.main-nav-menu  {
     margin-right: auto;
     width: 100%;
     max-width: 1200px;
-    min-height: 42px;
     float: none;
     clear: none;
     font-size: 16px;
@@ -809,21 +808,17 @@ div.main-nav-menu  {
     border-top: 1px solid #555;
     border-left: 1px solid #555;
     border-right: 1px solid #555;
-    box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
+
 }
 
 .main-navigation {
-    min-height: 42px;
-    display: inline-block;
+    box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8);
     background: #000 url(images/bkgr-menu.png) repeat-x left top;
     background: -webkit-linear-gradient(top,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Safari 5.1-6*/
     background: -o-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Opera 11.1-12*/
     background: -moz-linear-gradient(bottom,rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Fx 3.6-15*/
     background: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(0,0,0,.75), rgba(0,0,0,1)); /*Standard*/
-}
-
-.main-navigation .nav-menu {
-    display: block;
+    display: inline-block;
 }
 
 .main-navigation ul {
@@ -834,12 +829,15 @@ div.main-nav-menu  {
 
 .main-navigation li {
     min-width: 120px;
+    max-width: 180px;
     vertical-align: middle; 
     border-left: 1px solid #444;
     border-bottom: 1px solid #444;
 }
 
 .main-navigation a {
+    min-width: 120px;
+    max-width: 180px;
     text-align: center;
     padding: 0 .5em;
     color: #fff; 
@@ -852,7 +850,6 @@ div.main-nav-menu  {
 
 .main-navigation ul ul a {
     text-align: left;
-    width: 180px;
     padding: 10px 10px 10px 20px;
     background: #333;
     line-height: 1em; 
@@ -1185,7 +1182,9 @@ article.type-post {
     padding: 5px 5px 5px 37px;
     display: inline-block;
     color: #000;
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: 14px;
+    font-size: 1.4rem; }
 
     .widget-area ul a:focus,
     .widget-area ul a:hover {
@@ -1253,9 +1252,7 @@ article.type-post {
   .widget-area ul ul a:link,
   .widget-area ul ul a:visited  {
     background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 5px 5px 5px 53px;
-    font-size: 14px;
-    font-size: 1.4rem; }
+    padding: 5px 5px 5px 53px; }
 
   .widget-area ul ul a:focus, 
   .widget-area ul ul a:hover {
@@ -1267,9 +1264,7 @@ article.type-post {
     .widget-area ul ul ul a:link,
     .widget-area ul ul ul a:visited  {
       background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 5px 5px 5px 69px;
-      font-size: 14px;
-      font-size: 1.4rem; }
+      padding: 5px 5px 5px 69px; }
 
     .widget-area ul ul ul a:focus,
     .widget-area ul ul ul a:hover {
@@ -1585,32 +1580,36 @@ table { margin-bottom: 0; }
 
 /* 3.2 UU2014 - Mobile Devices - Menu
    ========================================================================== */
-.menu-toggle,
-  .main-navigation.toggled .nav-menu { display: none; }
+.main-navigation.toggled ul {
+    display: block;
+}
 
-  .main-navigation ul li { min-width: 85px; }
-
-    .main-navigation ul a {
+.main-navigation ul a {
     font-size: 15px;
     font-size: 1.5rem;
-    line-height: 2.0em;
-    padding: .2em; }
+    line-height: 1.5em;
+    padding: .2em; 
+}
 
-  .main-navigation ul ul { top: 2.2em; }
+.main-navigation ul ul { 
+    top: 1.7em; 
+}
 
-    .main-navigation ul ul ul li,
-    .main-navigation ul ul li {
-    width: inherit;
-    max-width: 85px; }
+.main-navigation li {
+    min-width: 0;
+    max-width: 120px;
+}
 
-    .main-navigation ul ul ul a,
-    .main-navigation ul ul a {
-      padding: .2em;
-      line-height: 2.0em; }
+.main-navigation a {
+    min-width: 0;
+    max-width: 120px;
+}
 
-    .main-navigation ul ul ul {
-      left: 100%;
-      top: 0; }
+.main-navigation ul ul ul a,
+.main-navigation ul ul a {
+    padding: .2em;
+    line-height: 1.5em; 
+}
 
 /* 3.3 UU2014 - Mobile Devices - Search Box
    ========================================================================== */
@@ -1685,8 +1684,6 @@ article { padding: 5px; }
 
 /* 3.5 UU2014 - Mobile Devices - Sidebar Widgets
    ========================================================================== */
-.widget_nav_menu { display: none; }
-
 .site .site-content .widget-area {
   clear: both;
   width: 100%; }

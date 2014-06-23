@@ -188,7 +188,9 @@ function uu2014_scripts() {
 
 	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans");
 
-	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140611');
+	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140622');
+
+	wp_enqueue_script( 'uu2014-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script('uu2014-script', get_template_directory_uri().'/js/functions.js', array('jquery'), '20140617', true);
 
@@ -223,7 +225,6 @@ add_action( 'widgets_init', 'uu2014_remove_recent_comments_style' );
 function uu2014_add_editor_styles() {
     add_editor_style('editor-style.css');
 }
-
 add_action('init', 'uu2014_add_editor_styles');
 
 /**
