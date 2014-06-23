@@ -808,7 +808,6 @@ div.main-nav-menu  {
     border-top: 1px solid #555;
     border-left: 1px solid #555;
     border-right: 1px solid #555;
-
 }
 
 .main-navigation {
@@ -822,14 +821,13 @@ div.main-nav-menu  {
 }
 
 .main-navigation ul {
-    line-height: 40px;
+    line-height: 2.0em;
     min-width: 75%;
     float:right; 
 }
 
 .main-navigation li {
     min-width: 120px;
-    max-width: 180px;
     vertical-align: middle; 
     border-left: 1px solid #444;
     border-bottom: 1px solid #444;
@@ -837,22 +835,31 @@ div.main-nav-menu  {
 
 .main-navigation a {
     min-width: 120px;
-    max-width: 180px;
     text-align: center;
     padding: 0 .5em;
     color: #fff; 
 }
 
 .main-navigation ul ul {
-    top: 41px;
+    margin-top: 1px;
+    top: 2.0em;
     text-align: left; 
 }
 
+.main-navigation ul ul li {
+    max-width: 180px;
+}
+
 .main-navigation ul ul a {
+    max-width: 180px;
     text-align: left;
-    padding: 10px 10px 10px 20px;
+    padding: 7px 7px 7px 15px;
     background: #333;
     line-height: 1em; 
+}
+
+.main-navigation ul ul ul {
+    margin: 0;
 }
 
 .main-navigation li:hover > a,
@@ -908,6 +915,14 @@ div.main-nav-menu  {
 .secondary-navigation .current-menu-ancestor .sub-menu,
 .secondary-navigation .current-menu-item .sub-menu { 
     display: inline-block; 
+}
+
+.double-tap {
+    display: none;
+}
+
+a:hover .double-tap {
+    display: block;
 }
 
 /* 20.3 UU2014 - Search Box
@@ -1584,31 +1599,35 @@ table { margin-bottom: 0; }
     display: block;
 }
 
-.main-navigation ul a {
+.main-navigation a {
     font-size: 15px;
     font-size: 1.5rem;
-    line-height: 1.5em;
-    padding: .2em; 
+    padding: 0 .2em; 
 }
 
 .main-navigation ul ul { 
-    top: 1.7em; 
 }
 
+.main-navigation ul ul li {
+    max-width: 120px;
+}
+
+.main-navigation ul ul a {
+    max-width: 120px;
+}
+
+.main-navigation ul ul li,
 .main-navigation li {
     min-width: 0;
-    max-width: 120px;
 }
 
+.main-navigation ul ul a,
 .main-navigation a {
     min-width: 0;
-    max-width: 120px;
 }
 
-.main-navigation ul ul ul a,
 .main-navigation ul ul a {
-    padding: .2em;
-    line-height: 1.5em; 
+    padding: 5px 5px 5px 10px;
 }
 
 /* 3.3 UU2014 - Mobile Devices - Search Box

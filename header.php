@@ -49,7 +49,7 @@
                 <div class="main-nav-menu">
                     <nav id="site-navigation" class="navigation site-navigation main-navigation" role="navigation">
                         <button class="menu-toggle"><?php _e('Primary Menu', 'uu2014'); ?></button>
-                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu')); ?>
+                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu', 'link_after' => '<span class="double-tap"></span>')); ?>
                     </nav><!-- #site-navigation -->
                 </div>
             </header><!-- #masthead -->
