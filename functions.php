@@ -188,7 +188,7 @@ function uu2014_scripts() {
 
 	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans");
 
-	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140622');
+	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140707');
 
 	wp_enqueue_script( 'uu2014-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140622', true );
 
