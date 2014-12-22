@@ -177,6 +177,24 @@ function uu2014_widgets_init() {
       'before_title'  => '<h3 class="floating-widget-title">',
       'after_title'   => '</h3>',
     ));
+    register_sidebar(array(
+      'name'          => __('Content Header Widget Area', 'uu2014'),
+      'id'            => 'content-header-widget',
+      'description'   => __('The theme can display widgets just before the main content of your page.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to the top of your pages.', 'uu2014'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3 class="content-header-widget-title">',
+      'after_title'   => '</h3>',
+    ));
+    register_sidebar(array(
+      'name'          => __('Content Footer Widget Area', 'uu2014'),
+      'id'            => 'content-footer-widget',
+      'description'   => __('The theme can display widgets just after the main content of your page.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to the bottom of your pages.', 'uu2014'),
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3 class="content-footer-widget-title">',
+      'after_title'   => '</h3>',
+    ));
 }
 
 add_action('widgets_init', 'uu2014_widgets_init');
@@ -188,7 +206,7 @@ function uu2014_scripts() {
 
 	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans");
 
-	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20140707');
+	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20141221');
 
 	wp_enqueue_script( 'uu2014-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140622', true );
 
@@ -253,6 +271,15 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Add theme CSS classes for Page Builder plugin by SiteOrigin
+ */
+function uu2014_panels_row_styles($styles) {
+	$styles['cell-borders'] = __('Cell Borders', 'uu2014');
+	return $styles;
+}
+add_filter('siteorigin_panels_row_styles', 'uu2014_panels_row_styles');
+
+/**
  * Load TGM_Plugin_Activation class.
  */
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
@@ -270,6 +297,11 @@ function uu2014_register_required_plugins() {
       array(
         'name'     => 'Featured articles Lite',
         'slug'     => 'featured-articles-lite',
+        'required' => false,
+      ),
+      array(
+        'name'     => 'Page Builder by SiteOrigin',
+        'slug'     => 'siteorigin-panels',
         'required' => false,
       ),
     );

@@ -3,7 +3,7 @@ Theme Name: UU 2014
 Theme URI: http://www.uuwp.org
 Author: Dan Flippo
 Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
-Version: 1.3.2
+Version: 1.3.3
 Author URI: https://github.com/dflippo
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1162,7 +1162,7 @@ article.type-post {
    ========================================================================== */
 .widget { margin: 0; }
 
-.widget-area {
+#secondary.widget-area {
   float: left;
   overflow: hidden;
   width: 25%; 
@@ -1531,22 +1531,95 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
 /* 20.9 UU2014 - Plugin: Featured Articles
    ========================================================================== */
-.FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a { font-size: 75%; }
+.FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a,
+.site .fa_slider_simple.default .fa_slide_content h2 a { 
+    font-size: 75%; 
+}
 
-.site .FA_overall_container_classic.light{
+.site .FA_overall_container_classic.light,
+.site .fa_slider_simple.default {
+  border:1px solid #b5b5b5;
   background: none;
   background-image: url(data:image/png;base64,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);
-  margin-left: 5px;
-  -webkit-border-bottom-left-radius: 15px;
-  -moz-border-radius-bottomleft: 15px;
-  border-bottom-left-radius: 15px; }
-
+}
 
 .site .FA_overall_container_classic.light ul.FA_navigation,
 .site .FA_overall_container_classic.light .FA_featured_articles .FA_article .image_container,
 .site .FA_overall_container_classic.light .FA_featured_articles .FA_article h2 {
   background: none; }
 
+.site .fa_slider_simple img.fa_slide_image{
+	width: auto !important;
+    height: auto !important;
+    margin: auto !important;
+}
+
+.site .fa_slider_simple .fa_slide_content{
+    width: 65%;
+    height: 85%;
+	overflow:hidden;
+}
+
+.site .fa_slider_simple .fa_image{
+    top:50%;
+    -moz-transform		: translateY(-50%);
+    -webkit-transform	: translateY(-50%);
+    -o-transform		: translateY(-50%);
+    transform			: translateY(-50%);	
+    width: 20%;	
+    height: 85%;
+	overflow:hidden;
+}
+
+img#wpstats {
+	display: none;
+}
+
+.panel-row-style-cell-borders .widget_origin_list {
+	margin-left: 5px;
+	margin-right: 5px;
+	zoom: 1;
+	padding: 2em;
+	position: relative;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	background: #FCFCFC;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	border: 1px solid #D0D0D0;
+}
+
+.widget-area .fa_slideshow ul {
+	list-style: inherit;
+	width: inherit;
+}
+
+.widget-area .fa_slideshow li {
+	width: inherit;
+	border-top: inherit;
+}
+
+.widget-area .fa_slideshow ul a {
+	background: inherit;
+	padding: inherit;
+	display: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	font-size: inherit;
+}  
+.widget-area .fa_slideshow ul {
+	list-style: inherit;
+}
+
+.widget-area ul a:focus,
+.widget-area ul a:hover {
+	background: inherit;
+	color: inherit; 
+}
+
+ 
 /* 20.10 UU2014 - Specific #ID Styles
    ========================================================================== */
 #main.no-sidebar { margin: 0; }
@@ -1639,18 +1712,16 @@ table { margin-bottom: 0; }
 
 /* 3.2 UU2014 - Mobile Devices - Header
    ========================================================================== */
-.site .site-header .site-branding .site-title-description {
-    padding: 5px;
-}
-
 .site .site-header .site-branding .site-title {
     padding: 0 0 0 40px;
     line-height: 1.0; 
 }
-
 .site .site-header .site-branding .site-description {
     padding: 0 0 0 40px;
     line-height: 1.0; 
+}
+.site .site-header .site-branding .site-title-description {
+    padding: 5px;
 }
 
 /* 3.4 UU2014 - Mobile Devices - Content Area
