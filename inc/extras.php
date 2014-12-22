@@ -160,3 +160,11 @@ function uu2014_the_attached_image() {
 	);
 }
 endif;
+
+/* Add shiv in case we are less than WP 4.1 for title tags */
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+function uu2014_render_title() { ?>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php }
+add_action( 'wp_head', 'uu2014_render_title' );
+endif;

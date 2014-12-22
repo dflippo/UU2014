@@ -11,7 +11,6 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php wp_title('|', true, 'right'); ?></title>
 <?php $uu2014_display_favicon_image = get_theme_mod('uu2014_display_favicon_image', false);
       $uu2014_favicon = get_theme_mod('uu2014_favicon', false);
       if($uu2014_display_favicon_image && $uu2014_favicon) {

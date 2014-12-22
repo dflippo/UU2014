@@ -41,7 +41,8 @@ if (!function_exists('uu2014_setup')) :
 
         /**
          * Enable support for Post Thumbnails on posts and pages
-         *
+         * The theme does not call the_post_thumbnail() to display thumbnails but
+         * they are used by many plugins including Facebook.
          * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
          */
         add_theme_support('post-thumbnails');
@@ -53,6 +54,11 @@ if (!function_exists('uu2014_setup')) :
 			'primary' => __('Primary Menu', 'uu2014'),
 			'secondary' => __('Secondary menu in left sidebar', 'uu2014'),
         ));
+        
+        /**
+          * Confirm to WordPress 4.1+ that we are not defining our own titles
+          */
+        add_theme_support('title-tag');
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
