@@ -8,6 +8,7 @@
  * @package UU2014
  */
 
+if ( ! function_exists( 'uu2014_page_menu_args' ) ) :
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -19,7 +20,9 @@ function uu2014_page_menu_args( $args ) {
     return $args;
 }
 add_filter( 'wp_page_menu_args', 'uu2014_page_menu_args' );
+endif;
 
+if ( ! function_exists( 'uu2014_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -35,7 +38,9 @@ function uu2014_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'uu2014_body_classes' );
+endif;
 
+if ( ! function_exists( 'uu2014_wp_title' ) ) :
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
@@ -67,7 +72,9 @@ function uu2014_wp_title( $title, $sep ) {
     return $title;
 }
 add_filter( 'wp_title', 'uu2014_wp_title', 10, 2 );
+endif;
 
+if ( ! function_exists( 'uu2014_setup_author' ) ) :
 /**
  * Sets the authordata global when viewing an author archive.
  *
@@ -88,3 +95,68 @@ function uu2014_setup_author() {
     }
 }
 add_action( 'wp', 'uu2014_setup_author' );
+endif;
+
+if ( ! function_exists( 'uu2014_the_attached_image' ) ) :
+/**
+ * Print the attached image with a link to the next attached image.
+ *
+ */
+function uu2014_the_attached_image() {
+	$post                = get_post();
+	/**
+	 * Filter the default attachment size.
+	 *
+	 * @param array $dimensions {
+	 *     An array of height and width dimensions.
+	 *
+	 *     @type int $height Height of the image in pixels. Default 810.
+	 *     @type int $width  Width of the image in pixels. Default 810.
+	 * }
+	 */
+	$attachment_size     = apply_filters( 'uu2014_attachment_size', array( 810, 810 ) );
+	$next_attachment_url = wp_get_attachment_url();
+
+	/*
+	 * Grab the IDs of all the image attachments in a gallery so we can get the URL
+	 * of the next adjacent image in a gallery, or the first image (if we're
+	 * looking at the last image in a gallery), or, in a gallery of one, just the
+	 * link to that image file.
+	 */
+	$attachment_ids = get_posts( array(
+		'post_parent'    => $post->post_parent,
+		'fields'         => 'ids',
+		'numberposts'    => -1,
+		'post_status'    => 'inherit',
+		'post_type'      => 'attachment',
+		'post_mime_type' => 'image',
+		'order'          => 'ASC',
+		'orderby'        => 'menu_order ID',
+	) );
+
+	// If there is more than 1 attachment in a gallery...
+	if ( count( $attachment_ids ) > 1 ) {
+		foreach ( $attachment_ids as $attachment_id ) {
+			if ( $attachment_id == $post->ID ) {
+				$next_id = current( $attachment_ids );
+				break;
+			}
+		}
+
+		// get the URL of the next image attachment...
+		if ( $next_id ) {
+			$next_attachment_url = get_attachment_link( $next_id );
+		}
+
+		// or get the URL of the first image attachment.
+		else {
+			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
+		}
+	}
+
+	printf( '<a href="%1$s" rel="attachment">%2$s</a>',
+		esc_url( $next_attachment_url ),
+		wp_get_attachment_image( $post->ID, $attachment_size )
+	);
+}
+endif;
