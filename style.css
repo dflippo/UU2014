@@ -1554,7 +1554,9 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
 
 .site .fa_slider_simple img.fa_slide_image{
 	width: auto !important;
+    max-width: 100% !important;
     height: auto !important;
+    max-height: 100% !important;
     margin: auto !important;
 }
 
