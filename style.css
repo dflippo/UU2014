@@ -1533,7 +1533,11 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
    ========================================================================== */
 .FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a,
 .site .fa_slider_simple.default .fa_slide_content h2 a { 
-    font-size: 75%; 
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.0;
+    font-weight: normal;
+    color: black;
 }
 
 .site .FA_overall_container_classic.light,
