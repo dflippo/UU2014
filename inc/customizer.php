@@ -26,42 +26,66 @@ function uu2014_customize_register($wp_customize) {
         'priority' => 10010,
         'description' => __('You can customize the maximum widths for different sections of the theme below', 'uu2014')
     ));
-    $wp_customize->add_setting('uu2014_page_width', array('default' => '1200px'));
+    $wp_customize->add_setting('uu2014_page_width', array(
+        'default' => '1200px', 
+        'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control('uu2014_page_width_textfield', array(
         'label' => __('Maximum Page Width', 'uu2014'),
         'section' => 'uu2014_width_section',
         'settings' => 'uu2014_page_width'
             )
     );
-    $wp_customize->add_setting('uu2014_header_width', array('default' => '1200px'));
+    $wp_customize->add_setting('uu2014_header_width', array(
+        'default' => '1200px', 
+        'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control('uu2014_header_width_textfield', array(
         'label' => __('Maximum Header Width', 'uu2014'),
         'section' => 'uu2014_width_section',
         'settings' => 'uu2014_header_width'
             )
     );
-    $wp_customize->add_setting('uu2014_menu_width', array('default' => '1200px'));
+    $wp_customize->add_setting('uu2014_menu_width', array(
+        'default' => '1200px', 
+        'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control('uu2014_menu_width_textfield', array(
         'label' => __('Maximum Menu Width', 'uu2014'),
         'section' => 'uu2014_width_section',
         'settings' => 'uu2014_menu_width'
             )
     );
-    $wp_customize->add_setting('uu2014_footer_widget_width', array('default' => '1200px'));
+    $wp_customize->add_setting('uu2014_footer_widget_width', array(
+        'default' => '1200px', 
+        'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control('uu2014_footer_widget_width_textfield', array(
         'label' => __('Maximum Footer Widget Area Width', 'uu2014'),
         'section' => 'uu2014_width_section',
         'settings' => 'uu2014_footer_widget_width'
             )
     );
-    $wp_customize->add_setting('uu2014_floating_widgets_min_width', array('default' => '1300'));
+    $wp_customize->add_setting('uu2014_floating_widgets_min_width', array(
+        'default' => '1300', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_floating_min_width_textfield', array(
         'label' => __('Minimum width in pixels required to show floating widget area?', 'uu2014'),
         'section' => 'uu2014_width_section',
         'settings' => 'uu2014_floating_widgets_min_width'
             )
     );
-    $wp_customize->add_setting('uu2014_content_width', array('default' => '720'));
+    $wp_customize->add_setting('uu2014_content_width', array(
+        'default' => '720', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_content_width_textfield', array(
         'label' => __('Maximum Content Width in pixels? The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.', 'uu2014'),
         'section' => 'uu2014_width_section',
@@ -75,7 +99,11 @@ function uu2014_customize_register($wp_customize) {
         'priority' => 10020,
         'description' => __('This theme has a number of features that you can choose to display or hide', 'uu2014')
     ));
-    $wp_customize->add_setting('uu2014_display_title_image', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_title_image', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_title_image_dropdown', array(
         'label' => __('Display an image near the title?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -87,7 +115,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_footer_image', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_footer_image', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_footer_image_dropdown', array(
         'label' => __('Display an image in the footer?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -99,7 +131,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_favicon_image', array('default' => '0'));
+    $wp_customize->add_setting('uu2014_display_favicon_image', array(
+        'default' => '0', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_favicon_image_dropdown', array(
         'label' => __('Display theme image for the website icon(favicon)?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -111,7 +147,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_sidebar_widgets', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_sidebar_widgets', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_sidebar_dropdown', array(
         'label' => __('Display primary sidebar widget area?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -123,7 +163,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_header_widgets', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_header_widgets', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_header_dropdown', array(
         'label' => __('Display header widget area?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -135,7 +179,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_footer_widgets', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_footer_widgets', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_footer_dropdown', array(
         'label' => __('Display footer widget area?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -147,7 +195,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_floating_widgets', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_floating_widgets', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_floating_dropdown', array(
         'label' => __('Display floating widget area?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -159,7 +211,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_comments_pages', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_comments_pages', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_comments_pages_dropdown', array(
         'label' => __('Display comments on pages?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -171,7 +227,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_comments_posts', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_comments_posts', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_comments_posts_dropdown', array(
         'label' => __('Display comments on posts?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -183,7 +243,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_comments_images', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_comments_images', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_comments_images_dropdown', array(
         'label' => __('Display comments on image pages?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -195,7 +259,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_display_bylines', array('default' => '1'));
+    $wp_customize->add_setting('uu2014_display_bylines', array(
+        'default' => '1', 
+        'sanitize_callback' => 'is_int'
+        )
+    );
     $wp_customize->add_control('uu2014_display_bylines_dropdown', array(
         'label' => __('Display bylines on posts?', 'uu2014'),
         'section' => 'uu2014_display_features_section',
@@ -214,7 +282,11 @@ function uu2014_customize_register($wp_customize) {
         'priority' => 100030,
         'description' => __('You can choose what style of UU image to display in the theme.', 'uu2014')
     ));
-    $wp_customize->add_setting('uu2014_title_image', array('default' => 'chalice.png'));
+    $wp_customize->add_setting('uu2014_title_image', array(
+        'default' => 'chalice.png', 
+        'sanitize_callback' => 'sanitize_file_name'
+        )
+    );
     $wp_customize->add_control('uu2014_title_image_dropdown', array(
         'label' => __('Which image should be displayed near the title?', 'uu2014'),
         'section' => 'uu2014_choose_images_section',
@@ -229,7 +301,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_footer_image', array('default' => 'chalice-watermark-dark.gif'));
+    $wp_customize->add_setting('uu2014_footer_image', array(
+        'default' => 'chalice-watermark-dark.gif', 
+        'sanitize_callback' => 'sanitize_file_name'
+        )
+    );
     $wp_customize->add_control('uu2014_footer_image_dropdown', array(
         'label' => __('Which image should be displayed in the footer?', 'uu2014'),
         'section' => 'uu2014_choose_images_section',
@@ -241,7 +317,11 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
-    $wp_customize->add_setting('uu2014_favicon', array('default' => 'favicon.ico'));
+    $wp_customize->add_setting('uu2014_favicon', array(
+        'default' => 'favicon.ico', 
+        'sanitize_callback' => 'sanitize_file_name'
+        )
+    );
     $wp_customize->add_control('uu2014_favicon_dropdown', array(
         'label' => __('Which image should be used for the website icon(favicon)?', 'uu2014'),
         'section' => 'uu2014_choose_images_section',
