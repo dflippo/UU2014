@@ -60,6 +60,15 @@ This theme supports updates from WordPress.org.  Please update your copy of the 
 Changelog
 ---------
 
+### v1.3.3
+* Added two additional widget areas. The new areas are above and below the primary content area on pages and single posts. These areas are ideal for slideshow widgets (both Cyclone Slider and Featured Articles Lite work well) or social media sharing buttons. These areas address issues that slider plugins can have when they try to automatically inject themselves in posts/pages.
+* Added tight integration for the Page Builder plugin by SiteOrigin. This plugin is now automatically recommended by the theme but is not required and you can disable the prompt to install it. This plugin allows users to create advanced responsive, multi-column layouts very easily. You can see the plugin in use on the homepage of uuwp.org. A row-style has been added that surrounds widgets in a border. Users who do not use a primary left sidebar on pages should especially find this plugin helpful for laying out their full-width pages. This plugin can cause issues with other plugins that attempt to hook into the main loop and that is one reason I added the new content header and footer widget areas.
+* Fixed CSS for the Featured Articles Lite plugin when used with this theme. The theme has specific CSS rules to optimize both the 2.4.x and new 3.x versions of Featured Articles Lite. Be aware that the new version of the plugin has fewer FA themes. For version 3.x only the new "Simple" theme is optimized but it looks modern and polished so that isn't a big problem. New instructions with recommended settings for the plugin will be posted to uuwp.org.
+* Further optimized images with the EWWW plugin to reduce size
+* Fixed a missing function for posts with the image post-type
+* Removed Meteor Slides customization since it has not been needed since implementing a header widget area
+* Updated TGM Plugin Activation library to avoid theme check errors
+
 ### v1.3.2
 * Tweaked the padding around the title for mobile devices so that longer titles fix on iPhone
 * Fixed the double-tap support for mobile devices so that only menus with a sub-menu require a double-tap
