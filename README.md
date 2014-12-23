@@ -60,6 +60,9 @@ This theme supports updates from WordPress.org.  Please update your copy of the 
 Changelog
 ---------
 
+### v1.3.4
+* Removed "Flaming Chalice" from ALT attribute for cosmetic image in header.  Cosmetic images should not have ALT tags for accessibility and translation reasons.
+
 ### v1.3.3
 * Added two additional widget areas. The new areas are above and below the primary content area on pages and single posts. These areas are ideal for slideshow widgets (both Cyclone Slider and Featured Articles Lite work well) or social media sharing buttons. These areas address issues that slider plugins can have when they try to automatically inject themselves in posts/pages.
 * Added tight integration for the Page Builder plugin by SiteOrigin. This plugin is now automatically recommended by the theme but is not required and you can disable the prompt to install it. This plugin allows users to create advanced responsive, multi-column layouts very easily. You can see the plugin in use on the homepage of uuwp.org. A row-style has been added that surrounds widgets in a border. Users who do not use a primary left sidebar on pages should especially find this plugin helpful for laying out their full-width pages. This plugin can cause issues with other plugins that attempt to hook into the main loop and that is one reason I added the new content header and footer widget areas.

@@ -3,8 +3,8 @@ Theme Name: UU 2014
 Theme URI: http://www.uuwp.org
 Author: Dan Flippo
 Author URI: https://github.com/dflippo
-Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 4 widget areas in two sidebars, the header, and the footer. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
-Version: 1.3.3
+Description: UU2014 is a Responsive WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 6 widget areas in two sidebars, the header, the footer, and the header/footer of the primary content area on pages and single posts. It also allows you to easily disable features including the UU title image, UU footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. The theme also features optional integration with the CodeFlavors Featured Articles Lite plugin for featured post sliders and the SiteOrigin Page Builder plugin for responsive, multi-column layouts. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
+Version: 1.3.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
@@ -33,7 +33,8 @@ UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/
   Released under the MIT, BSD, and GPL Licenses.
 
 UU 2014 Uses Images from the UUA, http://www.uua.org/communications/art/uuachalice/index.shtml
-  (C) 2014 Unitarian Universalist Association. Images used with permission.
+  (C) 2014 Unitarian Universalist Association. Images licensed under GNU General Public 
+  License (GPL), v3 and used with permission
 
 UU 2014 Uses JS from HTML5 Shiv, https://code.google.com/p/html5shiv/
   (C) 2014 @afarkas @jdalton @jon_neal @rem
