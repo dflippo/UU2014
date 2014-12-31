@@ -4,8 +4,8 @@
  *
  * @package UU2014
  */
-
-get_header(); ?>
+get_header();
+?>
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -13,7 +13,7 @@ get_header(); ?>
 
         <?php while (have_posts()) : the_post(); ?>
 
-            <?php get_template_part('content', 'single'); ?>
+            <?php get_template_part( 'content', get_post_format() ); ?>
 
             <?php uu2014_post_nav(); ?>
 
