@@ -8,7 +8,6 @@
  * @package UU2014
  */
 
-if ( ! function_exists( 'uu2014_page_menu_args' ) ) :
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -20,9 +19,7 @@ function uu2014_page_menu_args( $args ) {
     return $args;
 }
 add_filter( 'wp_page_menu_args', 'uu2014_page_menu_args' );
-endif;
 
-if ( ! function_exists( 'uu2014_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -38,43 +35,54 @@ function uu2014_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'uu2014_body_classes' );
+
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	/**
+	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 *
+	 * @param string $title Default title text for current view.
+	 * @param string $sep Optional separator.
+	 * @return string The filtered title.
+	 */
+	function uu2014_wp_title( $title, $sep ) {
+	    if ( is_feed() ) {
+	        return $title;
+	    }
+	
+	    global $page, $paged;
+	
+	    // Add the blog name
+	    $title .= get_bloginfo( 'name', 'display' );
+	
+	    // Add the blog description for the home/front page.
+	    $site_description = get_bloginfo( 'description', 'display' );
+	    if ( $site_description && ( is_home() || is_front_page() ) ) {
+	        $title .= " $sep $site_description";
+	    }
+	
+	    // Add a page number if necessary:
+	    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+	        $title .= " $sep " . sprintf( __( 'Page %s', 'uu2014' ), max( $paged, $page ) );
+	    }
+	
+	    return $title;
+	}
+	add_filter( 'wp_title', 'uu2014_wp_title', 10, 2 );
+
+	/**
+	 * Title shim for sites older than WordPress 4.1.
+	 *
+	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 * @todo Remove this function when WordPress 4.3 is released.
+	 */
+	function uu2014_render_title() { 
+		?>
+	    <title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php 
+	}
+	add_action( 'wp_head', 'uu2014_render_title' );
 endif;
 
-if ( ! function_exists( 'uu2014_wp_title' ) ) :
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function uu2014_wp_title( $title, $sep ) {
-    if ( is_feed() ) {
-        return $title;
-    }
-
-    global $page, $paged;
-
-    // Add the blog name
-    $title .= get_bloginfo( 'name', 'display' );
-
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) ) {
-        $title .= " $sep $site_description";
-    }
-
-    // Add a page number if necessary:
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-        $title .= " $sep " . sprintf( __( 'Page %s', 'uu2014' ), max( $paged, $page ) );
-    }
-
-    return $title;
-}
-add_filter( 'wp_title', 'uu2014_wp_title', 10, 2 );
-endif;
-
-if ( ! function_exists( 'uu2014_setup_author' ) ) :
 /**
  * Sets the authordata global when viewing an author archive.
  *
@@ -95,9 +103,7 @@ function uu2014_setup_author() {
     }
 }
 add_action( 'wp', 'uu2014_setup_author' );
-endif;
 
-if ( ! function_exists( 'uu2014_the_attached_image' ) ) :
 /**
  * Print the attached image with a link to the next attached image.
  *
@@ -159,12 +165,3 @@ function uu2014_the_attached_image() {
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
 }
-endif;
-
-/* Add shiv in case we are less than WP 4.1 for title tags */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-function uu2014_render_title() { ?>
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php }
-add_action( 'wp_head', 'uu2014_render_title' );
-endif;

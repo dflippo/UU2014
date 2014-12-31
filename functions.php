@@ -39,6 +39,14 @@ if (!function_exists('uu2014_setup')) :
          */
         add_theme_support('automatic-feed-links');
 
+		/**
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
+
         /**
          * Enable support for Post Thumbnails on posts and pages
          * The theme does not call the_post_thumbnail() to display thumbnails but
@@ -48,33 +56,28 @@ if (!function_exists('uu2014_setup')) :
         add_theme_support('post-thumbnails');
 
         /**
-         * This theme uses wp_nav_menu() in one location.
+         * This theme uses wp_nav_menu() in two locations.
          */
         register_nav_menus(array(
 			'primary' => __('Primary Menu', 'uu2014'),
 			'secondary' => __('Secondary menu in left sidebar', 'uu2014'),
         ));
         
-        /**
-          * Confirm to WordPress 4.1+ that we are not defining our own titles
-          */
-        add_theme_support('title-tag');
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support( 'html5', array(
+			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+        ) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link'
-	) );
+        /*
+         * Enable support for Post Formats.
+         * See http://codex.wordpress.org/Post_Formats
+         */
+        add_theme_support( 'post-formats', array(
+            'aside', 'image', 'video', 'quote', 'link',
+        ) );
 
         // Setup the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('uu2014_custom_background_args', array(
@@ -210,9 +213,9 @@ add_action('widgets_init', 'uu2014_widgets_init');
  */
 function uu2014_scripts() {
 
-	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans");
+	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans", array(), null);
 
-	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20141223');
+	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array(), '20141228');
 
 	wp_enqueue_script( 'uu2014-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140622', true );
 
@@ -226,7 +229,10 @@ function uu2014_scripts() {
 		wp_enqueue_script('uu2014-keyboard-image-navigation', get_template_directory_uri().'/js/keyboard-image-navigation.js', array('jquery'), '20120202');
 	}
 
-	// If we are using the floating widgets area, we need to set the minimum width for it to display
+	/** If we are using the floating widgets area, we need to set the minimum width for it to display
+     * We are only using JavaScript from the Sharebar plugin to provide a floating widget area and
+     * users can use widgets provided by WordPress or a plugin in this area.
+     */
 	if (get_theme_mod('uu2014_display_floating_widgets', 1) && is_active_sidebar('sharebar') && (is_single() || is_page())) {
 		$uu2014_floating_widgets_param = array('min_width' => get_theme_mod('uu2014_floating_widgets_min_width', 1300));
 		wp_enqueue_script('uu2014-sharebar-script', get_template_directory_uri().'/js/sharebar.js', array('jquery'), '20140617', true);
@@ -247,9 +253,9 @@ function uu2014_remove_recent_comments_style() {
 add_action( 'widgets_init', 'uu2014_remove_recent_comments_style' );
 
 function uu2014_add_editor_styles() {
-    add_editor_style('editor-style.css');
+	add_editor_style( array( get_stylesheet_uri(), '//fonts.googleapis.com/css?family=Open+Sans', 'editor-style.css' ) );
 }
-add_action('init', 'uu2014_add_editor_styles');
+add_action('after_setup_theme', 'uu2014_add_editor_styles');
 
 /**
  * Implement the Custom Header feature.
@@ -278,6 +284,8 @@ require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Add theme CSS classes for Page Builder plugin by SiteOrigin
+ * The siteorigin_panels_row_styles filter is not prefixed with "uu2014"
+ * because it is part of the plugin, not the theme.
  */
 function uu2014_panels_row_styles($styles) {
 	$styles['cell-borders'] = __('Cell Borders', 'uu2014');
@@ -303,6 +311,11 @@ function uu2014_register_required_plugins() {
       array(
         'name'     => 'Featured articles Lite',
         'slug'     => 'featured-articles-lite',
+        'required' => false,
+      ),
+      array(
+        'name'     => 'Typecase Web Fonts',
+        'slug'     => 'typecase',
         'required' => false,
       ),
       array(

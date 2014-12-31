@@ -92,6 +92,129 @@ function uu2014_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'uu2014_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function uu2014_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', 'uu2014' ) );
+		if ( $categories_list && uu2014_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'uu2014' ) . '</span> ', $categories_list );
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', __( ', ', 'uu2014' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'uu2014' ) . '</span> ', $tags_list );
+		}
+	}
+
+	if (get_theme_mod('uu2014_display_comments_posts', 1) && ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', 'uu2014' ), __( '1 Comment', 'uu2014' ), __( '% Comments', 'uu2014' ) );
+		echo '</span> ';
+	}
+	edit_post_link( sprintf( __( 'Edit: <em>%s</em>', 'uu2014' ), get_the_title() ), '<span class="edit-link">', '</span>' );
+}
+endif;
+
+if ( ! function_exists( 'uu2014_the_archive_title' ) ) :
+/**
+ * Shim for `the_archive_title()`.
+ *
+ * Display the archive title based on the queried object.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the title. Default empty.
+ * @param string $after  Optional. Content to append to the title. Default empty.
+ */
+function uu2014_the_archive_title( $before = '', $after = '' ) {
+	if ( is_category() ) {
+		$title = sprintf( __( 'Category: %s', 'uu2014' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		$title = sprintf( __( 'Tag: %s', 'uu2014' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		$title = sprintf( __( 'Author: %s', 'uu2014' ), '<span class="vcard">' . get_the_author() . '</span>' );
+	} elseif ( is_year() ) {
+		$title = sprintf( __( 'Year: %s', 'uu2014' ), get_the_date( _x( 'Y', 'yearly archives date format', 'uu2014' ) ) );
+	} elseif ( is_month() ) {
+		$title = sprintf( __( 'Month: %s', 'uu2014' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'uu2014' ) ) );
+	} elseif ( is_day() ) {
+		$title = sprintf( __( 'Day: %s', 'uu2014' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'uu2014' ) ) );
+	} elseif ( is_tax( 'post_format' ) ) {
+		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+			$title = _x( 'Asides', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+			$title = _x( 'Galleries', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+			$title = _x( 'Images', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+			$title = _x( 'Videos', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+			$title = _x( 'Quotes', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+			$title = _x( 'Links', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+			$title = _x( 'Statuses', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+			$title = _x( 'Audio', 'post format archive title', 'uu2014' );
+		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+			$title = _x( 'Chats', 'post format archive title', 'uu2014' );
+		}
+	} elseif ( is_post_type_archive() ) {
+		$title = sprintf( __( 'Archives: %s', 'uu2014' ), post_type_archive_title( '', false ) );
+	} elseif ( is_tax() ) {
+		$tax = get_taxonomy( get_queried_object()->taxonomy );
+		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+		$title = sprintf( __( '%1$s: %2$s', 'uu2014' ), $tax->labels->singular_name, single_term_title( '', false ) );
+	} else {
+		$title = __( 'Archives', 'uu2014' );
+	}
+
+	/**
+	 * Filter the archive title.
+	 *
+	 * @param string $title Archive title to be displayed.
+	 */
+	$title = apply_filters( 'get_the_archive_title', $title );
+
+	if ( ! empty( $title ) ) {
+		echo $before . $title . $after;
+	}
+}
+endif;
+
+if ( ! function_exists( 'uu2014_the_archive_description' ) ) :
+/**
+ * Shim for `the_archive_description()`.
+ *
+ * Display category, tag, or term description.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the description. Default empty.
+ * @param string $after  Optional. Content to append to the description. Default empty.
+ */
+function uu2014_the_archive_description( $before = '', $after = '' ) {
+	$description = apply_filters( 'get_the_archive_description', term_description() );
+
+	if ( ! empty( $description ) ) {
+		/**
+		 * Filter the archive description.
+		 *
+		 * @see term_description()
+		 *
+		 * @param string $description Archive description to be displayed.
+		 */
+		echo $before . $description . $after;
+	}
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -127,6 +250,9 @@ function uu2014_categorized_blog() {
  * Flush out the transients used in uu2014_categorized_blog.
  */
 function uu2014_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
     // Like, beat it. Dig?
     delete_transient( 'uu2014_categories' );
 }

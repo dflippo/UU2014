@@ -1,14 +1,17 @@
-@import url( '//fonts.googleapis.com/css?family=Open+Sans' );
-@import url( 'style.css' );
-
 /* Add overwrites as needed so that the content of the editor field is attractive and not broken */
-body {
-    padding: 0;
-    margin: 0;
-    background-color: rgb(255, 255, 255); 
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    color: #000; }
-
-table td {
-    padding: 7px 10px;
-    border: 1px solid #cfcfcf; }
+html {
+	background-color: inherit!important;;
+}
+body.wp-editor {
+	font-family: "Open Sans";
+	color: #000;
+	background-color: inherit!important;
+}
+/* Default Font Sizes */
+body, button, input, select, textarea { font-size: 15px; font-size: 1.5rem; }
+h1 { font-size: 25px; font-size: 2.5rem; }
+h2 { font-size: 20px; font-size: 2.0rem; }
+h3 { font-size: 18px; font-size: 1.8rem; }
+h4 { font-size: 17px; font-size: 1.7rem; }
+h5 { font-size: 16px; font-size: 1.6rem; }
+h6 { font-size: 15px; font-size: 1.5rem; }

@@ -21,9 +21,9 @@ get_header();
 
             <?php
             // If the theme is set to display comments
-            if (get_theme_mod('uu2014_display_comments_posts', 1)) {
+            if (get_theme_mod('uu2014_display_comments_pages', 1)) {
                 // If comments are open or we have at least one comment, load up the comment template
-                if ( comments_open() || '0' != get_comments_number() ) {
+                if ( comments_open() || get_comments_number() ) {
                     comments_template();
                 }
             } ?>

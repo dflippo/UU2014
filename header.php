@@ -38,10 +38,10 @@
 					<?php } } ?>
 					</div>
                     <div class="site-title-description">
-                        <img id="chalice" alt="" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png'); ?>">
-                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home" style="color:<?php get_header_textcolor() ?>;"><?php bloginfo('name'); ?></a></h1>
+						<img id="site-title-image" alt="" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png'); ?>">
+                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php if (get_bloginfo('description')) { ?>
-                            <h2 class="site-description" style="color:<?php get_header_textcolor() ?>;"><?php bloginfo('description'); ?></h2>
+                            <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                         <?php } // if (get_bloginfo('description'))   ?>
                     </div>
                 </div>

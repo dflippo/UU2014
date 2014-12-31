@@ -5,7 +5,7 @@
  *
  * @package UU2014
  */
-
+    
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  * Add plugin integration section for UU2014
@@ -19,6 +19,51 @@ function uu2014_customize_register($wp_customize) {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+    /* Font Sizes
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_font_size_section', array(
+        'title' => __('UU 2014 - Font Sizes', 'uu2014'),
+        'priority' => 10008,
+        'description' => __('You can customize the font sizes for different sections of the theme below', 'uu2014')
+    ));
+    $uu2014_font_size_settings = uu2014_get_font_size_settings();
+    foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) {
+        $wp_customize->add_setting($font_size_setting, array(
+            'default' => $value['font-size-default'], 
+            'sanitize_callback' => 'uu2014_sanitize_font_size'
+            )
+        );
+        $wp_customize->add_control($font_size_setting . '_dropdown', array(
+            'label' => $value['label'],
+            'section' => 'uu2014_font_size_section',
+            'settings' => $font_size_setting,
+            'type' => 'select',
+            'choices' => uu2014_get_font_size_choices()
+        ));
+    }
+
+    /* Mobile Font Sizes
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_mobile_font_size_section', array(
+        'title' => __('UU 2014 - Smaller Device Font Sizes', 'uu2014'),
+        'priority' => 10009,
+        'description' => __('The sizes below take effect on any screen with up to 600 pixels width', 'uu2014')
+    ));
+    foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) {
+        $wp_customize->add_setting($font_size_setting . '_mobile', array(
+            'default' => $value['mobile-font-size-default'], 
+            'sanitize_callback' => 'uu2014_sanitize_font_size'
+            )
+        );
+        $wp_customize->add_control($font_size_setting . '_mobile_dropdown', array(
+            'label' => $value['label'],
+            'section' => 'uu2014_mobile_font_size_section',
+            'settings' => $font_size_setting . '_mobile',
+            'type' => 'select',
+            'choices' => uu2014_get_font_size_choices()
+        ));
+    }
+
     /* Widths
       ========================================================================== */
     $wp_customize->add_section('uu2014_width_section', array(
@@ -72,7 +117,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_floating_widgets_min_width', array(
         'default' => '1300', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'sanitize_text_field'
         )
     );
     $wp_customize->add_control('uu2014_floating_min_width_textfield', array(
@@ -83,7 +128,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_content_width', array(
         'default' => '720', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'sanitize_text_field'
         )
     );
     $wp_customize->add_control('uu2014_content_width_textfield', array(
@@ -101,7 +146,7 @@ function uu2014_customize_register($wp_customize) {
     ));
     $wp_customize->add_setting('uu2014_display_title_image', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_title_image_dropdown', array(
@@ -117,7 +162,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_footer_image', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_footer_image_dropdown', array(
@@ -133,7 +178,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_favicon_image', array(
         'default' => '0', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_favicon_image_dropdown', array(
@@ -149,7 +194,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_sidebar_widgets', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_sidebar_dropdown', array(
@@ -165,7 +210,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_header_widgets', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_header_dropdown', array(
@@ -181,7 +226,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_footer_widgets', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_footer_dropdown', array(
@@ -197,7 +242,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_floating_widgets', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_floating_dropdown', array(
@@ -213,7 +258,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_comments_pages', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_comments_pages_dropdown', array(
@@ -229,7 +274,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_comments_posts', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_comments_posts_dropdown', array(
@@ -245,7 +290,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_comments_images', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_comments_images_dropdown', array(
@@ -261,7 +306,7 @@ function uu2014_customize_register($wp_customize) {
     );
     $wp_customize->add_setting('uu2014_display_bylines', array(
         'default' => '1', 
-        'sanitize_callback' => 'is_int'
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
         )
     );
     $wp_customize->add_control('uu2014_display_bylines_dropdown', array(
@@ -342,31 +387,37 @@ add_action('customize_register', 'uu2014_customize_register');
 function uu2014_customize_css()
 { ?>
 <style type="text/css" id="uu2014_customize_css">
-.main-navigation  { max-width: <?php echo get_theme_mod('uu2014_menu_width', '1200px'); ?>; }
-.site .site-header .site-branding  { max-width: <?php echo get_theme_mod('uu2014_header_width', '1200px'); ?>; }
-.site .site-content { max-width: <?php echo get_theme_mod('uu2014_page_width', '1200px'); ?>; }
+<?php 
+$uu2014_font_size_settings = uu2014_get_font_size_settings();  
+foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) { ?>
+	<?php echo $value['selector']; ?> { <?php echo get_theme_mod($font_size_setting, $value['font-size-default']); ?> }
+<?php } ?>
+@media screen and (max-width: 600px) {
+<?php foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) { ?>
+	<?php echo $value['selector']; ?> { <?php echo get_theme_mod($font_size_setting . '_mobile', $value['mobile-font-size-default']); ?> }
+<?php } ?>
+}
+div.main-nav-menu { max-width: <?php echo get_theme_mod('uu2014_menu_width', '1200px'); ?>; }
+div.site-branding { max-width: <?php echo get_theme_mod('uu2014_header_width', '1200px'); ?>; }
+div.site-content { max-width: <?php echo get_theme_mod('uu2014_page_width', '1200px'); ?>; }
 div.footer-widget-area { max-width: <?php echo get_theme_mod('uu2014_footer_widget_width', '1200px'); ?>; }
-div.header-widget-area { max-width: <?php echo get_theme_mod('uu2014_header_width', '1200px'); ?>; }
-.site .site-header {
-  line-height: 0;
-  color: #fff;
-  }
-.site .site-content { background-image: url(<?php echo get_template_directory_uri() . '/images/img-noise-500x500.png'; ?>); }
-.site .site-content { background: rgb(255, 255, 255); background-color: rgba(255, 255, 255, .9); ?>); }
+.header-widget-area { max-width: <?php echo get_theme_mod('uu2014_header_width', '1200px'); ?>; }
+div.site-content { background-image: url(<?php echo get_template_directory_uri() . '/images/img-noise-500x500.png'; ?>); }
+div.site-content { background: rgb(255, 255, 255); background-color: rgba(255, 255, 255, .9); }
 <?php if (!get_theme_mod('uu2014_display_title_image', 1)) : ?>
-    #chalice { display: none; }
-    .site .site-header .site-branding .site-title { padding: 0; }
-    .site .site-header .site-branding .site-description { padding: 0; }
+#site-title-image { display: none; }
+.site-title { padding: 0; }
+.site-description { padding: 0; }
 <?php endif; ?>
 <?php if (get_theme_mod('uu2014_display_footer_image', 1)) : ?>
-    .site .site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
+.site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
 <?php else : ?>
-    .site .site-footer { background-image: none; }
+.site-footer { background-image: none; }
 <?php endif; ?>
 <?php if (!get_theme_mod('uu2014_display_sidebar_widgets', 1)) : ?>
-    .site .site-content .content-area .site-main { margin: 0; }
-    .site .site-content { background-size: 0%; }
-    #secondary { display: none; }
+.site-main { margin: 0; }
+.site-content { background-size: 0%; }
+#secondary { display: none; }
 <?php endif; ?>
 </style>
 <?php }
@@ -380,3 +431,272 @@ function uu2014_customize_preview_js() {
 }
 
 add_action('customize_preview_init', 'uu2014_customize_preview_js');
+
+function uu2014_get_font_size_choices() {
+    return array(
+        'font-size: 0px; font-size: 0.0rem;'  => '0',
+        'font-size: 1px; font-size: 0.1rem;'  => '1',
+        'font-size: 2px; font-size: 0.2rem;'  => '2',
+        'font-size: 3px; font-size: 0.3rem;'  => '3',
+        'font-size: 4px; font-size: 0.4rem;'  => '4',
+        'font-size: 5px; font-size: 0.5rem;'  => '5',
+        'font-size: 6px; font-size: 0.6rem;'  => '6',
+        'font-size: 7px; font-size: 0.7rem;'  => '7',
+        'font-size: 8px; font-size: 0.8rem;'  => '8',
+        'font-size: 9px; font-size: 0.9rem;'  => '9',
+        'font-size: 10px; font-size: 1.0rem;' => '10',
+        'font-size: 11px; font-size: 1.1rem;' => '11',
+        'font-size: 12px; font-size: 1.2rem;' => '12',
+        'font-size: 13px; font-size: 1.3rem;' => '13',
+        'font-size: 14px; font-size: 1.4rem;' => '14',
+        'font-size: 15px; font-size: 1.5rem;' => '15',
+        'font-size: 16px; font-size: 1.6rem;' => '16',
+        'font-size: 17px; font-size: 1.7rem;' => '17',
+        'font-size: 18px; font-size: 1.8rem;' => '18',
+        'font-size: 19px; font-size: 1.9rem;' => '19',
+        'font-size: 20px; font-size: 2.0rem;' => '20',
+        'font-size: 21px; font-size: 2.1rem;' => '21',
+        'font-size: 22px; font-size: 2.2rem;' => '22',
+        'font-size: 23px; font-size: 2.3rem;' => '23',
+        'font-size: 24px; font-size: 2.4rem;' => '24',
+        'font-size: 25px; font-size: 2.5rem;' => '25',
+        'font-size: 26px; font-size: 2.6rem;' => '26',
+        'font-size: 27px; font-size: 2.7rem;' => '27',
+        'font-size: 28px; font-size: 2.8rem;' => '28',
+        'font-size: 29px; font-size: 2.9rem;' => '29',
+        'font-size: 30px; font-size: 3.0rem;' => '30',
+        'font-size: 31px; font-size: 3.1rem;' => '31',
+        'font-size: 32px; font-size: 3.2rem;' => '32',
+        'font-size: 33px; font-size: 3.3rem;' => '33',
+        'font-size: 34px; font-size: 3.4rem;' => '34',
+        'font-size: 35px; font-size: 3.5rem;' => '35',
+        'font-size: 36px; font-size: 3.6rem;' => '36',
+        'font-size: 37px; font-size: 3.7rem;' => '37',
+        'font-size: 38px; font-size: 3.8rem;' => '38',
+        'font-size: 39px; font-size: 3.9rem;' => '39',
+        'font-size: 40px; font-size: 4.0rem;' => '40',
+        'font-size: 41px; font-size: 4.1rem;' => '41',
+        'font-size: 42px; font-size: 4.2rem;' => '42',
+        'font-size: 43px; font-size: 4.3rem;' => '43',
+        'font-size: 44px; font-size: 4.4rem;' => '44',
+        'font-size: 45px; font-size: 4.5rem;' => '45',
+        'font-size: 46px; font-size: 4.6rem;' => '46',
+        'font-size: 47px; font-size: 4.7rem;' => '47',
+        'font-size: 48px; font-size: 4.8rem;' => '48',
+        'font-size: 49px; font-size: 4.9rem;' => '49',
+        'font-size: 50px; font-size: 5.0rem;' => '50',
+    );
+}
+if ( ! function_exists( 'uu2014_sanitize_font_size' ) ) :
+/**
+ * Sanitization callback for font sizes.
+ *
+ * @param string $value Font Size value.
+ * @return string Font Size.
+ */
+function uu2014_sanitize_font_size( $value ) {
+	$font_sizes = uu2014_get_font_size_choices();
+
+	if ( ! array_key_exists( $value, $font_sizes ) ) {
+		return 'font-size: 16px; font-size: 1.6rem;';
+	}
+	return $value;
+}
+endif;
+
+if ( ! function_exists( 'uu2014_sanitize_true_false' ) ) :
+/**
+ * Sanitization callback for font sizes.
+ *
+ * @param string $value Font Size value.
+ * @return string Font Size.
+ */
+function uu2014_sanitize_true_false( $value ) {
+	if ( $value == 1 ) {
+		return true;
+	} 
+	return false;
+}
+endif;
+
+if ( ! function_exists( 'uu2014_get_font_size_settings' ) ) :
+/**
+ * List of default font size settings for theme
+ *
+ * @return Array of font_setting -> value['selector', 'font-size-default', 'label']
+ */
+function uu2014_get_font_size_settings() {
+    $uu2014_font_size_settings = array(
+        'uu2014_default_font_size' => array(
+            'label' => __('Default', 'uu2014'),
+            'selector' => 'body, button, input, select, textarea, p', 
+            'font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_site_title_font_size' => array(
+            'label' => __('Site Title', 'uu2014'),
+            'selector' => '.site-title a', 
+            'font-size-default' => 'font-size: 30px; font-size: 3.0rem;', 
+            'mobile-font-size-default' => 'font-size: 20px; font-size: 2.0rem;', 
+            'font-family-default' => 'Georgia', 
+        ),
+        'uu2014_site_description_font_size' => array(
+            'label' => __('Site Description', 'uu2014'),
+            'selector' => '.site-description', 
+            'font-size-default' => 'font-size: 16px; font-size: 1.6rem;', 
+            'mobile-font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'font-family-default' => 'Georgia', 
+        ),
+        'uu2014_main_menu_font_size' => array(
+            'label' => __('Main Menu', 'uu2014'),
+            'selector' => 'div.main-nav-menu', 
+            'font-size-default' => 'font-size: 16px; font-size: 1.6rem;', 
+            'mobile-font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h1_font_size' => array(
+            'label' => __('Heading 1', 'uu2014'),
+            'selector' => 'h1', 
+            'font-size-default' => 'font-size: 25px; font-size: 2.5rem;', 
+            'mobile-font-size-default' => 'font-size: 20px; font-size: 2.0rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h2_font_size' => array(
+            'label' => __('Heading 2', 'uu2014'),
+            'selector' => 'h2', 
+            'font-size-default' => 'font-size: 20px; font-size: 2.0rem;', 
+            'mobile-font-size-default' => 'font-size: 19px; font-size: 1.9rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h3_font_size' => array(
+            'label' => __('Heading 3', 'uu2014'),
+            'selector' => 'h3', 
+            'font-size-default' => 'font-size: 18px; font-size: 1.8rem;', 
+            'mobile-font-size-default' => 'font-size: 18px; font-size: 1.8rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h4_font_size' => array(
+            'label' => __('Heading 4', 'uu2014'),
+            'selector' => 'h4', 
+            'font-size-default' => 'font-size: 17px; font-size: 1.7rem;', 
+            'mobile-font-size-default' => 'font-size: 17px; font-size: 1.7rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h5_font_size' => array(
+            'label' => __('Heading 5', 'uu2014'),
+            'selector' => 'h5', 
+            'font-size-default' => 'font-size: 16px; font-size: 1.6rem;', 
+            'mobile-font-size-default' => 'font-size: 16px; font-size: 1.6rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_h6_font_size' => array(
+            'label' => __('Heading 6', 'uu2014'),
+            'selector' => 'h6', 
+            'font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'mobile-font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_widget_h1_font_size' => array(
+            'label' => __('Widget Heading 1', 'uu2014'),
+            'selector' => '.widget-area h1', 
+            'font-size-default' => 'font-size: 18px; font-size: 1.8rem;', 
+            'mobile-font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_widget_list_item_font_size' => array(
+            'label' => __('Widget List Item', 'uu2014'),
+            'selector' => '.widget-area ul a', 
+            'font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_footer_widget_h1_font_size' => array(
+            'label' => __('Footer Widget Heading 1', 'uu2014'),
+            'selector' => '.footer-widget-area h1', 
+            'font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_site_footer_font_size' => array(
+            'label' => __('Site Footer', 'uu2014'),
+            'selector' => '.site-footer', 
+            'font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_footer_widget_list_item_font_size' => array(
+            'label' => __('Footer Widget List Item', 'uu2014'),
+            'selector' => '.footer-widget-area ul ul a, .footer-widget-area ul ul a:link, .footer-widget-area ul ul a:visited', 
+            'font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_header_widget_h1_font_size' => array(
+            'label' => __('Header Widget Heading 1', 'uu2014'),
+            'selector' => '.header-widget-area h1', 
+            'font-size-default' => 'font-size: 18px; font-size: 1.8rem;', 
+            'mobile-font-size-default' => 'font-size: 18px; font-size: 1.8rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_header_widget_list_item_font_size' => array(
+            'label' => __('Header Widget List Item', 'uu2014'),
+            'selector' => '.header-widget-area ul ul a', 
+            'font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'mobile-font-size-default' => 'font-size: 14px; font-size: 1.4rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_featured_articles_title_font_size' => array(
+            'label' => __('Featured Articles Lite Slide Title', 'uu2014'),
+            'selector' => '.site .FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap h2 a, .site .fa_slider_simple.default .fa_slide_content h2 a', 
+            'font-size-default' => 'font-size: 20px; font-size: 2.0rem;', 
+            'mobile-font-size-default' => 'font-size: 16px; font-size: 1.6rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+        'uu2014_featured_articles_text_font_size' => array(
+            'label' => __('Featured Articles Lite Slide Text', 'uu2014'),
+            'selector' => '.site .FA_overall_container_classic .FA_featured_articles .FA_article .FA_wrap p, .site .fa_slider_simple.default .fa_slide_content p', 
+            'font-size-default' => 'font-size: 15px; font-size: 1.5rem;', 
+            'mobile-font-size-default' => 'font-size: 12px; font-size: 1.2rem;', 
+            'font-family-default' => 'Open Sans', 
+        ),
+    );
+    return $uu2014_font_size_settings;
+}
+endif;
+
+/**
+ *  Add theme support for users of the Typecase plugin in the customizer
+ */
+function uu2014_typecase_theme_support() {
+    $uu2014_font_size_settings = uu2014_get_font_size_settings();  
+    $uu2014_simple_font_sections = array();
+    $uu2014_adv_font_sections = array();
+    foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) {
+        if(in_array($value['label'], array('Default', 'Site Title', 'Site Description'))){
+            $uu2014_simple_font_sections[$font_size_setting] = array(
+                'label' => $value['label'],
+                'selector' => $value['selector'],
+                'default' => $value['font-family-default'],
+            );
+        } else {
+            $uu2014_adv_font_sections[$font_size_setting] = array(
+                'label' => $value['label'],
+                'selector' => $value['selector'],
+                'default' => $value['font-family-default'],
+            );
+        }
+    } 
+    add_theme_support( 'typecase', array(
+        // array of simple options
+        'simple' => $uu2014_simple_font_sections,
+        // array of advanced options
+        // hidden by default, can be enabled by the user
+        'advanced' => array(
+            // each array is a customizer section in the theme fonts panel
+            'Advanced Font Locations' => $uu2014_adv_font_sections,
+        ),
+    ) );
+}
+//'after_setup_theme' is too late so we are calling this now
+uu2014_typecase_theme_support();
