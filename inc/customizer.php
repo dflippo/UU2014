@@ -19,6 +19,33 @@ function uu2014_customize_register($wp_customize) {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+
+    /* Theme Reset
+      ========================================================================== */
+    $wp_customize->add_section('uu2014_theme_reset_section', array(
+        'title' => __('UU 2014 - Reset Theme', 'uu2014'),
+        'priority' => 10007,
+        'description' => __('You can reset all the customization settings for the UU2014 theme sections below but this will not reset standard WordPress settings such as your title or widget areas.  Please note that you must exit and re-enter the customizer after making this change before you will be able to change other settings.', 'uu2014')
+    ));
+	// It is important that the default is false or you would reset every time
+    $wp_customize->add_setting('uu2014_theme_reset_setting', array(
+        'default' => '0', 
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
+        )
+    );
+    $wp_customize->add_control('uu2014_theme_reset_button', array(
+        'label' => __('Reset all customizations for the UU2014 theme?', 'uu2014'),
+        'section' => 'uu2014_theme_reset_section',
+        'settings' => 'uu2014_theme_reset_setting',
+        'type' => 'radio',
+        'choices' => array(
+				'1' => __('Yes, please reset immediately', 'uu2014'),
+				'0' => __('Not right now', 'uu2014'),
+			),
+        )
+    );
+
+
     /* Font Sizes
       ========================================================================== */
     $wp_customize->add_section('uu2014_font_size_section', array(
@@ -382,6 +409,13 @@ function uu2014_customize_register($wp_customize) {
 }
 
 add_action('customize_register', 'uu2014_customize_register');
+
+
+// If the user clicked the reset button, remove all theme modifications
+// It is important that the default is false or you would reset every time
+if (get_theme_mod('uu2014_theme_reset_setting', 0)){
+	remove_theme_mods();
+}
 
 //We have a small amount of dynamic CSS that is output in the header
 function uu2014_customize_css()
