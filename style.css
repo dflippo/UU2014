@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Description: UU2014 is a Responsive and Accessibility-Ready WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 6 widget areas in two sidebars, the header, the footer, and the header/footer of the primary content area on pages and single posts. It also allows you to easily modify features in the WordPress Customizer including the title image, footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Sections have been added to the WordPress Customizer to set the font-sizes and mobile font-sizes for many theme regions. Optional integration has been added for the UpThemes Typecase Web Fonts plugin to select different font-families for these theme regions. The theme also features optional integration with the CodeFlavors Featured Articles Lite plugin for featured post sliders and the SiteOrigin Page Builder plugin for responsive, multi-column layouts. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
 Author: Dan Flippo
-Version: 1.3.6
+Version: 1.3.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
@@ -1259,13 +1259,59 @@ article.type-post {
 
 /* 20.6 UU2014 - Sidebar Widgets
    ========================================================================== */
-.widget { margin: 0; }
+.widget-area ul a:before,
+.header-widget-area ul a:before,
+.footer-widget-area ul a:before {
+    font-family: "dashicons";
+    content: "\f139";
+    -webkit-font-smoothing: antialiased;
+    font: normal 30px/1 'dashicons';
+	color: red;
+	position: absolute;
+	vertical-align: top;
+	margin-bottom: auto;
+	max-height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+.widget-area ul ul a:before,
+.header-widget-area ul ul a:before,
+.footer-widget-area ul ul a:before {
+	left: 20px;
+}
+
+.widget-area ul ul ul a:before,
+.header-widget-area ul ul ul a:before,
+.footer-widget-area ul ul ul a:before {
+	left: 40px;
+}
+
+.widget-area ul ul ul ul a:before,
+.header-widget-area ul ul ul ul a:before,
+.footer-widget-area ul ul ul ul a:before {
+	left: 60px;
+}
+
+.widget-area ul a:hover:before,
+.widget-area ul a:focus:before,
+.header-widget-area ul a:hover:before,
+.header-widget-area ul a:focus:before,
+.footer-widget-area ul a:hover:before,
+.footer-widget-area ul a:focus:before {
+	color: white;
+	background: #333;
+}
+
+.widget {
+	margin: 0;
+}
 
 #secondary.widget-area {
-  float: left;
-  overflow: hidden;
-  width: 25%; 
- }
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}
 
 .widget-area h1,
 .widget-area h2,
@@ -1282,236 +1328,266 @@ article.type-post {
 .widget-area blockquote,
 .widget-area address,
 .widget-area pre,
-.widget-area table { margin: 0; }
-
-    .widget-area ul {
-    list-style: none;
-    width: 100%;
-    }
-
-   .widget-area li {
-    width: 100%;
-    border-top: 1px dashed #ccc;
-    }
-
-.widget-area ul a {
-    background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 5px 5px 5px 37px;
-    display: inline-block;
-    color: #000;
-    text-decoration: none;
+.widget-area table {
+	margin: 0;
 }
 
-    .widget-area ul a:focus,
-    .widget-area ul a:hover {
-      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
-      color: #fff; }
+.widget-area ul {
+	list-style: none;
+	width: 100%;
+}
 
-    .widget-area li.recentcomments {
-      width: 85%;
-      background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 5px 5px 5px 37px; }
+.widget-area li,
+.header-widget-area li,
+.footer-widget-area li {
+	width: 100%;
+	border-top: 1px dashed #ccc;
+	position: relative;
+}
 
-    .widget-area li.recentcomments a {
-    background-image: none;
-    display: inline;
-    padding: 0; }
+.widget-area ul a {
+	padding: 5px 5px 5px 30px;
+	display: inline-block;
+	color: #000;
+	text-decoration: none;
+}
 
-    .widget-area li.recentcomments a:focus,
-    .widget-area li.recentcomments a:hover {
-      background-image: none;
-      display: inline;
-      padding: 0; }
+.widget-area ul ul a,
+.widget-area ul ul a:link,
+.widget-area ul ul a:visited  {
+	padding: 5px 5px 5px 50px;
+}
 
-    .widget-area .rssSummary,
-    .widget-area .rss-date{
-      padding: 0 5px 0 37px; }
+.widget-area ul ul ul a,
+.widget-area ul ul ul a:link,
+.widget-area ul ul ul a:visited  {
+	padding: 5px 5px 5px 70px;
+}
 
-    .widget-area .textwidget {
-      padding: 0 5px 0 5px; }
+.widget-area ul ul ul ul a,
+.widget-area ul ul ul ul a:link,
+.widget-area ul ul ul ul a:visited  {
+	padding: 5px 5px 5px 90px;
+}
 
-    .widget-area #calendar_wrap {
-      margin: 0 5px 0 5px;
-      padding: 0 5px 0 5px;
-      border: solid black thin; }
+.widget-area li.recentcomments {
+	width: 85%;
+	padding: 5px 5px 5px 30px;
+}
 
-    .widget-area input {
-      width: 95%;
-      border: solid black thin; }
+.widget-area li.recentcomments a,
+.widget-area li.recentcomments a:focus,
+.widget-area li.recentcomments a:hover {
+	background-image: none;
+	display: inline;
+	padding: 0;
+}
 
-    .widget-area select {
-      width: 100%; }
+.widget-area .rssSummary,
+.widget-area .rss-date{
+	padding: 0 5px 0 35px;
+}
 
-    .widget-area h1 {
-    background: #ccc;
-    background: rgba(0, 0, 0, 0.06); /* fallback color */
-    border-left: 1px solid #ccc;
-    font-weight: normal;
-    padding: 14px 10px 8px 20px; 
+.widget-area .textwidget {
+	padding: 0 5px 0 5px;
+}
+
+.widget-area #calendar_wrap {
+	margin: 0 5px 0 5px;
+	padding: 0 5px 0 5px;
+	border: solid black thin;
+}
+
+.widget-area input {
+	width: 95%;
+	border: solid black thin;
+}
+
+.widget-area select {
+	width: 100%;
+}
+
+.widget-area h1 {
+	background: #ccc;
+	background: rgba(0, 0, 0, 0.06); /* fallback color */
+	padding: 14px 10px 8px 20px;
 	border-top: 1px dashed #ccc;
 	-webkit-border-top-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
 	border-top-right-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-moz-border-radius-bottomright: 5px;
-	border-bottom-right-radius: 5px; }
+	border-bottom-right-radius: 5px;
+}
 
-.widget_nav_menu .current-menu-item a { font-weight: bold; }
+.widget_nav_menu .current-menu-item a {
+	font-weight: bold;
+}
 
-.widget_nav_menu .current-menu-item .sub-menu a { font-weight: normal; }
+.widget_nav_menu .current-menu-item .sub-menu a {
+	font-weight: normal;
+}
 
-.widget-area ul ul { border-top: none; }
+.widget-area ul,
+.widget-area ul ul,
+.widget-area ul ul ul,
+.widget-area ul ul ul ul {
+	border-top: none;
+}
 
-  .widget-area ul ul a,
-  .widget-area ul ul a:link,
-  .widget-area ul ul a:visited  {
-    background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 5px 5px 5px 53px; }
-
-  .widget-area ul ul a:focus, 
-  .widget-area ul ul a:hover {
-    background: #333 url(images/tri-white.gif) no-repeat 37px 11px; }
-
-  .widget-area ul ul ul { border-top: none; }
-
-    .widget-area ul ul ul a,
-    .widget-area ul ul ul a:link,
-    .widget-area ul ul ul a:visited  {
-      background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 5px 5px 5px 69px; }
-
-    .widget-area ul ul ul a:focus,
-    .widget-area ul ul ul a:hover {
-     background: #333 url(images/tri-white.gif) no-repeat 53px 11px; }
+.widget-area ul a:focus,
+.widget-area ul a:hover,
+.widget-area ul ul a:focus,
+.widget-area ul ul a:hover,
+.widget-area ul ul ul a:focus,
+.widget-area ul ul ul a:hover,
+.widget-area ul ul ul ul a:focus,
+.widget-area ul ul ul ul a:hover {
+	background: #333;
+	color: #fff;
+}
 
 /* 20.7 UU2014 - Footer
    ========================================================================== */
 .site-footer {
-  clear: both;
-  width: 100%;
-  background: #111 url(images/chalice-watermark-dark.gif) no-repeat 40px 0;
-  background-size:auto 100%;
-  background-color: rgb(0,0,0);
-  border-top: 4px solid #555;
-  color: #fff;
-  padding: 30px 0 10px 0;
-  text-align: right; }
+	clear: both;
+	width: 100%;
+	background: #111 url(images/chalice-watermark-dark.gif) no-repeat 40px 0;
+	background-size:auto 100%;
+	background-color: rgb(0,0,0);
+	border-top: 4px solid #555;
+	color: #fff;
+	padding: 30px 0 10px 0;
+	text-align: right;
+}
 
-  .site-footer p {
-    margin: 0 40px 20px 20px;
-    padding: 0;
-    line-height: 1.5;
-    text-align: right; }
+.site-footer p {
+	margin: 0 40px 20px 20px;
+	padding: 0;
+	line-height: 1.5;
+	text-align: right;
+}
 
-  .site-footer a {
-    color: #ccc;
-    text-decoration: none; }
+.site-footer a {
+	color: #ccc;
+	text-decoration: none;
+}
 
-  div.footer-widget-area {
-    margin: 0px 40px 20px auto;
-    padding-left: 40px;
+div.footer-widget-area {
+	margin: 0px 40px 20px auto;
+	padding-left: 40px;
+	max-width: 1200px;
+	text-align: left;
+}
 
-    max-width: 1200px;
-    text-align: left; }
+.footer-widget-area h1,
+.footer-widget-area h2,
+.footer-widget-area h3,
+.footer-widget-area h4,
+.footer-widget-area h5,
+.footer-widget-area h6,
+.footer-widget-area p,
+.footer-widget-area ul,
+.footer-widget-area ol,
+.footer-widget-area li > ul,
+.footer-widget-area li > ol,
+.footer-widget-area dd,
+.footer-widget-area blockquote,
+.footer-widget-area address,
+.footer-widget-area pre,
+.footer-widget-area table {
+	margin: 0;
+}
 
-    .footer-widget-area h1,
-    .footer-widget-area h2,
-    .footer-widget-area h3,
-    .footer-widget-area h4,
-    .footer-widget-area h5,
-    .footer-widget-area h6,
-    .footer-widget-area p,
-    .footer-widget-area ul,
-    .footer-widget-area ol,
-    .footer-widget-area li > ul,
-    .footer-widget-area li > ol,
-    .footer-widget-area dd,
-    .footer-widget-area blockquote,
-    .footer-widget-area address,
-    .footer-widget-area pre,
-    .footer-widget-area table { margin: 0; }
+.footer-widget-area ul {
+	list-style: none;
+	width: 100%;
+}
 
-    .footer-widget-area ul {
-    list-style: none;
-    width: 100%;
-    }
+.footer-widget-area li {
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
 
-   .footer-widget-area li {
-    width: 100%;
-    border-top: 1px solid #ccc;
-    }
+.footer-widget-area ul a {
+	padding: 5px 5px 5px 30px;
+	display: inline-block;
+	text-decoration: none;
+}
 
-    .footer-widget-area ul a {
-    background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 5px 5px 5px 37px;
-    display: inline-block;
-    /*color: #000;*/
-    text-decoration: none; }
+.footer-widget-area ul a:focus,
+.footer-widget-area ul a:hover,
+.footer-widget-area ul ul a:focus,
+.footer-widget-area ul ul a:hover,
+.footer-widget-area ul ul ul a:focus,
+.footer-widget-area ul ul ul a:hover,
+.footer-widget-area ul ul ul ul a:focus,
+.footer-widget-area ul ul ul ul a:hover {
+	background: #333;
+}
 
-	.footer-widget-area ul a:focus,
-    .footer-widget-area ul a:hover {
-      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
-      /*color: #fff;*/ }
-
-    .footer-widget-area li.recentcomments {
-      width: 85%;
-      background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 5px 5px 5px 37px; }
-
-    .footer-widget-area li.recentcomments a {
-    background-image: none;
-    display: inline;
-    padding: 0; }
-
-	.footer-widget-area li.recentcomments a:focus,
-	.footer-widget-area li.recentcomments a:hover {
-      background-image: none;
-      display: inline;
-      padding: 0; }
-
-    .footer-widget-area .rssSummary,
-    .footer-widget-area .rss-date{
-      padding: 0 5px 0 37px; }
-
-    .footer-widget-area .textwidget {
-      text-align: right; }
-
-    .footer-widget-area #calendar_wrap {
-      margin: 0 5px 0 5px;
-      padding: 0 5px 0 5px;
-      border: solid white thin; }
-
-    .footer-widget-area h1 {
-    border-left: 1px solid #ccc;
-    font-weight: normal;
-    padding: 14px 10px 8px 20px; }
+.footer-widget-area li.recentcomments {
+	width: 85%;
+	padding: 5px 5px 5px 30px;
+}
 
 .footer-widget-area ul ul a,
 .footer-widget-area ul ul a:link,
 .footer-widget-area ul ul a:visited {
-    background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 5px 5px 5px 53px;
+	padding: 5px 5px 5px 50px;
 }
 
-  .footer-widget-area ul ul a:focus, 
-  .footer-widget-area ul ul a:hover {
-    background: #333 url(images/tri-white.gif) no-repeat 37px 11px; }
+.footer-widget-area ul ul ul a,
+.footer-widget-area ul ul ul a:link,
+.footer-widget-area ul ul ul a:visited  {
+	padding: 5px 5px 5px 70px;
+}
 
-  .footer-widget-area ul ul ul { border-top: none; }
+.footer-widget-area ul ul ul ul a,
+.footer-widget-area ul ul ul ul a:link,
+.footer-widget-area ul ul ul ul a:visited  {
+	padding: 5px 5px 5px 90px;
+}
 
-    .footer-widget-area ul ul ul a,
-    .footer-widget-area ul ul ul a:link,
-    .footer-widget-area ul ul ul a:visited  {
-      background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 5px 5px 5px 69px; }
+.footer-widget-area li.recentcomments a {
+	background-image: none;
+	display: inline;
+	padding: 0;
+}
 
-    .footer-widget-area ul ul ul a:focus,
-    .footer-widget-area ul ul ul a:hover {
-     background: #333 url(images/tri-white.gif) no-repeat 53px 11px; }
+.footer-widget-area li.recentcomments a:focus,
+.footer-widget-area li.recentcomments a:hover {
+	background-image: none;
+	display: inline;
+	padding: 0;
+}
+
+.footer-widget-area .rssSummary,
+.footer-widget-area .rss-date{
+	padding: 0 5px 0 35px;
+}
+
+.footer-widget-area .textwidget {
+	text-align: right;
+}
+
+.footer-widget-area #calendar_wrap {
+	margin: 0 5px 0 5px;
+	padding: 0 5px 0 5px;
+	border: solid white thin;
+}
+
+.footer-widget-area h1 {
+	padding: 14px 10px 8px 20px;
+}
+
+.footer-widget-area ul ul ul {
+	border-top: none;
+}
+
 
 /* 20.7.1 UU2014 - Header Widget Area
    ========================================================================== */
-
 .header-widget-area {
 	margin: 0;
 	padding: 0;
@@ -1526,91 +1602,100 @@ article.type-post {
 }
 
 .header-widget-area .header-widget-title {
-    color: white;	}
-
-    .header-widget-area h1,
-    .header-widget-area h2,
-    .header-widget-area h3,
-    .header-widget-area h4,
-    .header-widget-area h5,
-    .header-widget-area h6,
-    .header-widget-area p,
-    .header-widget-area ul,
-    .header-widget-area ol,
-    .header-widget-area li > ul,
-    .header-widget-area li > ol,
-    .header-widget-area dd,
-    .header-widget-area blockquote,
-    .header-widget-area address,
-    .header-widget-area pre,
-    .header-widget-area table { margin: 0; }
-
-    .header-widget-area ul {
-    list-style: none;
-    width: 100%;
-    }
-
-   .header-widget-area li {
-    width: 100%;
-    border-top: 1px solid #ccc;
-    }
-
-    .header-widget-area ul a {
-    background: url(images/tri-red.gif) no-repeat 20px 15px;
-    padding: 5px 5px 5px 37px;
-    display: inline-block;
-    color: white;
-    text-decoration: none; }
-
-    .header-widget-area ul a:focus, 
-	.header-widget-area ul a:hover {
-      background: #333 url(images/tri-white.gif) no-repeat 20px 15px;
-      color: white; }
-
-    .header-widget-area a:visited {
-      color: white; }
-
-    .header-widget-area li.recentcomments {
-      width: 85%;
-      background: url(images/tri-red.gif) no-repeat 20px 15px;
-      padding: 5px 5px 5px 37px; }
-
-    .header-widget-area li.recentcomments a {
-    background-image: none;
-    display: inline;
-    padding: 0; }
-
-    .header-widget-area li.recentcomments a:active,
-	.header-widget-area li.recentcomments a:focus,
-	.header-widget-area li.recentcomments a:hover {
-      background-image: none;
-      display: inline;
-      padding: 0; }
-
-    .header-widget-area .rssSummary,
-    .header-widget-area .rss-date{
-      padding: 0 5px 0 37px; }
-
-    .header-widget-area .textwidget {
-      text-align: right; }
-
-    .header-widget-area #calendar_wrap {
-      margin: 0 5px 0 5px;
-      padding: 0 5px 0 5px;
-      border: solid white thin; }
-
-    .header-widget-area h1 {
-    font-weight: normal;
-    padding: 14px 10px 8px 20px; }
-
-.header-widget-area ul ul a  {
-    background: url(images/tri-red.gif) no-repeat 37px 11px;
-    padding: 5px 5px 5px 53px;
+	color: white;	
 }
 
-    .header-widget-area ul ul ul a  {
-      background: url(images/tri-red.gif) no-repeat 53px 11px;
-      padding: 5px 5px 5px 69px; }
+.header-widget-area h1,
+.header-widget-area h2,
+.header-widget-area h3,
+.header-widget-area h4,
+.header-widget-area h5,
+.header-widget-area h6,
+.header-widget-area p,
+.header-widget-area ul,
+.header-widget-area ol,
+.header-widget-area li > ul,
+.header-widget-area li > ol,
+.header-widget-area dd,
+.header-widget-area blockquote,
+.header-widget-area address,
+.header-widget-area pre,
+.header-widget-area table {
+	margin: 0;
+}
+
+.header-widget-area ul {
+	list-style: none;
+	width: 100%;
+}
+
+.header-widget-area li {
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
+
+.header-widget-area ul a {
+	padding: 5px 5px 5px 30px;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+}
+
+.header-widget-area ul a:focus,
+.header-widget-area ul a:hover {
+	background: #333;
+	color: white;
+}
+
+.header-widget-area a:visited {
+	color: white;
+}
+
+.header-widget-area li.recentcomments {
+	width: 85%;
+	padding: 5px 5px 5px 30px;
+}
+
+.header-widget-area ul ul a  {
+	padding: 5px 5px 5px 50px;
+}
+
+.header-widget-area ul ul ul a  {
+	padding: 5px 5px 5px 70px;
+}
+
+.header-widget-area ul ul ul ul a  {
+	padding: 5px 5px 5px 90px;
+}
+
+.header-widget-area li.recentcomments a,
+.header-widget-area li.recentcomments a:active,
+.header-widget-area li.recentcomments a:focus,
+.header-widget-area li.recentcomments a:hover {
+	background-image: none;
+	display: inline;
+	padding: 0;
+}
+
+.header-widget-area .rssSummary,
+.header-widget-area .rss-date{
+	padding: 0 5px 0 35px;
+}
+
+.header-widget-area .textwidget {
+	text-align: right;
+}
+
+.header-widget-area #calendar_wrap {
+	margin: 0 5px 0 5px;
+	padding: 0 5px 0 5px;
+	border: solid white thin;
+}
+
+.header-widget-area h1 {
+	padding: 14px 10px 8px 20px;
+}
+
 
 /* 20.8 UU2014 - Plugin: Contact Form 7
    ========================================================================== */
@@ -1645,8 +1730,7 @@ span.wpcf7-radio span.wpcf7-list-item { display: inline; }
     max-height: 100% !important;
     margin: auto !important;
 }
-		.fa_slider_simple .fa_slide_content{
-		}
+
 .site .fa_slider_simple .fa_slide_content{
 	line-height: 1.2;
     width: 65%;
@@ -1727,8 +1811,8 @@ img#wpstats {
 	list-style: inherit;
 }
 
-.widget-area ul a:focus,
-.widget-area ul a:hover {
+.widget-area .fa_slideshow ul a:focus,
+.widget-area .fa_slideshow ul a:hover {
 	background: inherit;
 	color: inherit; 
 }
@@ -1777,39 +1861,188 @@ address,
 pre,
 table { margin-bottom: 0; }
 
+
 /* 3.2 UU2014 - Mobile Devices - Menu
    ========================================================================== */
+button.menu-toggle {
+	background: none;
+	font-size: 20px;
+	color: white;
+	box-shadow: none;
+	text-shadow: none;
+	width: 100%;
+	padding: 5px 20px;
+	line-height: 30px;
+	text-align: left;
+}
+
+
+button.menu-toggle:focus,
+button.menu-toggle:hover, 
+input[type="button"].menu-toggle:hover, 
+input[type="reset"].menu-toggle:hover, 
+input[type="submit"].menu-toggle:hover {
+    background-color: #333;
+}
+
+.menu-toggle:before {
+    font-family: "dashicons";
+    content: "\f333";
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font: normal 30px/1 'dashicons';
+    vertical-align: top;
+	padding-right: 20px;
+	color: red;
+}
+
+button.menu-toggle:focus:before,
+button.menu-toggle:hover:before, 
+input[type="button"].menu-toggle:hover:before, 
+input[type="reset"].menu-toggle:hover:before, 
+input[type="submit"].menu-toggle:hover:before {
+    color: white;
+}
+
 .main-navigation.toggled ul {
     display: block;
+	background-color: black;
+	color: white;
 }
 
-.main-navigation a {
-    padding: 0 .2em; 
-}
-
-.main-navigation ul ul { 
-}
-
-.main-navigation ul ul li {
-    max-width: 120px;
-}
-
-.main-navigation ul ul a {
-    max-width: 120px;
-}
-
+.main-navigation li,
+.main-navigation li:hover > a,
+.main-navigation li.focus > a,
+.main-navigation ul li,
+.main-navigation ul a,
+.main-navigation ul li > ul,
+.main-navigation ul li > ul,
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul,
+.main-navigation ul ul,
+.main-navigation ul ul:hover > a,
+.main-navigation ul ul.focus > a,
 .main-navigation ul ul li,
-.main-navigation li {
-    min-width: 0;
+.main-navigation ul ul a,
+.main-navigation ul ul li > ul,
+.main-navigation ul ul li > ul,
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	border-left: inherit;
+	border-bottom: inherit;
+	position: inherit;
+	float: none;
+	width: inherit;
+	min-width: inherit;
+	max-width: 100%;
+	line-height: inherit;
+	min-height: 30px;
+    left: auto;
+	z-index: inherit;
+	top: inherit;
+	text-align: left;
+	box-shadow: inherit;
+	background-color: black;
+}
+
+.main-navigation ul a:before {
+    font-family: "dashicons";
+    content: "\f139";
+    -webkit-font-smoothing: antialiased;
+    font: normal 30px/1 'dashicons';
+	color: red;
+	position: absolute;
+	vertical-align: top;
+	margin-bottom: auto;
+	max-height: 100%;
+	left: 0px;
+	top: 5px;
+}
+
+.main-navigation ul ul a:before {
+	left: 20px;
+}
+
+.main-navigation ul ul ul a:before {
+	left: 40px;
+}
+
+.main-navigation ul ul ul ul a:before {
+	left: 60px;
+}
+
+.main-navigation ul a:focus:before,
+.main-navigation ul a:hover:before,
+.main-navigation ul a:focus,
+.main-navigation ul a:hover,
+.main-navigation ul ul a:focus, 
+.main-navigation ul ul a:hover,
+.main-navigation ul ul ul a:focus,
+.main-navigation ul ul ul a:hover,
+.main-navigation ul ul ul ul a:focus,
+.main-navigation ul ul ul ul a:hover {
+	color: white;
+	background: #333;
+}
+
+.main-navigation ul {
+	list-style: none;
+	width: 100%;
+}
+
+.main-navigation li,
+.main-navigation ul li,
+.main-navigation ul ul li,
+.main-navigation ul ul ul li,
+.main-navigation ul ul ul ul li {
+	width: 100%;
+	border-top: 1px solid #ccc;
+	position: relative;
+}
+
+.main-navigation ul ul ul { 
+	border-top: none; 
+}
+
+.main-navigation ul a {
+	padding: 5px 5px 5px 30px;
+	text-decoration: none; 
+	color: white;
 }
 
 .main-navigation ul ul a,
-.main-navigation a {
-    min-width: 0;
+.main-navigation ul ul a:link,
+.main-navigation ul ul a:visited {
+	padding: 5px 5px 5px 50px;
 }
 
-.main-navigation ul ul a {
-    padding: 5px 5px 5px 10px;
+.main-navigation ul ul ul a,
+.main-navigation ul ul ul a:link,
+.main-navigation ul ul ul a:visited  {
+	padding: 5px 5px 5px 70px; 
+}
+
+.main-navigation ul ul ul ul a,
+.main-navigation ul ul ul ul a:link,
+.main-navigation ul ul ul ul a:visited  {
+	padding: 5px 5px 5px 90px; 
+}
+
+.main-navigation ul li.current_page_item > a,
+.main-navigation ul li.current-menu-ancestor > a,
+.main-navigation ul li.current-menu-item > a,
+.main-navigation ul li.current-menu-parent > a,
+.secondary-navigation ul li.current_page_item > a,
+.secondary-navigation ul li.current-menu-item > a,
+.secondary-navigation ul li.current_page_item > a:focus,
+.secondary-navigation ul li.current-menu-item > a:focus,
+.secondary-navigation ul li.current_page_item > a:hover,
+.secondary-navigation ul li.current-menu-item > a:hover { 
+    color: white; 
+}
+
+.secondary-navigation {
+	display: none;
 }
 
 /* 3.3 UU2014 - Mobile Devices - Search Box
@@ -1878,6 +2111,11 @@ article { padding: 5px; }
    ========================================================================== */
 #site-title-image { max-width: 40px; padding: 5px 0; }
 
+#sharebar {
+	display: none !important;
+}
+
+
 }
 
 /* 3.8 UU2014 - Floating Widget CSS from Sharebar Plugin
@@ -1935,7 +2173,7 @@ body ul#sharebarx li {
 
   .stButton:last-child { margin: 0 !important; }
 
-  .stButton .stFb_vbubble { width: 53px !important; }
+  .stButton .stFb_vbubble { width: 55px !important; }
 
   .stButton .stFb_text {
     padding: 2px 5px 3px !important;

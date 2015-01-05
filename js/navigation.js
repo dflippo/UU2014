@@ -4,7 +4,12 @@
  * Handles toggling the navigation menu for small screens.
  */
 ( function() {
-	var container, button, menu;
+	var page, container, button, menu;
+
+	page = document.getElementById( 'page' );
+	if ( ! page ) {
+		return;
+	}
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -32,10 +37,12 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+			page.className = page.className.replace( ' toggled', '' );
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
+			page.className += ' toggled';
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
