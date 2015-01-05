@@ -74,7 +74,7 @@ function uu2014_customize_register($wp_customize) {
     $wp_customize->add_section('uu2014_mobile_font_size_section', array(
         'title' => __('UU 2014 - Smaller Device Font Sizes', 'uu2014'),
         'priority' => 10009,
-        'description' => __('The sizes below take effect on any screen with up to 600 pixels width', 'uu2014')
+        'description' => __('The sizes below take effect on any screen with up to 782 pixels width', 'uu2014')
     ));
     foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) {
         $wp_customize->add_setting($font_size_setting . '_mobile', array(
@@ -426,7 +426,7 @@ $uu2014_font_size_settings = uu2014_get_font_size_settings();
 foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) { ?>
 	<?php echo $value['selector']; ?> { <?php echo get_theme_mod($font_size_setting, $value['font-size-default']); ?> }
 <?php } ?>
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 782px) {
 <?php foreach ( $uu2014_font_size_settings as $font_size_setting => $value ) { ?>
 	<?php echo $value['selector']; ?> { <?php echo get_theme_mod($font_size_setting . '_mobile', $value['mobile-font-size-default']); ?> }
 <?php } ?>

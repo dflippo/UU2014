@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'uu2014-content-footer' ) ) : ?>
-	<div id="content-footer" class="content-footer widget-area" role="complementary">
+	<div id="content-footer" class="content-footer-widget-area widget-area" role="complementary">
 		<?php dynamic_sidebar( 'uu2014-content-footer' ); ?>
 	</div><!-- #content-footer -->
 <?php endif; ?>

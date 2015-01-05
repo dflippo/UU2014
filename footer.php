@@ -11,7 +11,7 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-  <div id="footer-widget-area" class="footer-widget-area">
+  <div id="footer-widget-area" class="footer-widget-area widget-area">
   <?php if (!dynamic_sidebar('footer-widget')) :
 			echo '<p>&nbsp;</p>';
 		endif; ?></div>

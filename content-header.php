@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'content-header-widget' ) ) : ?>
-	<div id="content-header-widget" class="content-header-widget widget-area" role="complementary">
+	<div id="content-header-widget" class="content-header-widget-area widget-area" role="complementary">
 		<?php dynamic_sidebar( 'content-header-widget' ); ?>
 	</div><!-- #content-header -->
 <?php endif; ?>
