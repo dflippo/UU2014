@@ -10,8 +10,8 @@
  *
  * @package UU2014
  */
-get_header();
-?>
+
+get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -31,7 +31,7 @@ get_header();
 
             <?php endwhile; ?>
 
-            <?php uu2014_paging_nav(); ?>
+            <?php the_posts_navigation(); ?>
 
         <?php else : ?>
 

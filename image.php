@@ -15,7 +15,7 @@ get_header();
 
 			<?php get_template_part('content', 'image'); ?>
 
-			<?php uu2014_post_nav(); ?>
+			<?php the_post_navigation(); ?>
 
 			<?php
 			// If the theme is set to display comments

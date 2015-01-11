@@ -9,15 +9,15 @@
 
 get_header(); ?>
 
-    <section id="primary" class="content-area">
+    <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
         <?php if ( have_posts() ) : ?>
 
             <header class="page-header">
                     <?php
-					uu2014_the_archive_title( '<h1 class="page-title">', '</h1>' );
-					uu2014_the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
                 ?>
             </header><!-- .page-header -->
 
@@ -34,7 +34,7 @@ get_header(); ?>
 
             <?php endwhile; ?>
 
-            <?php uu2014_paging_nav(); ?>
+            <?php the_posts_navigation(); ?>
 
         <?php else : ?>
 
@@ -43,7 +43,7 @@ get_header(); ?>
         <?php endif; ?>
 
         </main><!-- #main -->
-    </section><!-- #primary -->
+    </div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

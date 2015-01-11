@@ -27,4 +27,9 @@
 		$(this).parents().toggleClass('focus');
 	});
 
+	// Add classes used for formatting lists later to ensure font has loaded
+	$(".widget-area ul").addClass("format-ul");
+	$(".main-navigation ul").addClass("format-mobile-ul");
+	$(".menu-toggle").addClass("format-menu-toggle");
+
 })(jQuery);

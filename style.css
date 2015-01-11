@@ -24,19 +24,19 @@ This theme draws from the following themes released under GNU General Public Lic
 - Underscores http://underscores.me/ (C)2012-2014 Automattic, Inc.
 - Twenty Fourteen http://wordpress.org/themes/twentyfourteen (C)2014 the WordPress team
 
-UU 2014 Uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/ 
+UU 2014 uses Images from UU 2011 Theme, http://www.faithandweb.com/faith2012/ 
   (C) 2012 Anna Belle Leiserson. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission.
 
-UU 2014 Uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/
+UU 2014 uses JS and CSS from the Sharebar plugin, http://devgrow.com/sharebar/
   (C) 2010 Monjurul Dolon, http://mdolon.com/
   Released under the MIT, BSD, and GPL Licenses.
 
-UU 2014 Uses Images from the UUA, http://www.uua.org/communications/art/uuachalice/index.shtml
+UU 2014 uses Images from the UUA, http://www.uua.org/communications/art/uuachalice/index.shtml
   (C) 2014 Unitarian Universalist Association. Images licensed under GNU General Public 
   License (GPL), v3 and used with permission
 
-UU 2014 Uses JS from HTML5 Shiv, https://code.google.com/p/html5shiv/
+UU 2014 uses JS from HTML5 Shiv, https://code.google.com/p/html5shiv/
   (C) 2014 @afarkas @jdalton @jon_neal @rem
   Released under the MIT and GPL Version 2 Licenses.
 
@@ -537,21 +537,21 @@ a:active {
 }
 
 .site-main .comment-navigation,
-.site-main .paging-navigation,
+.site-main .posts-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
 
 .comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
+.posts-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
 
 .comment-navigation .nav-next,
-.paging-navigation .nav-next,
+.posts-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
 	text-align: right;
@@ -716,7 +716,7 @@ a:active {
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
@@ -811,9 +811,11 @@ object {
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
+
 .gallery-caption {
 	display: block;
 }
+
 
 /* ==========================================================================
    20.0 UU2014 Theme Specific
@@ -834,7 +836,7 @@ textarea {
 	color: black;
 }
 
-body { background-color: rgb(106, 137, 153); }
+body { background-color: #ab1b42; }
 
 input[type="submit"] {
   box-shadow: none;
@@ -880,7 +882,7 @@ a:hover, a:focus, a:active {
 	color: white;
 	background: #333;
 	text-decoration: underline;
-	outline: thin dotted;
+	outline: red thin dotted;
 }
 
 /* 20.2 UU2014 - Menu
@@ -954,12 +956,14 @@ div.main-nav-menu  {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-    background: #333;
+	color: white;
+	background: #333;
 }
 
 .main-navigation ul ul:hover > a,
 .main-navigation ul ul.focus > a {
-    background: #333;
+	color: white;
+	background: #333;
 }
 
 .main-navigation ul li:hover > ul,
@@ -972,10 +976,12 @@ div.main-nav-menu  {
     left: 100%;
 }
 
-.main-navigation ul li.current_page_item > a,
 .main-navigation ul li.current-menu-ancestor > a,
+.main-navigation ul li.current-menu-parent > a,
 .main-navigation ul li.current-menu-item > a,
-.main-navigation ul li.current-menu-parent > a{ 
+.main-navigation ul li.current_page_ancestor > a,
+.main-navigation ul li.current_page_parent > a,
+.main-navigation ul li.current_page_item > a { 
     color: cyan;
 }
 
@@ -989,21 +995,30 @@ div.main-nav-menu  {
     color: darkblue;
 }
 
-.secondary-navigation ul li.current_page_item > a:focus,
 .secondary-navigation ul li.current-menu-item > a:focus,
-.secondary-navigation ul li.current_page_item > a:hover,
-.secondary-navigation ul li.current-menu-item > a:hover { 
+.secondary-navigation ul li.current-menu-item > a:hover,
+.secondary-navigation ul li.current_page_item > a:focus,
+.secondary-navigation ul li.current_page_item > a:hover { 
     color: cyan; 
 }
 
-.secondary-navigation .sub-menu { 
+.secondary-navigation .page_item ul { 
     display: none; 
 }
 
-.secondary-navigation.current-menu-ancestor,
-.secondary-navigation .current-menu-item,
-.secondary-navigation .current-menu-ancestor .sub-menu,
-.secondary-navigation .current-menu-item .sub-menu { 
+.secondary-navigation .page_item.current_page_ancestor ul,
+.secondary-navigation .page_item.current_page_parent ul,
+.secondary-navigation .page_item.current_page_item ul { 
+    display: inline-block; 
+}
+
+.secondary-navigation .menu-item ul { 
+    display: none; 
+}
+
+.secondary-navigation .menu-item.current-menu-ancestor ul,
+.secondary-navigation .menu-item.current-menu-parent ul,
+.secondary-navigation .menu-item.current-menu-item ul {
     display: inline-block; 
 }
 
@@ -1260,34 +1275,37 @@ article.type-post {
 
 /* 20.6 UU2014 - Sidebar Widgets
    ========================================================================== */
-.widget-area ul a:before {
-    font-family: "dashicons";
-    content: "\f139";
-    -webkit-font-smoothing: antialiased;
-    font: normal 30px/1 'dashicons';
+.format-ul {
+	list-style: none;
+}
+
+.format-ul li a:before {
+	font: normal normal normal 30px/1 dashicons;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f139";
 	color: red;
 	position: absolute;
 	vertical-align: top;
-	margin-bottom: auto;
-	max-height: 100%;
 	left: 0px;
-	top: 0px;
+    top: 1px;
 }
 
-.widget-area ul ul a:before {
+.format-ul ul a:before {
 	left: 20px;
 }
 
-.widget-area ul ul ul a:before {
+.format-ul ul ul a:before {
 	left: 40px;
 }
 
-.widget-area ul ul ul ul a:before {
+.format-ul ul ul ul a:before {
 	left: 60px;
 }
 
-.widget-area ul a:hover:before,
-.widget-area ul a:focus:before {
+.format-ul a:hover:before,
+.format-ul a:focus:before {
 	color: white;
 	background: #333;
 }
@@ -1322,7 +1340,6 @@ article.type-post {
 }
 
 .widget-area ul {
-	list-style: none;
 	width: 100%;
 }
 
@@ -1332,6 +1349,12 @@ article.type-post {
 	position: relative;
 }
 
+.widget-area ul.menu > li:first-child,
+.widget-area > nav > div > ul > li:first-child,
+.widget > ul > li:first-child {
+	border-top: 1px solid transparent;
+}
+
 .widget-area ul a,
 .widget-area ul a:link,
 .widget-area ul a:visited {
@@ -1339,7 +1362,16 @@ article.type-post {
 	display: inline-block;
 	color: black;
 	text-decoration: none;
+	min-height: 32px;
 }
+
+.widget-area .menu a,
+.widget_pages a,
+.widget_meta a,
+.widget_recent_entries a{
+	width: 100%;
+}
+
 
 .widget-area ul ul a,
 .widget-area ul ul a:link,
@@ -1360,7 +1392,6 @@ article.type-post {
 }
 
 .widget-area li.recentcomments {
-	width: 85%;
 	padding: 5px 5px 5px 30px;
 }
 
@@ -1401,7 +1432,8 @@ article.type-post {
 	background: #ccc;
 	background: rgba(0, 0, 0, 0.06); /* fallback color */
 	padding: 14px 10px 8px 20px;
-	border-top: 1px dashed #ccc;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
 	-webkit-border-top-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
 	border-top-right-radius: 5px;
@@ -1418,22 +1450,8 @@ article.type-post {
 	font-weight: normal;
 }
 
-.widget-area ul,
-.widget-area ul ul,
-.widget-area ul ul ul,
-.widget-area ul ul ul ul {
-	border-top: none;
-}
-
 .widget-area ul a:focus,
-.widget-area ul a:hover,
-.widget-area ul ul a:focus,
-.widget-area ul ul a:hover,
-.widget-area ul ul ul a:focus,
-.widget-area ul ul ul a:hover,
-.widget-area ul ul ul ul a:focus,
-.widget-area ul ul ul ul a:hover {
-	background: #333;
+.widget-area ul a:hover {
 	color: white;
 }
 
@@ -1483,7 +1501,6 @@ div.footer-widget-area {
 }
 
 .footer-widget-area li.recentcomments {
-	width: 85%;
 	padding: 5px 5px 5px 30px;
 }
 
@@ -1707,31 +1724,37 @@ table { margin-bottom: 0; }
 
 button.menu-toggle {
 	background: none;
-	font-size: 20px;
+	font-size: 18px;
 	color: white;
 	box-shadow: none;
 	text-shadow: none;
 	width: 100%;
 	padding: 5px 20px;
-	line-height: 30px;
+	line-height: 32px;
 	text-align: left;
+	vertical-align: middle;
 }
-
 
 button.menu-toggle:focus,
 button.menu-toggle:hover, 
 input[type="button"].menu-toggle:hover, 
 input[type="reset"].menu-toggle:hover, 
 input[type="submit"].menu-toggle:hover {
-    background-color: #333;
+	color: white;
+	background: #333;
+	text-decoration: underline;
+	outline: none;
+    border-color: red;
 }
 
-.menu-toggle:before {
-    font-family: "dashicons";
+.format-menu-toggle:before {
+	font: normal normal normal 32px/1 dashicons;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
     content: "\f333";
     display: inline-block;
     -webkit-font-smoothing: antialiased;
-    font: normal 30px/1 'dashicons';
     vertical-align: top;
 	padding-right: 20px;
 	color: red;
@@ -1776,8 +1799,8 @@ input[type="submit"].menu-toggle:hover:before {
 	width: inherit;
 	min-width: inherit;
 	max-width: 100%;
-	line-height: inherit;
-	min-height: 30px;
+	line-height: 1.5;
+	min-height: 32px;
     left: auto;
 	z-index: inherit;
 	top: inherit;
@@ -1786,34 +1809,37 @@ input[type="submit"].menu-toggle:hover:before {
 	background-color: black;
 }
 
-.main-navigation ul a:before {
-    font-family: "dashicons";
-    content: "\f139";
-    -webkit-font-smoothing: antialiased;
-    font: normal 30px/1 'dashicons';
+.main-navigation .format-mobile-ul li a:before {
+	font: normal normal normal 30px/1 dashicons;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\f139";
 	color: red;
 	position: absolute;
 	vertical-align: top;
-	margin-bottom: auto;
-	max-height: 100%;
-	left: 0px;
-	top: 5px;
+	left: 0;
+    top:50%;
+    -moz-transform		: translateY(-50%);
+    -webkit-transform	: translateY(-50%);
+    -o-transform		: translateY(-50%);
+    transform			: translateY(-50%);	
 }
 
-.main-navigation ul ul a:before {
+.main-navigation .format-mobile-ul ul a:before {
 	left: 20px;
 }
 
-.main-navigation ul ul ul a:before {
+.main-navigation .format-mobile-ul ul ul a:before {
 	left: 40px;
 }
 
-.main-navigation ul ul ul ul a:before {
+.main-navigation .format-mobile-ul ul ul ul a:before {
 	left: 60px;
 }
 
-.main-navigation ul a:focus:before,
-.main-navigation ul a:hover:before,
+.main-navigation .format-mobile-ul a:focus:before,
+.main-navigation .format-mobile-ul a:hover:before,
 .main-navigation ul a:focus,
 .main-navigation ul a:hover,
 .main-navigation ul ul a:focus, 
@@ -1851,6 +1877,7 @@ input[type="submit"].menu-toggle:hover:before {
 	padding: 5px 5px 5px 30px;
 	text-decoration: none; 
 	color: white;
+	font-size: 110%;
 }
 
 .main-navigation ul ul a,

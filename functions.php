@@ -81,7 +81,7 @@ if (!function_exists('uu2014_setup')) :
 
         // Setup the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('uu2014_custom_background_args', array(
-          'default-color' => '6a8999',
+          'default-color' => 'ab1b42',
           'default-image' => '',
         )));
 
@@ -215,7 +215,7 @@ function uu2014_scripts() {
 
 	wp_enqueue_style('uu2014-google-fonts-style', "//fonts.googleapis.com/css?family=Open+Sans", array(), null);
 
-	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array('dashicons'), '20150105');
+	wp_enqueue_style('uu2014-style', get_stylesheet_uri(), array('uu2014-google-fonts-style', 'dashicons'), '20150105');
 
 	wp_enqueue_script( 'uu2014-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140622', true );
 
@@ -253,7 +253,11 @@ function uu2014_remove_recent_comments_style() {
 add_action( 'widgets_init', 'uu2014_remove_recent_comments_style' );
 
 function uu2014_add_editor_styles() {
-	add_editor_style( array( get_stylesheet_uri(), '//fonts.googleapis.com/css?family=Open+Sans', 'editor-style.css' ) );
+	add_editor_style( array(
+		'//fonts.googleapis.com/css?family=Open+Sans', 
+		get_stylesheet_uri(), 
+		'editor-style.css',
+	));
 }
 add_action('after_setup_theme', 'uu2014_add_editor_styles');
 
@@ -309,18 +313,23 @@ function uu2014_register_required_plugins() {
      */
     $plugins = array(
       array(
-        'name'     => 'Featured articles Lite',
+        'name'     => 'FA Lite - WP responsive slider plugin',
         'slug'     => 'featured-articles-lite',
-        'required' => false,
-      ),
-      array(
-        'name'     => 'Typecase Web Fonts',
-        'slug'     => 'typecase',
         'required' => false,
       ),
       array(
         'name'     => 'Page Builder by SiteOrigin',
         'slug'     => 'siteorigin-panels',
+        'required' => false,
+      ),
+      array(
+        'name'     => 'SiteOrigin Widgets Bundle',
+        'slug'     => 'so-widgets-bundle',
+        'required' => false,
+      ),
+      array(
+        'name'     => 'Black Studio TinyMCE Widget',
+        'slug'     => 'black-studio-tinymce-widget',
         'required' => false,
       ),
     );
