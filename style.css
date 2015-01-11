@@ -1275,11 +1275,11 @@ article.type-post {
 
 /* 20.6 UU2014 - Sidebar Widgets
    ========================================================================== */
-.format-ul {
+.widget-area ul {
 	list-style: none;
 }
 
-.format-ul li a:before {
+.widget-area ul li a:before {
 	font: normal normal normal 30px/1 dashicons;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -1292,20 +1292,20 @@ article.type-post {
     top: 1px;
 }
 
-.format-ul ul a:before {
+.widget-area ul > li > ul > li > a:before {
 	left: 20px;
 }
 
-.format-ul ul ul a:before {
+.widget-area ul > li > ul > li > ul > li > a:before {
 	left: 40px;
 }
 
-.format-ul ul ul ul a:before {
+.widget-area ul > li > ul > li > ul > li > ul > li > a:before {
 	left: 60px;
 }
 
-.format-ul a:hover:before,
-.format-ul a:focus:before {
+.widget-area ul a:hover:before,
+.widget-area ul a:focus:before {
 	color: white;
 	background: #333;
 }
@@ -1718,12 +1718,19 @@ table { margin-bottom: 0; }
 	display: block;
 }
 
+.main-navigation {
+	background: none;
+	background-color: black;
+	color: white;
+}
+
 .main-navigation ul {
 	display: none;
 }
 
 button.menu-toggle {
 	background: none;
+	background-color: black;
 	font-size: 18px;
 	color: white;
 	box-shadow: none;
@@ -1733,6 +1740,25 @@ button.menu-toggle {
 	line-height: 32px;
 	text-align: left;
 	vertical-align: middle;
+	-webkit-border-radius: 10;
+	-moz-border-radius: 10;
+	border-radius:		10px;
+	border-top:			1px solid rgba(255,255,255,0.2);
+	border-bottom:		1px solid rgba(255,255,255,0.2);
+	border-left:		none;
+	border-right:		none;
+	background-image:	-webkit-gradient(radial, 60% 0, 100, 60% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.25) ));
+	background-image:	-moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 100%);
+	background-image:	gradient(radial, 60% 0, 100, 60% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.25) ));
+	-webkit-box-shadow:	inset rgba(255,255,255,0.4) 0 0.2em .2em, inset rgba(0,0,0,0.15) 0 -0.1em .2em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 1px, hsl(0, 0%, 45%) 0 .1em 1px, /* color border */
+						rgba(0,0,0,0.9) 0 .1em 1px; /* drop shadow */
+	-moz-box-shadow:	inset rgba(255,255,255,0.4) 0 0.2em .2em, inset rgba(0,0,0,0.15) 0 -0.1em .2em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 1px, hsl(0, 0%, 45%) 0 .1em 1px, /* color border */
+						rgba(0,0,0,0.9) 0 .1em 1px; /* drop shadow */
+	box-shadow:			inset rgba(255,255,255,0.4) 0 0.2em .2em, inset rgba(0,0,0,0.15) 0 -0.1em .2em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 1px, hsl(0, 0%, 45%) 0 .1em 1px, /* color border */
+						rgba(0,0,0,0.9) 0 .1em 1px; /* drop shadow */
 }
 
 button.menu-toggle:focus,
@@ -1747,7 +1773,7 @@ input[type="submit"].menu-toggle:hover {
     border-color: red;
 }
 
-.format-menu-toggle:before {
+button.menu-toggle:before {
 	font: normal normal normal 32px/1 dashicons;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -1809,7 +1835,7 @@ input[type="submit"].menu-toggle:hover:before {
 	background-color: black;
 }
 
-.main-navigation .format-mobile-ul li a:before {
+.main-navigation > div > ul > li a:before {
 	font: normal normal normal 30px/1 dashicons;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
@@ -1826,20 +1852,20 @@ input[type="submit"].menu-toggle:hover:before {
     transform			: translateY(-50%);	
 }
 
-.main-navigation .format-mobile-ul ul a:before {
+.main-navigation > div > ul > li > ul > li > a:before {
 	left: 20px;
 }
 
-.main-navigation .format-mobile-ul ul ul a:before {
+.main-navigation > div > ul > li > ul > li > ul > li > a:before {
 	left: 40px;
 }
 
-.main-navigation .format-mobile-ul ul ul ul a:before {
+.main-navigation > div > ul > li > ul > li > ul > li > ul > li > a:before {
 	left: 60px;
 }
 
-.main-navigation .format-mobile-ul a:focus:before,
-.main-navigation .format-mobile-ul a:hover:before,
+.main-navigation ul a:focus:before,
+.main-navigation ul a:hover:before,
 .main-navigation ul a:focus,
 .main-navigation ul a:hover,
 .main-navigation ul ul a:focus, 
