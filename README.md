@@ -63,6 +63,12 @@ This theme supports updates from WordPress.org.  Please update your copy of the 
 Changelog
 ---------
 
+### v1.3.7
+* Introduced a new menu for mobile use that improves usability and accessibility. The previous menu had issues with spotty double-tap support on some mobile devices and the menu fonts were too small to easily tap. The new menu utilizes the same accessible JavasScript but clicking the menu button creates a simpler tree of all menu links. The size and visual contrast of the button and menu links have all been substantially increased (100% white on 100% back). Like the previous menu, the menu is accessible by keyboard navigation even on mobile devices.
+* Replaced triangle .gif files with use of WordPress's built-in Dashicons font.
+* Added control to the customizer that allows users to clear all theme customizations.
+* Mobile CSS now kicks in at 782px just like WordPress's mobile UI
+
 ### v1.3.6
 * Added extensive controls in the WordPress Customizer that allow users to pick both font-sizes and font-families. The theme now includes customizer controls for the font-sizes but modifications to font-families is done through theme support for the Typecase Web Fonts plugin. There are also separate customizer controls for all the font-sizes when viewed on mobile devices. The theme defines many different theme regions and each region can have a different font-family (through the plugin), font-size, and mobile font-size.
 * Synced theme with recent updates to the _s framework.
