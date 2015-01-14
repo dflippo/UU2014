@@ -35,8 +35,8 @@ jQuery.fn.sharebar = function(options) {
 	function sharebar_scroll() {
 		var p = jQuery(window).scrollTop();
 		var w = jQuery(window).width();
-		jQuery(sharebar).css('position',((p+20)>start) ? 'fixed' : 'absolute');
-		jQuery(sharebar).css('top',((p+20)>start) ? '20px' : '');
+		jQuery(sharebar).css('position',((p+32)>start) ? 'fixed' : 'absolute');
+		jQuery(sharebar).css('top',((p+32)>start) ? '32px' : '');
 	}
 
 };
