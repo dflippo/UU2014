@@ -110,6 +110,7 @@ add_action( 'wp', 'uu2014_setup_author' );
  */
 function uu2014_the_attached_image() {
 	$post                = get_post();
+	$next_id = false;
 	/**
 	 * Filter the default attachment size.
 	 *

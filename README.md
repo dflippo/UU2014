@@ -63,6 +63,13 @@ This theme supports updates from WordPress.org.  Please update your copy of the 
 Changelog
 ---------
 
+### v1.3.8
+* Fixed bug with customizer feature to hide bylines
+* Added four new customizer options to hide posted-on dates, post-formats, categories, and tags on posts
+* Added CSS to show posts flagged as "sticky" with an ivory background
+* Made a subtle change to the background color to make it a bit lighter and very slightly ivory.
+* Add CSS for printing - it removes most of the header and all of the sidebars and footer so that you are printing the content, not the stuff around the content.  It also tries to add a Google QR code to the top-right of your printout.
+
 ### v1.3.7
 * Introduced a new menu for mobile use that improves usability and accessibility. The previous menu had issues with spotty double-tap support on some mobile devices and the menu fonts were too small to easily tap. The new menu utilizes the same accessible JavasScript but clicking the menu button creates a simpler tree of all menu links. The size and visual contrast of the button and menu links have all been substantially increased (100% white on 100% back). Like the previous menu, the menu is accessible by keyboard navigation even on mobile devices.
 * Replaced triangle .gif files with use of WordPress's built-in Dashicons font.

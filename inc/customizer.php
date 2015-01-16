@@ -347,6 +347,70 @@ function uu2014_customize_register($wp_customize) {
         ),
             )
     );
+    $wp_customize->add_setting('uu2014_display_posted_on', array(
+        'default' => '1', 
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
+        )
+    );
+    $wp_customize->add_control('uu2014_display_posted_on_dropdown', array(
+        'label' => __('Display "Posted on ____" on posts?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_posted_on',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_post_format', array(
+        'default' => '1', 
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
+        )
+    );
+    $wp_customize->add_control('uu2014_display_post_format_dropdown', array(
+        'label' => __('Display post format name on posts?  (Aside, Image, Video, Quote, Link)', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_post_format',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_categories', array(
+        'default' => '1', 
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
+        )
+    );
+    $wp_customize->add_control('uu2014_display_categories_dropdown', array(
+        'label' => __('Display categories on posts?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_categories',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
+    $wp_customize->add_setting('uu2014_display_tags', array(
+        'default' => '1', 
+        'sanitize_callback' => 'uu2014_sanitize_true_false'
+        )
+    );
+    $wp_customize->add_control('uu2014_display_tags_dropdown', array(
+        'label' => __('Display tags on posts?', 'uu2014'),
+        'section' => 'uu2014_display_features_section',
+        'settings' => 'uu2014_display_tags',
+        'type' => 'radio',
+        'choices' => array(
+            '1' => __('Display', 'uu2014'),
+            '0' => __('Hide', 'uu2014'),
+        ),
+            )
+    );
     /* UU 2014 - Image Selection
       ========================================================================== */
     $wp_customize->add_section('uu2014_choose_images_section', array(
@@ -436,8 +500,6 @@ div.site-branding { max-width: <?php echo get_theme_mod('uu2014_header_width', '
 div.site-content { max-width: <?php echo get_theme_mod('uu2014_page_width', '1200px'); ?>; }
 div.footer-widget-area { max-width: <?php echo get_theme_mod('uu2014_footer_widget_width', '1200px'); ?>; }
 .header-widget-area { max-width: <?php echo get_theme_mod('uu2014_header_width', '1200px'); ?>; }
-div.site-content { background-image: url(<?php echo get_template_directory_uri() . '/images/img-noise-500x500.png'; ?>); }
-div.site-content { background: rgb(255, 255, 255); background-color: rgba(255, 255, 255, .9); }
 <?php if (!get_theme_mod('uu2014_display_title_image', 1)) : ?>
 #site-title-image { display: none; }
 .site-title { padding: 0; }
@@ -453,6 +515,32 @@ div.site-content { background: rgb(255, 255, 255); background-color: rgba(255, 2
 .site-content { background-size: 0%; }
 #secondary { display: none; }
 <?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_bylines', 1)) : ?>
+.byline { display: none !important; }
+<?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_posted_on', 1)) : ?>
+.posted-on { display: none !important; }
+<?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_post_format', 1)) : ?>
+.post-format { display: none !important; }
+<?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_categories', 1)) : ?>
+.cat-links { display: none !important; }
+<?php endif; ?>
+<?php if (!get_theme_mod('uu2014_display_tags', 1)) : ?>
+.tags-links { display: none !important; }
+<?php endif; ?>
+@media print {
+	.site-branding:before {
+		content: url(https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=http://<?php the_permalink(); ?>&choe=UTF-8);
+		position: absolute;
+		z-index: 9999;
+		top: 0;
+		right: 0;
+		width: 150px;
+		margin: 0;
+   }
+}
 </style>
 <?php }
 add_action( 'wp_head', 'uu2014_customize_css');
@@ -547,9 +635,9 @@ if ( ! function_exists( 'uu2014_sanitize_true_false' ) ) :
  */
 function uu2014_sanitize_true_false( $value ) {
 	if ( $value == 1 ) {
-		return true;
+		return 1;
 	} 
-	return false;
+	return 0;
 }
 endif;
 

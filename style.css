@@ -2,7 +2,7 @@
 Theme Name: UU 2014
 Description: UU2014 is a Responsive and Accessibility-Ready WordPress Theme designed to meet the needs of Unitarian Universalist Congregations and other UU organizations. The theme is fully responsive to smaller screens such as mobile phones and uses the Underscores framework to provide the latest WordPress, accessibility, and browser compatibility features. The theme is easy to customize with support for 2 menus and 6 widget areas in two sidebars, the header, the footer, and the header/footer of the primary content area on pages and single posts. It also allows you to easily modify features in the WordPress Customizer including the title image, footer image, comments, favicon, sidebars, and widget areas. Through the use of transparency, colors throughout the theme will shift to complement whatever image or color you choose for the page background. Sections have been added to the WordPress Customizer to set the font-sizes and mobile font-sizes for many theme regions. Optional integration has been added for the UpThemes Typecase Web Fonts plugin to select different font-families for these theme regions. The theme also features optional integration with the CodeFlavors Featured Articles Lite plugin for featured post sliders and the SiteOrigin Page Builder plugin for responsive, multi-column layouts. Support forum for questions and requests: https://github.com/dflippo/UU2014/issues
 Author: Dan Flippo
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: accessibility-ready, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready
@@ -824,7 +824,7 @@ object {
 /* 20.1 UU2014 - Global
    ========================================================================== */
 html {
-	background-color: rgb(0,0,0);
+	background-color: black;
 }
 
 body,
@@ -883,6 +883,10 @@ a:hover, a:focus, a:active {
 	background: #333;
 	text-decoration: underline;
 	outline: red thin dotted;
+}
+
+.sticky {
+	background: Ivory;
 }
 
 /* 20.2 UU2014 - Menu
@@ -1032,6 +1036,43 @@ li.menu-item-has-children > a:hover .double-tap {
     visibility: visible;
 }
 
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a,
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a {
+	line-height: 32px;
+    vertical-align: middle;
+}
+
+.nav-previous a:before {
+	margin-left: -30px;
+	font: normal normal normal 32px/1 dashicons;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: top;
+	padding-right: 5px;
+	color: red;
+	content: "\f340"; /* dashicons-arrow-left-alt */
+}
+
+.nav-next a:after {
+	margin-right: -30px;
+	font: normal normal normal 32px/1 dashicons;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: top;
+	padding-left: 5px;
+	color: red;
+	content: "\f344"; /* dashicons-arrow-right-alt */
+}
 
 /* 20.3 UU2014 - Search Box
    ========================================================================== */
@@ -1195,15 +1236,15 @@ div.site-title-description {
 /* 20.5 UU2014 - Content Area
    ========================================================================== */
 .site-content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 450px;
-  background: white url(images/img-noise-500x500.png) repeat-y left top;
-  background-color: rgba(255, 255, 255, .9); /* 10% transparent */
-  background-size: 25%; 
-  box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8); }
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1200px;
+	min-height: 450px;
+	background: rgb(255,255,250); /* fallback color */
+	background-color: rgba(255,255,250, .95); /* 5% transparent */
+	box-shadow: 8px 0 8px 1px rgba(0, 0, 0, 0.8), -8px 0 8px 1px rgba(0, 0, 0, 0.8); 
+}
 
 .content-area {
 	float: right;
@@ -1213,9 +1254,7 @@ div.site-title-description {
 
 .site-main {
 	margin: 0 0 0 25%;
-	padding: 0 0 0 0;
-	background-color: rgb(255, 255, 255); /* fallback color */
-	background-color: rgba(255, 255, 255, 0); /* 100% transparent */
+	padding: 0;
 }
 .site-main table td {
 	padding: 7px 10px;
@@ -1460,9 +1499,8 @@ article.type-post {
 .site-footer {
 	clear: both;
 	width: 100%;
-	background: #111 url(images/chalice-watermark-dark.gif) no-repeat 40px 0;
+	background: black url(images/chalice-watermark-dark.gif) no-repeat 40px 0;
 	background-size:auto 100%;
-	background-color: rgb(0,0,0);
 	border-top: 4px solid #555;
 	color: white;
 	padding: 30px 0 10px 0;
@@ -2080,3 +2118,66 @@ body ul#sharebarx li {
     padding: 2px 5px 3px !important;
     margin: 1px 1px 0 14px !important; }
 
+/* 3.9 UU2014 - Styles when printing
+   ========================================================================== */
+@media print {
+
+    #header-widget-area,
+	#search-box.search-box,
+	#colophon.site-footer,
+	#secondary.sidebar-widget-area,
+	#sharebar,
+	.navigation,
+	.entry-footer {
+		display: none !important;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+	html,
+	body,
+	#masthead.site-header,
+	div.site-title-description,
+	.site-title a,
+	.site-description,
+	#page.site,
+	#content.site-content,
+	#primary.content-area,
+	#main.site-main,
+	.site-footer{
+		color: black !important;
+		background: none !important;
+		border: none !important;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		page-break-after: avoid;
+	}
+
+	ul, img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	@page {
+		margin: 2cm;
+   }
+
+   .entry-content a[href^=http]:after {
+		content:" <" attr(href) "> ";
+   }
+   
+	article a[href^="#"]:after {
+		content: "";
+	}
+
+	$a:after > img {
+		content: "";
+	}
+
+}
