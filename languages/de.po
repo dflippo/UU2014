@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UU2014\n"
 "POT-Creation-Date: 2015-04-06 18:39-0500\n"
-"PO-Revision-Date: 2015-04-06 19:55-0500\n"
+"PO-Revision-Date: 2015-04-07 22:00+0100\n"
 "Last-Translator: Dan Flippo <djf13@cornell.edu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: 404.php:45
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Versuchen Sie es in der Monatsarchive. %1$s"
+msgstr "Versuchen Sie es im Monatsarchiv. %1$s"
 
 #: comments.php:35 comments.php:52
 msgid "&larr; Older Comments"
@@ -36,7 +36,7 @@ msgstr " zu <a href=\"%1$s\" title=\"Link zum Bild in voller Größe\">%2$s &tim
 #: content-image.php:52 content.php:33
 #, php-format
 msgid "Finish Reading: <em>%s</em>"
-msgstr "Sertig Lesen: <em> %s </em>"
+msgstr "Fertig lesen: <em> %s </em>"
 
 #: content-image.php:55 content-page.php:18 content.php:36
 msgid "Pages:"
@@ -45,7 +45,7 @@ msgstr "Seiten:"
 #: content-none.php:19
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Seit, den ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Suchen start</a>."
+msgstr "Bereit den ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Suchen start</a>."
 
 #: content-page.php:24 inc/template-tags.php:124
 #, php-format
@@ -119,7 +119,7 @@ msgstr "Hauptseitenleiste"
 
 #: functions.php:156
 msgid "This widget area will appear as a sidebar on the left of every page."
-msgstr "Widget Bereich wird als Seitenleiste auf der linken Seite auf jeder Seite angezeigt."
+msgstr "Widget Bereich wird als Seitenleiste links auf jeder Seite angezeigt."
 
 #: functions.php:163
 msgid "Header Widget Area"
@@ -127,23 +127,23 @@ msgstr "Kopf Widget Umgebung"
 
 #: functions.php:165
 msgid "The theme can display a header widget area instead of the standard WordPress header image functionality.  The theme will still use the WordPress header image if no widgets are added.  You can use this area to easily add a slideshow widget as your header."
-msgstr "Das Thema kann einen Header-Widget Bereich anstelle des Standard-Wordpress-header image Funktionen anzuzeigen. Das Thema wird noch die Wordpress-Bildkopfzeile verwenden, wenn keine Widgets hinzugefügt werden. Sie können diesen Bereich nutzen, um einfach fügen Sie eine Diashow-Widget als Header."
+msgstr "Das Thema kann einen Header-Widget Bereich anstelle des Standard-Wordpress-Header Image Funktionen anzeigen. Das Thema wird noch die Wordpress-Bildkopfzeile verwendt, wenn keine Widgets hinzugefügt werden. Sie können diesen Bereich nutzen, um einfach ein Diashow-Widget als Header einzufügen."
 
 #: functions.php:172
 msgid "Footer Widget Area"
-msgstr "Footer Widget Umgebung"
+msgstr "Fuss Widget Umgebung"
 
 #: functions.php:174
 msgid "The theme can display a footer widget area at the bottom of the page.  The area will only appear if you add a widget.  You can use this area to easily add custom text and links to the footer."
-msgstr "Das Thema kann eine Fußzeile Widget Bereich am unteren Rand der Seite angezeigt werden sollen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um kundenspezifischen Text und Links leicht hinzufügen, um die Fußzeile."
+msgstr "Das Thema kann ein Fußzeilen Widget Bereich am unteren Rand der Seite anzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um kundenspezifischen Text und Links einfach in der Fußzeile einzufügen."
 
 #: functions.php:181
 msgid "Floating Widget Area"
-msgstr "Schwimmdock Widget Umgebung"
+msgstr "Fliessende Widget Umgebung"
 
 #: functions.php:183
 msgid "The theme can display a floating widget area to the right of pages and individual posts.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to your pages."
-msgstr "Das Thema kann eine schwimmende Widget Bereich rechts von Seiten und einzelne Beiträge anzuzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um problemlos hinzufügen Sharing Widgets auf Ihren Seiten."
+msgstr "Das Thema kann einen fliessenden Widget Bereich rechts der Seiten oder einzelnen Beiträgen anzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um Sharing Widgets auf Ihren Seiten hinzuzufügen."
 
 #: functions.php:190
 msgid "Content Header Widget Area"
@@ -151,7 +151,7 @@ msgstr "Inhaltsheader Widget Umgebung"
 
 #: functions.php:192
 msgid "The theme can display widgets just before the main content of your page.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to the top of your pages."
-msgstr "Das Thema können Widgets kurz vor dem Inhalt Ihrer Seite anzuzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um problemlos hinzufügen Sharing Widgets an die Spitze Ihrer Seiten."
+msgstr "Das Thema kann Widgets unmittelbar vor dem Inhalt Ihrer Seite anzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um Sharing Widgets am Anfang Ihrer Seiten anzuzeigen."
 
 #: functions.php:199
 msgid "Content Footer Widget Area"
@@ -159,7 +159,7 @@ msgstr "Inhalt Footer-Widget Umgebung"
 
 #: functions.php:201
 msgid "The theme can display widgets just after the main content of your page.  The area will only appear if you add a widget.  You can use this area to easily add sharing widgets to the bottom of your pages."
-msgstr "Das Thema können Widgets gleich nach dem Inhalt Ihrer Seite anzuzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um problemlos hinzufügen Sharing Widgets auf den Grund Ihrer Seiten."
+msgstr "Das Thema kann Widgets gleich nach dem Inhalt Ihrer Seite anzeigen. Der Bereich wird nur angezeigt, wenn Sie ein Widget hinzufügen. Sie können diesen Bereich nutzen, um  Sharing Widgets an Ende Ihrer Seiten darzustellen."
 
 #: functions.php:295
 msgid "Cell Borders"
@@ -167,11 +167,11 @@ msgstr "Zellenrahmen"
 
 #: functions.php:346 inc/class-tgm-plugin-activation.php:161
 msgid "Install Required Plugins"
-msgstr "Installieren Erforderliche Plugins"
+msgstr "Installiere erforderliche Plugins"
 
 #: functions.php:347 inc/class-tgm-plugin-activation.php:162
 msgid "Install Plugins"
-msgstr "Plugins Installieren"
+msgstr "Plugins installieren"
 
 #: functions.php:348 inc/class-tgm-plugin-activation.php:163
 #, php-format
@@ -186,7 +186,8 @@ msgstr "Da lief was falsch mit dem Plugin API."
 msgid "Return to Required Plugins Installer"
 msgstr "Zurück zur Seite Erforderliche Plugins Installer"
 
-#: functions.php:361 inc/class-tgm-plugin-activation.php:177 inc/class-tgm-plugin-activation.php:1945
+#: functions.php:361 inc/class-tgm-plugin-activation.php:177
+#: inc/class-tgm-plugin-activation.php:1945
 msgid "Plugin activated successfully."
 msgstr "Plugin erfolgreich aktiviert."
 
@@ -205,7 +206,7 @@ msgstr "Zurück zum Dashboard"
 
 #: inc/class-tgm-plugin-activation.php:178
 msgid "The following plugin was activated successfully:"
-msgstr "Die folgende Plugin erfolgreich aktiviert wurde:"
+msgstr "Das folgende Plugin wurde erfolgreich aktiviert:"
 
 #: inc/class-tgm-plugin-activation.php:179
 #, php-format
@@ -214,15 +215,16 @@ msgstr "Alle Plugins installiert und erfolgreich aktiviert. %1$s"
 
 #: inc/class-tgm-plugin-activation.php:180
 msgid "Dismiss this notice"
-msgstr "Dismiss this notice"
+msgstr "Meldung zurückweisen"
 
-#: inc/class-tgm-plugin-activation.php:534 inc/class-tgm-plugin-activation.php:2162
+#: inc/class-tgm-plugin-activation.php:534
+#: inc/class-tgm-plugin-activation.php:2162
 msgid "Return to the Dashboard"
 msgstr "Zurück zum Dashboard"
 
 #: inc/class-tgm-plugin-activation.php:1169
 msgid "Private Repository"
-msgstr "Privat Repository"
+msgstr "Privates Repository"
 
 #: inc/class-tgm-plugin-activation.php:1172
 msgid "Pre-Packaged"
@@ -238,7 +240,7 @@ msgstr "Erforderlich"
 
 #: inc/class-tgm-plugin-activation.php:1180
 msgid "Recommended"
-msgstr "Empfehlenswert"
+msgstr "Empfohlen"
 
 #: inc/class-tgm-plugin-activation.php:1183
 msgid "Not Installed"
@@ -248,18 +250,20 @@ msgstr "Nicht Installiert"
 msgid "Installed But Not Activated"
 msgstr "Installiert, aber nicht aktiviert"
 
-#: inc/class-tgm-plugin-activation.php:1290 inc/class-tgm-plugin-activation.php:1398
+#: inc/class-tgm-plugin-activation.php:1290
+#: inc/class-tgm-plugin-activation.php:1398
 msgid "Install"
 msgstr "Installieren"
 
-#: inc/class-tgm-plugin-activation.php:1312 inc/class-tgm-plugin-activation.php:1399
+#: inc/class-tgm-plugin-activation.php:1312
+#: inc/class-tgm-plugin-activation.php:1399
 msgid "Activate"
 msgstr "Aktivieren"
 
 #: inc/class-tgm-plugin-activation.php:1361
 #, php-format
 msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
-msgstr "Ne Plugins zu installieren oder zu aktivieren. <A href = \" %1$s \" title=\"Zurück zum Dashboard\">Zurück zum Dashboard</a>"
+msgstr "Keine Plugins zu installieren oder zu aktivieren. <A href = \" %1$s \" title=\"Zurück zum Dashboard\">Zurück zum Dashboard</a>"
 
 #: inc/class-tgm-plugin-activation.php:1377
 msgid "Plugin"
@@ -271,7 +275,7 @@ msgstr "Quelle"
 
 #: inc/class-tgm-plugin-activation.php:1379
 msgid "Type"
-msgstr "Art"
+msgstr "Typ"
 
 #: inc/class-tgm-plugin-activation.php:1380
 msgid "Status"
@@ -279,12 +283,12 @@ msgstr "Status"
 
 #: inc/class-tgm-plugin-activation.php:1928
 msgid "Install package not available."
-msgstr "Installieren Sie das Paket nicht zur Verfügung."
+msgstr "Installationspaket steht nicht zur Verfügung"
 
 #: inc/class-tgm-plugin-activation.php:1929
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr "Downloading Installationspaket von <span class = \"Code\"> %s </span>&#8230;"
+msgstr "Herunterladen des Installationspakets von <span class = \"Code\"> %s </span>&#8230;"
 
 #: inc/class-tgm-plugin-activation.php:1930
 msgid "Unpacking the package&#8230;"
@@ -304,28 +308,30 @@ msgstr "Plugin erfolgreich installiert."
 
 #: inc/class-tgm-plugin-activation.php:1944
 msgid "Plugin activation failed."
-msgstr "Plugin activation failed."
+msgstr "Aktivierung des Plugins fehlgeschlagen."
 
 #: inc/class-tgm-plugin-activation.php:2058
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "Die Installation und der Aktivierungsprozess wird gestartet. Dieser Vorgang kann eine Weile auf einigen Hosts nehmen, also bitte etwas Geduld."
+msgstr "Die Installation und der Aktivierungsprozess werden gestartet. Dieser Vorgang kann eine Weile dauern. Bitte um etwas Geduld."
 
 #: inc/class-tgm-plugin-activation.php:2059
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s installiert und erfolgreich aktiviert."
 
-#: inc/class-tgm-plugin-activation.php:2059 inc/class-tgm-plugin-activation.php:2068
+#: inc/class-tgm-plugin-activation.php:2059
+#: inc/class-tgm-plugin-activation.php:2068
 msgid "Show Details"
 msgstr "Zeige Details"
 
-#: inc/class-tgm-plugin-activation.php:2059 inc/class-tgm-plugin-activation.php:2068
+#: inc/class-tgm-plugin-activation.php:2059
+#: inc/class-tgm-plugin-activation.php:2068
 msgid "Hide Details"
-msgstr "Einzelheiten ausblenden"
+msgstr "Details ausblenden"
 
 #: inc/class-tgm-plugin-activation.php:2060
 msgid "All installations and activations have been completed."
-msgstr "Alle Installation und Aktivierung abgeschlossen sind."
+msgstr "Alle Installationen und Aktivierungen sind abgeschlossen."
 
 #: inc/class-tgm-plugin-activation.php:2061
 #, php-format
@@ -334,7 +340,7 @@ msgstr "Installation und Aktivierung Plugin %1$s (%2$d/%3$d)"
 
 #: inc/class-tgm-plugin-activation.php:2065
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "Der Installationsvorgang wird gestartet. Dieser Vorgang kann eine Weile auf einigen Hosts nehmen, also bitte etwas Geduld."
+msgstr "Der Installationsvorgang wird gestartet. Dieser Vorgang kann eine Weile dauern. Bitte um etwas Geduld."
 
 #: inc/class-tgm-plugin-activation.php:2066
 #, php-format
@@ -344,7 +350,7 @@ msgstr "Bei der Installation ist ein Fehler aufgetreten %1$s : <strong> %2$s </s
 #: inc/class-tgm-plugin-activation.php:2067
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr "Installation dies fehlschlug: %1$s."
+msgstr "Installation fehlgeschlagen: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:2068
 #, php-format
@@ -362,19 +368,19 @@ msgstr "Installation von Plugin %1$s (%2$d/%3$d)"
 
 #: inc/customizer.php:26
 msgid "UU 2014 - Reset Theme"
-msgstr "UU 2014 - Zurücksetzen Theme"
+msgstr "UU 2014 - Theme zurücksetzen"
 
 #: inc/customizer.php:28
 msgid "You can reset all the customization settings for the UU2014 theme sections below but this will not reset standard WordPress settings such as your title or widget areas.  Please note that you must exit and re-enter the customizer after making this change before you will be able to change other settings."
-msgstr "Sie können alle benutzerdefinierten Einstellungen für die UU2014 Thema Abschnitte unten zurückgesetzt, aber das wird nicht Standard-Wordpress-Einstellungen zurücksetzen, wie Ihren Titel oder Widget Bereichen. Bitte beachten Sie, dass Sie zu verlassen und wieder in den Customizer nach dieser Änderung, bevor Sie in der Lage, um andere Einstellungen zu ändern."
+msgstr "Sie können alle benutzerdefinierten Einstellungen für die untenstehenden Abschnitte des UU2014 Themas zurücksetzen. Die Standard-Wordpress-Einstellungen, der Titel oder die Widget-Bereiche werden jedoch nicht zurückgesetzt,. Bitte beachten Sie, dass Sie den Customizer schliessen und wieder öffnen müssen nach dieser Änderung, bevor andere Einstellungen bearbeitet werden können."
 
 #: inc/customizer.php:37
 msgid "Reset all customizations for the UU2014 theme?"
-msgstr "Setzt alle Anpassungen für die UU2014 Thema?"
+msgstr "Alle Anpassungen für das UU2014 Thema zurücksetzen?"
 
 #: inc/customizer.php:42
 msgid "Yes, please reset immediately"
-msgstr "Ja, setzen Sie sich bitte umgehend"
+msgstr "Ja, bitte umgehend zurücksetzen"
 
 #: inc/customizer.php:43
 msgid "Not right now"
@@ -386,7 +392,7 @@ msgstr "UU 2014 - Schriftgrößen"
 
 #: inc/customizer.php:54
 msgid "You can customize the font sizes for different sections of the theme below"
-msgstr "Sie können die Schriftgrößen für die verschiedenen Abschnitte der unten Thema anpassen"
+msgstr "Sie können die Schriftgrößen für die verschiedenen Abschnitte des unteren Themas anpassen"
 
 #: inc/customizer.php:75
 msgid "UU 2014 - Smaller Device Font Sizes"
@@ -394,7 +400,7 @@ msgstr "UU 2014 - Kleinere Geräteschriftgrößen"
 
 #: inc/customizer.php:77
 msgid "The sizes below take effect on any screen with up to 782 pixels width"
-msgstr "Die Größen unten wirksam auf jedem Bildschirm mit bis zu 782 Pixel Breite"
+msgstr "Die Größen unten gelten auf jedem Bildschirm mit bis zu 782 Pixel Breite"
 
 #: inc/customizer.php:97
 msgid "UU 2014 - Widths"
@@ -402,7 +408,7 @@ msgstr "UU 2014 - Breiten"
 
 #: inc/customizer.php:99
 msgid "You can customize the maximum widths for different sections of the theme below"
-msgstr "Sie können die maximale Breite für verschiedene Abschnitte der unten Thema anpassen"
+msgstr "Sie können die maximale Breite für verschiedene Abschnitte des unteren Themas anpassen"
 
 #: inc/customizer.php:107
 msgid "Maximum Page Width"
@@ -410,7 +416,7 @@ msgstr "Maximale Seitenbreite"
 
 #: inc/customizer.php:118
 msgid "Maximum Header Width"
-msgstr "Maximale Schneidwerksbreite"
+msgstr "Maximale Breite Kopfbereich"
 
 #: inc/customizer.php:129
 msgid "Maximum Menu Width"
@@ -418,39 +424,47 @@ msgstr "Maximale Menü Breite"
 
 #: inc/customizer.php:140
 msgid "Maximum Footer Widget Area Width"
-msgstr "Maximale Footer Widget Bereich Breite"
+msgstr "Maximale Fuss Widget Bereich Breite"
 
 #: inc/customizer.php:151
 msgid "Minimum width in pixels required to show floating widget area?"
-msgstr "Minimale Breite in Pixel erforderlich, um Floating-Widget Bereich zeigen?"
+msgstr "Minimale Breite in Pixel erforderlich, um einen Floating-Widget Bereich anzuzeigen?"
 
 #: inc/customizer.php:162
 msgid "Maximum Content Width in pixels? The content width sets the maximum allowed width for any content in the theme, like oEmbeds and images added to posts."
-msgstr "Maximale Inhalt Breite in Pixel? Der Inhalt Breite legt die maximal zulässige Breite für die Inhalte im Thema, wie oEmbeds und Bilder Beiträge aufgenommen."
+msgstr "Maximale Inhalt Breite in Pixel? Der Inhalt Breite legt die maximal zulässige Breite für die Inhalte im Thema fest, wie oEmbeds und Bilder Beiträge hinzugefügt werden."
 
 #: inc/customizer.php:170
 msgid "UU 2014 - Display And Hide Features"
-msgstr "UU 2014 - ein- und ausblenden Eigenschaften"
+msgstr "UU 2014 - Eigenschaften ein- und ausblenden "
 
 #: inc/customizer.php:172
 msgid "This theme has a number of features that you can choose to display or hide"
-msgstr "Dieses Thema hat eine Reihe von Funktionen, die Sie wählen können ein- oder ausblenden"
+msgstr "Dieses Thema hat eine Reihe von Funktionen, die Sie ein- oder ausblenden können"
 
 #: inc/customizer.php:180
 msgid "Display an image near the title?"
-msgstr "Zeigen Sie ein Bild in der Nähe der Titel?"
+msgstr "Ein Bild in der Nähe des Titels zeigen?"
 
-#: inc/customizer.php:185 inc/customizer.php:201 inc/customizer.php:217 inc/customizer.php:233 inc/customizer.php:249 inc/customizer.php:265 inc/customizer.php:281 inc/customizer.php:297 inc/customizer.php:313 inc/customizer.php:329 inc/customizer.php:345 inc/customizer.php:361 inc/customizer.php:377 inc/customizer.php:393 inc/customizer.php:409
+#: inc/customizer.php:185 inc/customizer.php:201 inc/customizer.php:217
+#: inc/customizer.php:233 inc/customizer.php:249 inc/customizer.php:265
+#: inc/customizer.php:281 inc/customizer.php:297 inc/customizer.php:313
+#: inc/customizer.php:329 inc/customizer.php:345 inc/customizer.php:361
+#: inc/customizer.php:377 inc/customizer.php:393 inc/customizer.php:409
 msgid "Display"
 msgstr "Anzeige"
 
-#: inc/customizer.php:186 inc/customizer.php:202 inc/customizer.php:218 inc/customizer.php:234 inc/customizer.php:250 inc/customizer.php:266 inc/customizer.php:282 inc/customizer.php:298 inc/customizer.php:314 inc/customizer.php:330 inc/customizer.php:346 inc/customizer.php:362 inc/customizer.php:378 inc/customizer.php:394 inc/customizer.php:410
+#: inc/customizer.php:186 inc/customizer.php:202 inc/customizer.php:218
+#: inc/customizer.php:234 inc/customizer.php:250 inc/customizer.php:266
+#: inc/customizer.php:282 inc/customizer.php:298 inc/customizer.php:314
+#: inc/customizer.php:330 inc/customizer.php:346 inc/customizer.php:362
+#: inc/customizer.php:378 inc/customizer.php:394 inc/customizer.php:410
 msgid "Hide"
 msgstr "Verbergen"
 
 #: inc/customizer.php:196
 msgid "Display an image in the footer?"
-msgstr "Zeigen Sie ein Bild in der Fußzeile?"
+msgstr "Ein Bild in der Fusszeile zeigen?"
 
 #: inc/customizer.php:212
 msgid "Display theme image for the website icon(favicon)?"
@@ -458,39 +472,39 @@ msgstr "Themenbild anzeigen für die Website-Symbol (Favicon)?"
 
 #: inc/customizer.php:228
 msgid "Display primary sidebar widget area?"
-msgstr "Anzeige primären Sidebar Widget Bereich?"
+msgstr "Primären Sidebar Widget Bereich anzeigen?"
 
 #: inc/customizer.php:244
 msgid "Display header widget area?"
-msgstr "Display-Header-Widget Bereich?"
+msgstr "Header-Widget Bereich anzeigen?"
 
 #: inc/customizer.php:260
 msgid "Display footer widget area?"
-msgstr "Anzeige Fußzeile Widget Bereich?"
+msgstr "Fußzeile Widget Bereich anzeigen?"
 
 #: inc/customizer.php:276
 msgid "Display floating widget area?"
-msgstr "Anzeige schwimm Widget Bereich?"
+msgstr "Fliessender Widget Bereich anzeigen?"
 
 #: inc/customizer.php:292
 msgid "Display comments on pages?"
-msgstr "Anzeige Kommentare auf den Seiten?"
+msgstr "Kommentare auf den Seiten anzeigen?"
 
 #: inc/customizer.php:308
 msgid "Display comments on posts?"
-msgstr "Anzeige Kommentare zu Beiträge?"
+msgstr "Kommentare zu Beiträgen anzeigen?"
 
 #: inc/customizer.php:324
 msgid "Display comments on image pages?"
-msgstr "Anzeige Kommentare zu Bildseiten?"
+msgstr "Kommentare zu Bildseiten anzeigen?"
 
 #: inc/customizer.php:340
 msgid "Display bylines on posts?"
-msgstr "Anzeige bylines auf Beiträge?"
+msgstr "Seitenlinie anzeigen in Beiträgen?"
 
 #: inc/customizer.php:356
 msgid "Display \"Posted on ____\" on posts?"
-msgstr "Display \"Veröffentlicht am ____ \" auf Beiträge?"
+msgstr "Anzeige \"Veröffentlicht am ____ \" invBeiträgen?"
 
 #: inc/customizer.php:372
 msgid "Display post format name on posts?  (Aside, Image, Video, Quote, Link)"
@@ -498,11 +512,11 @@ msgstr "Anzeige nach Formatnamen auf Beiträge? (Abgesehen davon, Bild, Video, Z
 
 #: inc/customizer.php:388
 msgid "Display categories on posts?"
-msgstr "Kategorien auf Beiträge anzeigen?"
+msgstr "Kategorien in Beiträgen anzeigen?"
 
 #: inc/customizer.php:404
 msgid "Display tags on posts?"
-msgstr "Anzeigen-Tags auf Beiträge?"
+msgstr "Tags auf Beiträgen anzeigen?"
 
 #: inc/customizer.php:417
 msgid "UU 2014 - Image Selection"
@@ -510,11 +524,11 @@ msgstr "UU 2014 - Bildauswahl"
 
 #: inc/customizer.php:419
 msgid "You can choose what style of UU image to display in the theme."
-msgstr "Sie können wählen, welche Art von UU Bild, um das Thema anzuzeigen."
+msgstr "Sie können wählen, welche Art von UU Bild im Thema angezeigt werden soll"
 
 #: inc/customizer.php:427
 msgid "Which image should be displayed near the title?"
-msgstr "Welches Bild sollte in der Nähe der Titel angezeigt werden?"
+msgstr "Welches Bild soll in der Nähe des Titels angezeigt werden?"
 
 #: inc/customizer.php:433
 msgid "Silver UUA Symbol"
@@ -522,19 +536,19 @@ msgstr "Silber UUA Symbol"
 
 #: inc/customizer.php:434
 msgid "Smaller Silver UUA Symbol"
-msgstr "Kleinere Silber UUA Symbol"
+msgstr "Kleineres Silber UUA Symbol"
 
 #: inc/customizer.php:435
 msgid "Red UUA Symbol"
-msgstr "Red UUA Symbol"
+msgstr "Rotes UUA Symbol"
 
 #: inc/customizer.php:436
 msgid "Smaller Red UUA Symbol"
-msgstr "Kleinere Red UUA Symbol"
+msgstr "Kleineres rotes UUA Symbol"
 
 #: inc/customizer.php:446
 msgid "Which image should be displayed in the footer?"
-msgstr "Welches Bild sollte in der Fußzeile angezeigt werden?"
+msgstr "Welches Bild soll in der Fußzeile angezeigt werden?"
 
 #: inc/customizer.php:451
 msgid "Dark Chalice"
@@ -542,11 +556,11 @@ msgstr "Dunkle Chalice"
 
 #: inc/customizer.php:452
 msgid "Dark UUA Symbol"
-msgstr "Dunkle UUA Symbol"
+msgstr "Dunkles UUA Symbol"
 
 #: inc/customizer.php:462
 msgid "Which image should be used for the website icon(favicon)?"
-msgstr "Welches Bild sollte für die Website-Symbol (Favicon) verwendet werden?"
+msgstr "Welches Bild sollte für das Website-Symbol (Favicon) verwendet werden?"
 
 #: inc/customizer.php:467
 msgid "New Red UUA Symbol"
@@ -558,7 +572,7 @@ msgstr "Vorherige Chalice UUA Symbol"
 
 #: inc/customizer.php:653
 msgid "Default"
-msgstr "Default"
+msgstr "Standard"
 
 #: inc/customizer.php:660
 msgid "Site Title"
@@ -602,19 +616,19 @@ msgstr "Widget Überschrift 1"
 
 #: inc/customizer.php:730
 msgid "Widget List Item"
-msgstr "Widget List Item"
+msgstr "Widget Listen Objekt"
 
 #: inc/customizer.php:737
 msgid "Footer Widget Heading 1"
-msgstr "Footer Widget Überschrift 1"
+msgstr "Fuss Widget Überschrift 1"
 
 #: inc/customizer.php:744
 msgid "Site Footer"
-msgstr "Site Footer"
+msgstr "Seitenfuss"
 
 #: inc/customizer.php:751
 msgid "Footer Widget List Item"
-msgstr "Footer Widget List Item"
+msgstr "Fuss Widget List enObjekt"
 
 #: inc/customizer.php:758
 msgid "Header Widget Heading 1"
@@ -622,11 +636,11 @@ msgstr "Kopf Widget Überschrift 1"
 
 #: inc/customizer.php:765
 msgid "Header Widget List Item"
-msgstr "Kopf Widget List Item"
+msgstr "Kopf Widget Listen Objekt"
 
 #: inc/customizer.php:772
 msgid "Featured Articles Lite Slide Title"
-msgstr "Ausgewählte Artikel Lite Slide Title"
+msgstr "Ausgewählte Artikel Lite Slide Titel"
 
 #: inc/customizer.php:779
 msgid "Featured Articles Lite Slide Text"
@@ -679,7 +693,7 @@ msgstr "Kategorie: %s"
 #: inc/template-tags.php:141
 #, php-format
 msgid "Tag: %s"
-msgstr "Etikett: %s"
+msgstr "Tag: %s"
 
 #: inc/template-tags.php:143
 #, php-format
