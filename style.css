@@ -1707,18 +1707,33 @@ img#wpstats {
  
 /* 20.10 UU2014 - Specific #ID Styles
    ========================================================================== */
-#main.no-sidebar { margin: 0; }
-
-.page-template-page-nosidebar-php .site-content {
-  background-size: 0%; }
-
-#breadcrumbs {
-  margin: 0 20px;
+#main.no-sidebar {
+	margin: 0;
 }
 
-.menu-sitemap { display: none; }
+.page-template-page-nosidebar-php .site-content {
+	background-size: 0%;
+}
 
-.powerpress_player { clear: both; }
+.page-template-page-notitle .entry-title {
+	display: none; 
+}
+
+.page .entry-meta {
+	display: none; 
+}
+
+#breadcrumbs {
+	margin: 0 20px;
+}
+
+.menu-sitemap {
+	display: none;
+}
+
+.powerpress_player {
+	clear: both;
+}
 
 /* 20.11 UU2014 - Comments
    ========================================================================== */
