@@ -38,7 +38,7 @@
 					<?php } } ?>
 					</div>
                     <div class="site-title-description">
-						<img id="site-title-image" alt="" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'chalice.png'); ?>">
+						<img id="site-title-image" alt="" src="<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_title_image', 'Symbol_Gradient_77_110.png'); ?>">
                         <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                         <?php if (get_bloginfo('description')) { ?>
                             <h2 class="site-description"><?php bloginfo('description'); ?></h2>

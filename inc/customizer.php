@@ -419,7 +419,7 @@ function uu2014_customize_register($wp_customize) {
         'description' => __('You can choose what style of UU image to display in the theme.', 'uu2014')
     ));
     $wp_customize->add_setting('uu2014_title_image', array(
-        'default' => 'chalice.png', 
+        'default' => 'Symbol_Gradient_77_110.png', 
         'sanitize_callback' => 'sanitize_file_name'
         )
     );
@@ -438,7 +438,7 @@ function uu2014_customize_register($wp_customize) {
             )
     );
     $wp_customize->add_setting('uu2014_footer_image', array(
-        'default' => 'chalice-watermark-dark.gif', 
+        'default' => 'UUA_Symbol_dark_148_200.png', 
         'sanitize_callback' => 'sanitize_file_name'
         )
     );
@@ -506,7 +506,7 @@ div.footer-widget-area { max-width: <?php echo get_theme_mod('uu2014_footer_widg
 .site-description { padding: 0; }
 <?php endif; ?>
 <?php if (get_theme_mod('uu2014_display_footer_image', 1)) : ?>
-.site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'chalice-watermark-dark.gif'); ?>); }
+.site-footer { background-image: url(<?php echo get_template_directory_uri() . '/images/' . get_theme_mod('uu2014_footer_image', 'UUA_Symbol_dark_148_200.png'); ?>); }
 <?php else : ?>
 .site-footer { background-image: none; }
 <?php endif; ?>

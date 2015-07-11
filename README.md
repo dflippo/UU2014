@@ -10,17 +10,20 @@ UU2014
 * *Floating Widget Area:* The theme can display a floating widget area to the right of pages and individual posts.  It will hide the widget area if the page is to narrow.
 
 ####To see the theme in action with live content, visit some of the UU websites who have adopted the theme:
-* [Unitarian Universalist Church of Kent, Ohio](http://www.kentuu.org)
+* [Unitarian Universalist Church of Kent, Ohio](http://kentuu.org)
 * [Unitarian Universalist Fellowship of Columbus, Georgia](http://www.uucolumbusga.org/)
 * [Unitarian Universalist Fellowship of Santa Cruz County](http://uufscc.org/wordpress)
 * [Unitarian Universalist Church of Washington County](http://uuccwc.org)
+* [Unitarian Universalist Church of Manchester](http://www.uumanchester.org/)
+* [Unitarian Universalist Church of Las Cruces](http://www.uuchurchlc.org/)
+* [Unitarian Universalists of Central Delaware](http://uucd.org/)
+* [The Unitarian Universalist Congregation, Santa Rosa](https://web.uusantarosa.org/)
 * [CERGing Forward - The CERG Regional Blog](http://www.cerguua.org/cergingforward)
 * [Better Together - By the Staff of the Ohio-Meadville and St. Lawrence Districts](http://ohiomeadville.org/bettertogether)
 * [The Newberry UU - Clayton Memorial Unitarian Universalist Church](http://newberryuu.org/)
 * [First Unitarian Universalist Congregation of Albuquerque, NM](http://uuabq.com/)
 * [Florence Unitarian Universalist Fellowship](http://www.florenceuuf.org)
 * [Unitarian Universalist Fellowship of the Eastern Slopes](http://uufes.org/)
-* [San Gabriel Unitarian Universalist Fellowship](http://sangabrieluu.org/)
 * [Unitarian Fellowship of South Florida](http://www.uuhollywood.com/)
 * [Thermal Belt Unitarian Universalist Fellowship](http://www.tbuuf.org)
 
@@ -32,11 +35,12 @@ UU2014
 ####Licensed under GPLv2 or later. :) Use it to make something cool.
 
 ####If you are unfamiliar with UU, additional information is available on the Unitarian Universalist Association website:
-[Unitarian Universalist Beliefs](http://www.uua.org/beliefs/)
-[Principles and Purpose](http://www.uua.org/beliefs/principles/index.shtml)
-[Are My Beliefs Welcome?](http://www.uua.org/beliefs/welcome/index.shtml)
-[Other Frequently Asked Questions](http://www.uua.org/beliefs/faq/index.shtml)
-[Flaming Chalice: Symbol of Unitarian Universalism](http://www.uua.org/beliefs/chalice/)
+* [Unitarian Universalist Beliefs](http://www.uua.org/beliefs)
+* [Who We Are](http://www.uua.org/beliefs/who-we-are)
+* [People of Many Beliefs](http://www.uua.org/beliefs/who-we-are/people-many-beliefs)
+* [People of Many Backgrounds](http://www.uua.org/beliefs/who-we-are/people-many-backgrounds)
+* [People of Many Ages](http://www.uua.org/beliefs/who-we-are/we-are-people-all-ages)
+* [What We Believe](http://www.uua.org/beliefs/what-we-believe)
 
 Getting Started
 ---------------
@@ -62,6 +66,12 @@ This theme supports updates from WordPress.org.  Please update your copy of the 
 
 Changelog
 ---------
+
+### v1.3.9
+* Fixed bug with translation to other languages and added German translation for the theme.
+* Added page template that makes the page title not visible.
+* Added author / change date metadata for pages that is picked up by search engines.
+* Changed default images to the newer UUA images.  The previous images are still available in the customizer.
 
 ### v1.3.8
 * Fixed bug with customizer feature to hide bylines
